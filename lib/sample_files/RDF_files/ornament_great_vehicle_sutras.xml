@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF[
+	<!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	<!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	<!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+	<!ENTITY swivt 'http://semantic-mediawiki.org/swivt/1.0#'>
+	<!ENTITY wiki 'http://research.tsadra.org/index.php/Special:URIResolver/'>
+	<!ENTITY property 'http://research.tsadra.org/index.php/Special:URIResolver/Property-3A'>
+	<!ENTITY wikiurl 'https://research.tsadra.org/index.php/'>
+]>
+
+<rdf:RDF
+	xmlns:rdf="&rdf;"
+	xmlns:rdfs="&rdfs;"
+	xmlns:owl ="&owl;"
+	xmlns:swivt="&swivt;"
+	xmlns:wiki="&wiki;"
+	xmlns:property="&property;">
+
+	<owl:Ontology rdf:about="https://research.tsadra.org/index.php/Special:ExportRDF/Ornament+of+the+Great+Vehicle+S%C5%ABtras">
+		<swivt:creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-02-22T14:56:15-05:00</swivt:creationDate>
+		<owl:imports rdf:resource="http://semantic-mediawiki.org/swivt/1.0"/>
+	</owl:Ontology>
+	<swivt:Subject rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Ornament_of_the_Great_Vehicle_S-C5-ABtras">
+		<rdf:type rdf:resource="&wiki;Category-3ABooks"/>
+		<rdf:type rdf:resource="&wiki;Category-3AOrnament_of_the_Great_Vehicle_S-C5-ABtras"/>
+		<rdf:type rdf:resource="&wiki;Category-3ADharmachakra_Translation_Committee"/>
+		<rdf:type rdf:resource="&wiki;Category-3ASnow_Lion_Publications"/>
+		<rdf:type rdf:resource="&wiki;Category-3AShambhala_Publications"/>
+		<rdf:type rdf:resource="&wiki;Category-3AMaitreya"/>
+		<rdf:type rdf:resource="&wiki;Category-3AAsa-E1-B9-85ga"/>
+		<rdf:type rdf:resource="&wiki;Category-3AMi_pham_rgya_mtsho"/>
+		<rdf:type rdf:resource="&wiki;Category-3AMkhan_po_gzhan_dga-27"/>
+		<rdfs:label>Ornament of the Great Vehicle Sūtras</rdfs:label>
+		<swivt:page rdf:resource="https://research.tsadra.org/index.php/Ornament_of_the_Great_Vehicle_S%C5%ABtras"/>
+		<rdfs:isDefinedBy rdf:resource="https://research.tsadra.org/index.php/Special:ExportRDF/Ornament_of_the_Great_Vehicle_S%C5%ABtras"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</swivt:wikiNamespace>
+		<property:Author rdf:resource="&wiki;Maitreya"/>
+		<property:Author rdf:resource="&wiki;Asanga"/>
+		<property:Canonical rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</property:Canonical>
+		<property:Canonicalgenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cittamātra, Sems tsam</property:Canonicalgenre>
+		<property:Citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dharmachakra Translation Committee. Ornament of the Great Vehicle Sūtras: Maitreya’s Mahāyānasūtrālaṃkāra with Commentaries by Khenpo Shenga and Ju Mipham. Boston: Snow Lion Publications, 2014.</property:Citation>
+		<property:Citationofsourcetexts rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[[Asanga]]. [[Mahāyānasūtrālaṃkāra]] [[theg pa chen po mdo sde'i rgyan zhes bya ba'i tshig le'ur byas pa]]), D 4020, sems tsam, phi 1b1-39a4. Translated by T. Śākyasimha and dpal brtsegs.[http://tbrc.org/link?RID=O1GS6011</property:Citationofsourcetexts>
+		<property:Contributors rdf:resource="&wiki;Mkhan_po_gzhan_dga-27"/>
+		<property:Contributors rdf:resource="&wiki;Mi_pham_rgya_mtsho"/>
+		<property:Contributors rdf:resource="&wiki;Maitreya"/>
+		<property:Contributors rdf:resource="&wiki;Asanga"/>
+		<property:Edition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1st edition</property:Edition>
+		<property:Editiontype rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hardcover</property:Editiontype>
+		<property:Fulltitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ornament of the Great Vehicle Sūtras: Maitreya’s Mahāyānasūtrālaṃkāra with Commentaries by Khenpo Shenga and Ju Mipham</property:Fulltitle>
+		<property:Glossary rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tibetan-Sanskrit-English</property:Glossary>
+		<property:Index rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yes</property:Index>
+		<property:Isbn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">978-1-55939-428-4</property:Isbn>
+		<property:Language rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</property:Language>
+		<property:Lcclassification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bq3002.e5d53 2014</property:Lcclassification>
+		<property:Lcsubjects rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1. Yogācāra (Buddhism)—Early works to 1800. I. Maitreyanātha.
+II. Gźan-phan-chos-kyi-snaṅ-ba, Gźan-dga’, 1871–1927.
+III. Mi-pham-rgya-mtsho, ’Jam-mgon ’Ju, 1846–1912.
+IV. Dharmachakra Translation Committee.</property:Lcsubjects>
+		<property:Library rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physical and digital</property:Library>
+		<property:Librarylocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Special Collections</property:Librarylocation>
+		<property:Librarynote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Needs content</property:Librarynote>
+		<property:Noncanonical rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</property:Noncanonical>
+		<property:Notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endnotes</property:Notes>
+		<property:Numberofcopies rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1</property:Numberofcopies>
+		<property:Pagecreationdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-02-17Z</property:Pagecreationdate>
+		<property:Pagecreationdate-23aux rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2457070.5</property:Pagecreationdate-23aux>
+		<property:Physicalcondition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Good</property:Physicalcondition>
+		<property:Place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boston</property:Place>
+		<property:Pubdate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014</property:Pubdate>
+		<property:Publisher rdf:resource="&wiki;Snow_Lion_Publications"/>
+		<property:Pubsubtype rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Translation</property:Pubsubtype>
+		<property:Sectionarea rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dharmachakra</property:Sectionarea>
+		<property:Sourceauthor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[[Maitreya]]&lt;br&gt;
+[[Asanga]]&lt;br&gt;
+[[Khenpo Shenga]]&lt;br&gt;
+[[Ju Mipham Gyatso]]</property:Sourceauthor>
+		<property:Sourcetitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[[Mahāyānasūtrālaṃkāra]] ([[theg pa chen po mdo sde'i rgyan zhes bya ba'i tshig le'ur byas pa]])&lt;br&gt;
+[[Theg pa chen po mdo sde’i rgyan gyi dgongs don rnam par bshad pa theg mchog bdud rtsi’i dga’ ston]]&lt;br&gt;
+[[Theg pa chen po’i mdo sde’i rgyan ces bya ba’i mchan ’grel]]</property:Sourcetitle>
+		<property:Topic rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philosophy, Sutra</property:Topic>
+		<property:Totalpages rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1021</property:Totalpages>
+		<property:Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tibetan to English</property:Translation>
+		<property:Translator rdf:resource="&wiki;Dharmachakra_Translation_Committee"/>
+		<swivt:specialProperty_ASK rdf:resource="&wiki;Ornament_of_the_Great_Vehicle_S-C5-ABtras-23_QUERY08b516ca8b62aff0fa28a3a487171fab"/>
+		<swivt:specialProperty_ASK rdf:resource="&wiki;Ornament_of_the_Great_Vehicle_S-C5-ABtras-23_QUERY099f8160ad2df1c7d81168c6e18dcd27"/>
+		<swivt:specialProperty_ASK rdf:resource="&wiki;Ornament_of_the_Great_Vehicle_S-C5-ABtras-23_QUERY79d51c3c9152e9b3688552494b6ee454"/>
+		<swivt:specialProperty_ASK rdf:resource="&wiki;Ornament_of_the_Great_Vehicle_S-C5-ABtras-23_QUERY5ffcc3f725bfde005fc6ed869ef9a73a"/>
+		<swivt:wikiPageModificationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-02-17T21:01:56Z</swivt:wikiPageModificationDate>
+		<property:Modification_date-23aux rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2457071.3763426</property:Modification_date-23aux>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ornament of the Great Vehicle Sūtras</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#creationDate" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3ABooks" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3AOrnament_of_the_Great_Vehicle_S-C5-ABtras" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3ADharmachakra_Translation_Committee" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3ASnow_Lion_Publications" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3AShambhala_Publications" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3AMaitreya" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3AAsa-E1-B9-85ga" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3AMi_pham_rgya_mtsho" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3AMkhan_po_gzhan_dga-27" />
+	<owl:ObjectProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#page" />
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#wikiNamespace" />
+	<owl:ObjectProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AAuthor" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ACanonical" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ACanonicalgenre" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ACitation" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ACitationofsourcetexts" />
+	<owl:ObjectProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AContributors" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AEdition" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AEditiontype" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AFulltitle" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AGlossary" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AIndex" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AIsbn" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ALanguage" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ALcclassification" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ALcsubjects" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ALibrary" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ALibrarylocation" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ALibrarynote" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ANoncanonical" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ANotes" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ANumberofcopies" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APagecreationdate" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APagecreationdate-23aux" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APhysicalcondition" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APlace" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APubdate" />
+	<owl:ObjectProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APublisher" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APubsubtype" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ASectionarea" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ASourceauthor" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ASourcetitle" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ATopic" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ATotalpages" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ATranslation" />
+	<owl:ObjectProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ATranslator" />
+	<owl:ObjectProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#specialProperty_ASK" />
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#wikiPageModificationDate" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AModification_date-23aux" />
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#wikiPageSortKey" />
+	<!-- Created by Semantic MediaWiki, http://semantic-mediawiki.org/ -->
+</rdf:RDF>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF[
+	<!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	<!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	<!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+	<!ENTITY swivt 'http://semantic-mediawiki.org/swivt/1.0#'>
+	<!ENTITY wiki 'http://research.tsadra.org/index.php/Special:URIResolver/'>
+	<!ENTITY property 'http://research.tsadra.org/index.php/Special:URIResolver/Property-3A'>
+	<!ENTITY wikiurl 'https://research.tsadra.org/index.php/'>
+]>
+
+<rdf:RDF
+	xmlns:rdf="&rdf;"
+	xmlns:rdfs="&rdfs;"
+	xmlns:owl ="&owl;"
+	xmlns:swivt="&swivt;"
+	xmlns:wiki="&wiki;"
+	xmlns:property="&property;">
+
+	<owl:Ontology rdf:about="https://research.tsadra.org/index.php/Special:ExportRDF/The_Adamantine_Songs_%28Vajrag%C4%ABti%29">
+		<swivt:creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-02-22T14:43:17-05:00</swivt:creationDate>
+		<owl:imports rdf:resource="http://semantic-mediawiki.org/swivt/1.0"/>
+	</owl:Ontology>
+	<swivt:Subject rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/The_Adamantine_Songs_(Vajrag-C4-ABti)">
+		<rdf:type rdf:resource="&wiki;Category-3ABooks"/>
+		<rdf:type rdf:resource="&wiki;Category-3AThe_Adamantine_Songs_(Vajrag-C4-ABti)"/>
+		<rdf:type rdf:resource="&wiki;Category-3ABraitstein,_L."/>
+		<rdf:type rdf:resource="&wiki;Category-3ATreasury_of_the_Buddhist_Sciences"/>
+		<rdf:type rdf:resource="&wiki;Category-3ASaraha"/>
+		<rdf:type rdf:resource="&wiki;Category-3AColumbia_University-27s_Center_for_Buddhist_Studies"/>
+		<rdf:type rdf:resource="&wiki;Category-3ATibet_House_US"/>
+		<rdf:type rdf:resource="&wiki;Category-3AAmerican_Institute_of_Buddhist_Studies"/>
+		<rdfs:label>The Adamantine Songs (Vajragīti)</rdfs:label>
+		<swivt:page rdf:resource="https://research.tsadra.org/index.php/The_Adamantine_Songs_(Vajrag%C4%ABti)"/>
+		<rdfs:isDefinedBy rdf:resource="https://research.tsadra.org/index.php/Special:ExportRDF/The_Adamantine_Songs_(Vajrag%C4%ABti)"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</swivt:wikiNamespace>
+		<property:Author rdf:resource="&wiki;Saraha"/>
+		<property:Author rdf:resource="&wiki;Braitstein,_L."/>
+		<property:Canonical rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</property:Canonical>
+		<property:Citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Braitstein, Lara and Saraha. The Adamantine Songs (Vajragīti): Study, Translation, and Tibetan Critical Edition. Treasury of the Buddhist Sciences. New York: Columbia University's Center for Buddhist Studies, 2014.</property:Citation>
+		<property:Citationofsourcetexts rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[[Saraha]]. [[sku'i mdzod 'chi med rdo rje'i glu]], Toh. 2269, CT 1179, ;
+[[Saraha]]. [[gsung gi mdzod 'jam dbyangs rdo rje'i glu]], Toh. 2270, CT 1180, ;
+[[Saraha]]. [[thugs kyi mdzod skye med rdo rje'i glu]], Toh. 2271, CT 1181, ;</property:Citationofsourcetexts>
+		<property:Edition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1st edition</property:Edition>
+		<property:Formatofsourcetext rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wylie transliteration</property:Formatofsourcetext>
+		<property:Fulltitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Adamantine Songs (Vajragīti): Study, Translation, and Tibetan Critical Edition</property:Fulltitle>
+		<property:Glossary rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No glossary</property:Glossary>
+		<property:Index rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yes</property:Index>
+		<property:Isbn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9781935011170</property:Isbn>
+		<property:Language rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</property:Language>
+		<property:Library rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physical</property:Library>
+		<property:Librarylocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Series</property:Librarylocation>
+		<property:Librarynote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Needs content</property:Librarynote>
+		<property:Notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Footnotes</property:Notes>
+		<property:Numberofcopies rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1</property:Numberofcopies>
+		<property:Pagecreationdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-01-29Z</property:Pagecreationdate>
+		<property:Pagecreationdate-23aux rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2457051.5</property:Pagecreationdate-23aux>
+		<property:Physicalcondition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New</property:Physicalcondition>
+		<property:Place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New York</property:Place>
+		<property:Pubdate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014</property:Pubdate>
+		<property:Publicationtype rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Book</property:Publicationtype>
+		<property:Publisher rdf:resource="&wiki;Columbia_University-27s_Center_for_Buddhist_Studies"/>
+		<property:Pubsubtype rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Translation</property:Pubsubtype>
+		<property:Sectionarea rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Treasury of the Buddhist Sciences</property:Sectionarea>
+		<property:Series rdf:resource="&wiki;Treasury_of_the_Buddhist_Sciences"/>
+		<property:Sourceauthor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[[Saraha]]</property:Sourceauthor>
+		<property:Sourcetitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[[sku'i mdzod 'chi med rdo rje'i glu]]&lt;br&gt;
+[[gsung gi mdzod 'jam dbyangs rdo rje'i glu]]&lt;br&gt;
+[[thugs kyi mdzod skye med rdo rje'i glu]]</property:Sourcetitle>
+		<property:Topic rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philosophy, Poetry</property:Topic>
+		<property:Totalpages rdf:datatype="http://www.w3.org/2001/XMLSchema#double">236</property:Totalpages>
+		<property:Translation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tibetan to English</property:Translation>
+		<property:Translator rdf:resource="&wiki;Braitstein,_L."/>
+		<swivt:specialProperty_ASK rdf:resource="&wiki;The_Adamantine_Songs_(Vajrag-C4-ABti)-23_QUERY3baab5331a27c0b6b16642afc58e37b7"/>
+		<swivt:specialProperty_ASK rdf:resource="&wiki;The_Adamantine_Songs_(Vajrag-C4-ABti)-23_QUERY25ed2fcbb7a014a9e8dbf67bd066c8f7"/>
+		<swivt:specialProperty_ASK rdf:resource="&wiki;The_Adamantine_Songs_(Vajrag-C4-ABti)-23_QUERY6ebfc3e42043e09f0948a436c7437da2"/>
+		<swivt:specialProperty_ASK rdf:resource="&wiki;The_Adamantine_Songs_(Vajrag-C4-ABti)-23_QUERY9adc5ddd9b5ef925890c1512926ceefe"/>
+		<swivt:wikiPageModificationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-30T00:04:07Z</swivt:wikiPageModificationDate>
+		<property:Modification_date-23aux rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2457052.5028588</property:Modification_date-23aux>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Adamantine Songs (Vajragīti)</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#creationDate" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3ABooks" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3AThe_Adamantine_Songs_(Vajrag-C4-ABti)" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3ABraitstein,_L." />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3ATreasury_of_the_Buddhist_Sciences" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3ASaraha" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3AColumbia_University-27s_Center_for_Buddhist_Studies" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3ATibet_House_US" />
+	<owl:Class rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Category-3AAmerican_Institute_of_Buddhist_Studies" />
+	<owl:ObjectProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#page" />
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#wikiNamespace" />
+	<owl:ObjectProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AAuthor" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ACanonical" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ACitation" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ACitationofsourcetexts" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AEdition" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AFormatofsourcetext" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AFulltitle" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AGlossary" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AIndex" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AIsbn" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ALanguage" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ALibrary" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ALibrarylocation" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ALibrarynote" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ANotes" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ANumberofcopies" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APagecreationdate" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APagecreationdate-23aux" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APhysicalcondition" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APlace" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APubdate" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APublicationtype" />
+	<owl:ObjectProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APublisher" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3APubsubtype" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ASectionarea" />
+	<owl:ObjectProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ASeries" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ASourceauthor" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ASourcetitle" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ATopic" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ATotalpages" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ATranslation" />
+	<owl:ObjectProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3ATranslator" />
+	<owl:ObjectProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#specialProperty_ASK" />
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#wikiPageModificationDate" />
+	<owl:DatatypeProperty rdf:about="http://research.tsadra.org/index.php/Special:URIResolver/Property-3AModification_date-23aux" />
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#wikiPageSortKey" />
+	<!-- Created by Semantic MediaWiki, http://semantic-mediawiki.org/ -->
+</rdf:RDF>

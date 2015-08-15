@@ -1,0 +1,820 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.8/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.8/ http://www.mediawiki.org/xml/export-0.8.xsd" version="0.8" xml:lang="en">
+  <siteinfo>
+    <sitename>Tsadra Digital Research Library</sitename>
+    <base>https://research.tsadra.org/index.php/Main_Page</base>
+    <generator>MediaWiki 1.22.2</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Tsadra Digital Research Library</namespace>
+      <namespace key="5" case="first-letter">Tsadra Digital Research Library talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="170" case="first-letter">Filter</namespace>
+      <namespace key="171" case="first-letter">Filter talk</namespace>
+      <namespace key="460" case="case-sensitive">Campaign</namespace>
+      <namespace key="461" case="case-sensitive">Campaign talk</namespace>
+      <namespace key="1000" case="first-letter">Kangyur</namespace>
+      <namespace key="1001" case="first-letter">Kangyur talk</namespace>
+      <namespace key="1002" case="first-letter">Tengyur</namespace>
+      <namespace key="1003" case="first-letter">Tengyur talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>The Adamantine Songs (Vajragīti)</title>
+    <ns>0</ns>
+    <id>338849</id>
+    <revision>
+      <id>485519</id>
+      <parentid>485518</parentid>
+      <timestamp>2015-01-30T00:04:07Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2190">{{DRL Metadata
+|publicationtype=Book
+|citation=Braitstein, Lara and Saraha. The Adamantine Songs (Vajragīti): Study, Translation, and Tibetan Critical Edition. Treasury of the Buddhist Sciences. New York: Columbia University's Center for Buddhist Studies, 2014.
+|author=Saraha; Braitstein, Lara
+|translator=Braitstein, Lara
+|fulltitle=The Adamantine Songs (Vajragīti): Study, Translation, and Tibetan Critical Edition
+|series=Treasury of the Buddhist Sciences
+|place=New York
+|publisher=Columbia University's Center for Buddhist Studies
+|pubdate=2014
+|edition=1st edition
+|isbn=9781935011170
+|pubsubtype=Translation
+|topic=Philosophy, Poetry
+|index=Yes
+|totalpages=236
+|glossary=No glossary
+|notes=Footnotes
+|language=English
+|translation=Tibetan to English
+|formatofsourcetext=Wylie transliteration
+|canonical=Yes
+|sourceauthor=[[Saraha]]
+|sourcetitle=[[sku'i mdzod 'chi med rdo rje'i glu]]&lt;br&gt;
+[[gsung gi mdzod 'jam dbyangs rdo rje'i glu]]&lt;br&gt;
+[[thugs kyi mdzod skye med rdo rje'i glu]]
+|citationofsourcetexts=[[Saraha]]. [[sku'i mdzod 'chi med rdo rje'i glu]], Toh. 2269, CT 1179, ;
+[[Saraha]]. [[gsung gi mdzod 'jam dbyangs rdo rje'i glu]], Toh. 2270, CT 1180, ;
+[[Saraha]]. [[thugs kyi mdzod skye med rdo rje'i glu]], Toh. 2271, CT 1181, ;
+|library=Physical
+|librarylocation=Series
+|sectionarea=Treasury of the Buddhist Sciences
+|physicalcondition=New
+|numberofcopies=1
+|pagecreationdate=2015/01/29
+|librarynote=Needs content
+|containedin=
+|university=
+|pagenumbers=
+|issuenumber=
+|abbreviation=
+|affiliate=
+|affiliatewebsite=
+|issn=
+|noncanonicalgenre=
+}}
+&lt;br&gt;{{BookHeader}}
+
+== Title Page ==
+{{/Title Page}}
+
+== Publication data ==
+{{/Publication data}}
+
+== Table of Contents ==
+{{/Table of Contents}}
+
+== Introduction ==
+{{/Introduction}}
+
+== Glossary ==
+{{/Glossary}}
+
+== Notes ==
+{{/Notes}}
+
+== Bibliography ==
+{{/Bibliography}}
+
+{{OtherEditions}}
+
+== Scans ==
+{{Digital Library Scanned Pages, eBook and Categories | {{PAGENAME}}}} 
+
+[[Category: Saraha]] [[Category: Braitstein, L.]] [[Category: Treasury of the Buddhist Sciences]] [[Category: Columbia University's Center for Buddhist Studies]]  [[Category: Tibet House US]]
+[[Category: American Institute of Buddhist Studies]]</text>
+      <sha1>eoywk4fdky7yko41l4r3m493n8zhe4t</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>The Adamantine Songs (Vajragīti)/Bibliography</title>
+    <ns>0</ns>
+    <id>338868</id>
+    <revision>
+      <id>485494</id>
+      <timestamp>2015-01-29T23:52:21Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <comment>Created page with &quot;&lt;noinclude&gt;{{DRL subpage bibliography}}&lt;/noinclude&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="51">&lt;noinclude&gt;{{DRL subpage bibliography}}&lt;/noinclude&gt;</text>
+      <sha1>ldqp0s8j1dssakf9s1ychbav166lwtp</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>The Adamantine Songs (Vajragīti)/Covers</title>
+    <ns>0</ns>
+    <id>338851</id>
+    <revision>
+      <id>485454</id>
+      <timestamp>2015-01-29T23:12:44Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <comment>Created page with &quot;{{Cover Images|The Adamantine Songs}}&quot;</comment>
+      <text xml:space="preserve" bytes="37">{{Cover Images|The Adamantine Songs}}</text>
+      <sha1>tn137b2b499acmfdc1wlq6yz6yeg3qs</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>The Adamantine Songs (Vajragīti)/Glossary</title>
+    <ns>0</ns>
+    <id>338871</id>
+    <revision>
+      <id>485501</id>
+      <timestamp>2015-01-29T23:53:15Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <comment>Created page with &quot;&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="53">&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;</text>
+      <sha1>1d07zh4yux0c6vi51g1qxxh7pngobur</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>The Adamantine Songs (Vajragīti)/Introduction</title>
+    <ns>0</ns>
+    <id>338869</id>
+    <revision>
+      <id>485497</id>
+      <timestamp>2015-01-29T23:53:08Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <comment>Created page with &quot;&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="53">&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;</text>
+      <sha1>1d07zh4yux0c6vi51g1qxxh7pngobur</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>The Adamantine Songs (Vajragīti)/Notes</title>
+    <ns>0</ns>
+    <id>338872</id>
+    <revision>
+      <id>485502</id>
+      <timestamp>2015-01-29T23:53:18Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <comment>Created page with &quot;&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="53">&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;</text>
+      <sha1>1d07zh4yux0c6vi51g1qxxh7pngobur</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>The Adamantine Songs (Vajragīti)/Publication data</title>
+    <ns>0</ns>
+    <id>338873</id>
+    <revision>
+      <id>485503</id>
+      <timestamp>2015-01-29T23:53:24Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <comment>Created page with &quot;&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="53">&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;</text>
+      <sha1>1d07zh4yux0c6vi51g1qxxh7pngobur</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>The Adamantine Songs (Vajragīti)/Table of Contents</title>
+    <ns>0</ns>
+    <id>338870</id>
+    <revision>
+      <id>485499</id>
+      <timestamp>2015-01-29T23:53:12Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <comment>Created page with &quot;&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="53">&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;</text>
+      <sha1>1d07zh4yux0c6vi51g1qxxh7pngobur</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>The Adamantine Songs (Vajragīti)/Title Page</title>
+    <ns>0</ns>
+    <id>338867</id>
+    <revision>
+      <id>485492</id>
+      <timestamp>2015-01-29T23:51:58Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <comment>Created page with &quot;&lt;center&gt; &lt;big&gt;'''The'''&lt;/big&gt; &lt;br&gt; &lt;big&gt;'''Adamantine Songs'''&lt;/big&gt;&lt;br&gt; &lt;small&gt;'''(Vajragīti)'''&lt;/small &gt;   &lt;big&gt;By Saraha&lt;/big&gt;   Study, Translation, &lt;br&gt; and Tibetan Criti...&quot;</comment>
+      <text xml:space="preserve" bytes="637">&lt;center&gt;
+&lt;big&gt;'''The'''&lt;/big&gt; &lt;br&gt;
+&lt;big&gt;'''Adamantine Songs'''&lt;/big&gt;&lt;br&gt;
+&lt;small&gt;'''(Vajragīti)'''&lt;/small &gt;
+
+
+&lt;big&gt;By Saraha&lt;/big&gt;
+
+
+Study, Translation, &lt;br&gt;
+and Tibetan Critical Edition
+
+
+By &lt;br&gt;
+Lara Braitstein
+
+
+''Treasury of the Buddhist Sciences'' series&lt;br&gt;
+''Tengyur Translation Initiative''&lt;br&gt;
+CT 1179, 1180, 1181 (Toh. 2269, 2270, 2271)&lt;br&gt;
+
+Published by&lt;br&gt;
+The American Institute of Buddhist Studies&lt;br&gt;
+at Columbia University New York&lt;br&gt;
+
+Co-published with&lt;br&gt;
+Columbia University's Center for Buddhist Studies &lt;br&gt;
+and Tibet House US&lt;br&gt;
+
+New York&lt;br&gt;
+2014
+
+&lt;/center&gt;
+
+&lt;noinclude&gt;{{DRL subpage basecategories}}&lt;/noinclude&gt;</text>
+      <sha1>ick29jvdw3zg1nztlfj05k65ecvae6x</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:!</title>
+    <ns>10</ns>
+    <id>12251</id>
+    <revision>
+      <id>41708</id>
+      <timestamp>2009-05-13T18:30:43Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <comment>New page: |</comment>
+      <text xml:space="preserve" bytes="1">|</text>
+      <sha1>7boi6rb359a8bssoe6mvr1x1c03ftug</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:BookHeader</title>
+    <ns>10</ns>
+    <id>337361</id>
+    <revision>
+      <id>481995</id>
+      <parentid>481772</parentid>
+      <timestamp>2015-01-06T20:14:15Z</timestamp>
+      <contributor>
+        <username>Jeremi</username>
+        <id>49</id>
+      </contributor>
+      <text xml:space="preserve" bytes="855">&lt;div style=&quot;width:45%;margin:0;float:left;&quot;&gt;{{/Covers}}
+{{#show: {{PAGENAME}}
+| ?librarynote#={{{1}}}
+| format=template
+| template=StatusMessage
+}}&lt;/div&gt;
+&lt;div style=&quot;width:50%;margin:0 2%;float:left;&quot;&gt;{{#show: {{PAGENAME}}
+| ?fulltitle#={{{1}}}
+| ?author={{{2}}}
+| ?translator={{{3}}}
+| ?editor={{{4}}}
+| ?contributors={{{5}}}
+| ?series={{{6}}}
+| ?place#={{{7}}}
+| ?publisher={{{8}}}
+| ?pubdate#={{{9}}}
+| ?isbn#={{{10}}}
+| ?totalpages#={{{11}}}
+| ?translation={{{12}}}
+| ?sourceauthor={{{13}}}
+| ?sourcetitle={{{14}}}
+| ?library#={{{15}}}
+| ?librarylocation#={{{16}}}
+| ?citation={{{17}}}
+| ?numberinseries#={{{18}}}
+| ?sectionarea#={{{19}}}
+| ?multivolumework={{{20}}}
+| ?volumenumber={{{21}}}
+| ?totalvolumes={{{22}}}
+| ?relatedpages#={{{23}}}
+| format=template
+| template=Bookbox
+| link=all }}&lt;/div&gt;
+
+
+&lt;div style=&quot;clear:both;&quot;&gt;{{NewBookRequest}}&lt;/div&gt;</text>
+      <sha1>rdzuxcp947huuuwgl5tp2xir1ak17lb</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Bookbox</title>
+    <ns>10</ns>
+    <id>337340</id>
+    <revision>
+      <id>481996</id>
+      <parentid>481800</parentid>
+      <timestamp>2015-01-06T20:14:57Z</timestamp>
+      <contributor>
+        <username>Jeremi</username>
+        <id>49</id>
+      </contributor>
+      <text xml:space="preserve" bytes="3055">{| class=&quot;table table-condensed&quot; style=&quot;margin:0;&quot; 
+!colspan=&quot;2&quot; style=&quot;background-color:#F0F0F0 !important;font-weight:400;&quot;|&lt;big&gt;Book Information&lt;/big&gt;
+|-
+| style=&quot;width: 140px;font-size:14;color:#444;text-align:right;padding-top:8px;&quot; | ''Full title:''
+| &lt;big&gt;[[{{{1}}}]]&lt;/big&gt;
+|-
+| style=&quot;font-size:14;color:#444;text-align:right;&quot; | ''Chicago style citation:''
+| {{{17}}}{{
+#if: {{{2}}} |&lt;br&gt;
+   {{!}}-
+   {{!}} style=&quot;font-size:14;color:#444;text-align:right;&quot; {{!}} ''Author(s):''
+   {{!}} {{{2}}}
+| }}{{
+#if: {{{3}}} |&lt;br&gt;
+   {{!}}-
+   {{!}} style=&quot;font-size:14;color:#444;text-align:right;&quot; {{!}} ''Translator(s):''
+   {{!}} {{{3}}}
+| }}{{
+#if: {{{4}}} |&lt;br&gt;
+   {{!}}-
+   {{!}} style=&quot;font-size:14;color:#444;text-align:right;&quot; {{!}} ''Editor(s):''
+   {{!}} {{{4}}}
+| }}{{
+#if: {{{5}}} |&lt;br&gt;
+   {{!}}-
+   {{!}} style=&quot;font-size:14;color:#444;text-align:right;&quot; {{!}} ''Contributor(s):''
+   {{!}} {{{5}}}
+| }}{{
+#if: {{{6}}} |&lt;br&gt;
+   {{!}}-
+   {{!}} style=&quot;font-size:14;color:#444;text-align:right;&quot; {{!}} ''Series:''
+   {{!}}{{{6}}}{{#if: {{{18}}}|, Vol. {{{18}}}| }}
+| }}{{
+#if: {{{21}}} | &lt;br&gt;
+   {{!}}-
+   {{!}} style=&quot;font-size:14;color:#444;text-align:right;&quot; {{!}} ''Multivolume Info:''
+   {{!}}Num. {{{21}}} of {{{22}}} Volumes.
+| }}
+|-
+| style=&quot;font-size:14;color:#444;text-align:right;&quot; | ''Publication:''
+| {{#if: {{{7}}} |{{{7}}}: | }} {{{8}}}, {{{9}}}
+|-
+| style=&quot;font-size:14;color:#444;text-align:right;&quot; | ''ISBN #:''
+| {{#if: {{{10}}} |ISBN {{{10}}}| No ISBN number}}
+|-
+| style=&quot;font-size:14;color:#444;text-align:right;&quot; | ''Total # of pages:''
+| {{{11}}}
+|-
+| style=&quot;font-size:14;color:#444;text-align:right;&quot; | ''Contains a translation:''
+| {{#if: {{{12}}}|Yes|No}}{{
+#if: {{{13}}} 
+| &lt;br&gt;
+   {{!}}-
+   {{!}} style=&quot;font-size:14;color:#444;text-align:right;padding-top:5px;&quot; {{!}} ''Source author(s):''
+   {{!}}{{embedlist|{{{13}}}}}
+|
+}}{{
+#if: {{{14}}}
+|&lt;br&gt;
+   {{!}}-
+   {{!}} style=&quot;font-size:14;color:#444;text-align:right;padding-top:5px;&quot; {{!}} ''Source title(s):''
+   {{!}}{{embedlist|{{{14}}}}}   
+| 
+}}
+|-
+| style=&quot;font-size:14;color:#444;text-align:right;&quot; | ''Boulder Library:''
+| {{#ifeq: {{{15}}} | Physical | {{{15}}} version, located in &quot;{{{16}}}&quot; area, under &quot;{{{19}}}&quot; section.|}}{{#ifeq: {{{15}}} | Digital | {{{15}}} version, link to PDF below.|}}{{#if: {{{15}}} | | No inventory information recorded. [mailto:Research@tsadra.org Submit a request]}}{{#ifeq: {{{15}}} | Physical and digital | {{{15}}} versions available. Located in &quot;{{{16}}}&quot; area, under &quot;{{{19}}}&quot; section. Link to PDF below.|}}
+|-
+| style=&quot;font-size:14;color:#444;text-align:right;padding-top:8px;&quot; | ''PDF and Scans:''
+| {{#ask: [[Category:{{PAGENAME}}]] [[Category:Book PDFs]] | format=ul | default = *No PDFs // [[Special:Upload | Upload a PDF]] ([[PDF Upload Stub]])}}
+*{{#ifexist: {{BASEPAGENAME}}/Scans | [[{{BASEPAGENAME}}/Scans|Scans page]] | No scans page}}{{
+#if: {{{23}}} |&lt;br&gt;
+   {{!}}-
+   {{!}} style=&quot;font-size:14;color:#444;text-align:right;padding-top:8px;&quot; {{!}} ''Related Works:''
+   {{!}}{{embedlist|{{{23}}}}}
+|
+}}
+|}</text>
+      <sha1>7ysyiud948t2g7483u6574a38ezam3z</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Cover Images</title>
+    <ns>10</ns>
+    <id>328007</id>
+    <revision>
+      <id>484249</id>
+      <parentid>481132</parentid>
+      <timestamp>2015-01-23T17:43:32Z</timestamp>
+      <contributor>
+        <username>Jeremi</username>
+        <id>49</id>
+      </contributor>
+      <text xml:space="preserve" bytes="302">&lt;center&gt;[[Image: {{{1}}}-front.jpg|350x350px|Cover Images]] {{#ifexist: Image:{{{1}}}-spine.jpg | [[Image: {{{1}}}-spine.jpg|350x350px|Spine]] |}} {{#ifexist: Image:{{{1}}}-back.jpg | [[Image: {{{1}}}-back.jpg|350x350px|Back cover]] |}}&lt;/center&gt;&lt;includeonly&gt;{{DRL subpage basecategories}}&lt;/includeonly&gt;</text>
+      <sha1>1cbnfxizihu5zauuu044j4pl5l7pwcu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:DRL Metadata</title>
+    <ns>10</ns>
+    <id>10481</id>
+    <revision>
+      <id>483095</id>
+      <parentid>483087</parentid>
+      <timestamp>2015-01-20T21:51:07Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2017">&lt;noinclude&gt;[[Category:DRL Templates]]&lt;/noinclude&gt;{{
+#declare:
+|publicationtype=publicationtype
+|pubsubtype=pubsubtype
+|citation=citation
+|fulltitle=fulltitle
+|containedin=containedin
+|numberinseries=numberinseries
+|place=place
+|university=university
+|pubdate=pubdate
+|pubmonth=pubmonth
+|pagenumbers=pagenumbers
+|journal=journal
+|periodical=periodical
+|multivolumework=multivolumework
+|volumenumber=volumenumber
+|totalvolumes=totalvolumes
+|issuenumber=issuenumber
+|edition=edition
+|editiontype=editiontype
+|otheredition=otheredition
+|abbreviation=abbreviation
+|affiliate=affiliate
+|affiliatewebsite=affiliatewebsite
+|website=website
+|onlineeditionlink=onlineeditionlink
+|isbn=isbn
+|issn=issn
+|lcclassification=lcclassification
+|lcsubjects=lcsubjects
+|topic=topic
+|keywords=keywords
+|index=index
+|totalpages=totalpages
+|glossary=glossary
+|notes=notes
+|language=language
+|translation=translation
+|formatofsourcetext=formatofsourcetext
+|sourceauthor=sourceauthor
+|sourcetitle=sourcetitle
+|canonical=canonical
+|noncanonical=noncanonical
+|citationofsourcetexts=citationofsourcetexts
+|canonicalgenre=canonicalgenre
+|noncanonicalgenre=noncanonicalgenre
+|library=library
+|librarylocation=librarylocation
+|sectionarea=sectionarea
+|physicalcondition=physicalcondition
+|numberofcopies=numberofcopies
+|pdf=pdf
+|pagecreationdate=pagecreationdate
+|special=special
+|librarynote=librarynote
+|frombookeditor=frombookeditor
+|bookreviewed=bookreviewed
+|bookrevauthor=bookrevauthor
+|organization=organization
+|transcriber=transcriber
+|relatedpages=relatedpages
+|copyright=copyright
+|donatedby=donatedby
+}}{{
+#arraymap:{{{author|}}}|;|x|[[author::x| ]]|&amp;#32;
+}}{{
+#arraymap:{{{translator|}}}|;|x|[[translator::x| ]]|&amp;#32;
+}}{{
+#arraymap:{{{editor|}}}|;|x|[[editor::x| ]]|&amp;#32;
+}}{{
+#arraymap:{{{associatedpersons|}}}|;|x|[[associatedpersons::x| ]]|&amp;#32;
+}}{{
+#arraymap:{{{contributors|}}}|;|x|[[contributors::x| ]]|&amp;#32;
+}}{{
+#arraymap:{{{publisher|}}}|;|x|[[publisher::x| ]]|&amp;#32;
+}}{{
+#arraymap:{{{series|}}}|;|x|[[series::x| ]]|&amp;#32;
+}}</text>
+      <sha1>naaw1x63i7p50mza75gl44w9ck3clb7</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:DRL subpage basecategories</title>
+    <ns>10</ns>
+    <id>10602</id>
+    <revision>
+      <id>37096</id>
+      <timestamp>2009-04-20T23:11:19Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <comment>New page: &lt;includeonly&gt;[[Category:  {{BASEPAGENAME}}]]&lt;/includeonly&gt;   &lt;noinclude&gt;[[Category:DRL Templates]]&lt;/noinclude&gt;</comment>
+      <text xml:space="preserve" bytes="110">&lt;includeonly&gt;[[Category:  {{BASEPAGENAME}}]]&lt;/includeonly&gt; 
+
+&lt;noinclude&gt;[[Category:DRL Templates]]&lt;/noinclude&gt;</text>
+      <sha1>cj0v4j06xhz9zrngg2b07nvof1v8w9j</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Digital Library Books Categories</title>
+    <ns>10</ns>
+    <id>8193</id>
+    <revision>
+      <id>481039</id>
+      <parentid>480999</parentid>
+      <timestamp>2014-12-16T17:59:07Z</timestamp>
+      <contributor>
+        <username>Jeremi</username>
+        <id>49</id>
+      </contributor>
+      <text xml:space="preserve" bytes="129">&lt;includeonly&gt;[[Category: Books]]&lt;/includeonly&gt; [[Category: {{{1}}}]]&lt;noinclude&gt;[[Category:Digital Library Templates]]&lt;/noinclude&gt;</text>
+      <sha1>meyuyoohalyutd3nj8nnyuzir49te0x</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Digital Library Scanned Pages</title>
+    <ns>10</ns>
+    <id>8192</id>
+    <revision>
+      <id>23574</id>
+      <parentid>23573</parentid>
+      <timestamp>2009-04-16T14:45:36Z</timestamp>
+      <contributor>
+        <username>Eric</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="105">*[[{{{1}}}/Scans | {{{1}}} - Scanned pages]]&lt;noinclude&gt;[[Category:Digital Library Templates]]&lt;/noinclude&gt;</text>
+      <sha1>ata05mw6zb62fi312n7v1tp5yfa5gk1</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Digital Library Scanned Pages, eBook and Categories</title>
+    <ns>10</ns>
+    <id>8195</id>
+    <revision>
+      <id>334919</id>
+      <parentid>334918</parentid>
+      <timestamp>2011-03-14T22:32:06Z</timestamp>
+      <contributor>
+        <username>Marcus</username>
+        <id>9</id>
+      </contributor>
+      <text xml:space="preserve" bytes="432">&lt;noinclude&gt;&lt;big&gt;&lt;font color=&quot;#009300&quot;&gt;If you would like to request that all or a piece of this text be edited and made available on the DRL, please email {{Email}}.&lt;/font&gt;&lt;/big&gt;&lt;/noinclude&gt;&lt;includeonly&gt;{{Digital Library Scanned Pages | {{{1}}}}}
+{{Digital Library eBook | {{{1}}}}}
+
+{{Digital Library Books Categories | {{{1}}}}}&lt;/includeonly&gt;
+
+&lt;noinclude&gt;[[Category:Digital Library Templates]][[Category:DRL Templates]]&lt;/noinclude&gt;</text>
+      <sha1>rsca90culg0zlax8ovz47baaluqyihk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Digital Library eBook</title>
+    <ns>10</ns>
+    <id>8194</id>
+    <revision>
+      <id>23589</id>
+      <parentid>23588</parentid>
+      <timestamp>2008-11-14T17:28:39Z</timestamp>
+      <contributor>
+        <username>Eric</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="157">*[http://research.tsadra.org/ebooks/{{#replace:{{urlencode: {{{1}}}}}|+|%20}}/ {{{1}}} - eBook] &lt;noinclude&gt;[[Category:Digital Library Templates]]&lt;/noinclude&gt;</text>
+      <sha1>l67thcwa7mp2lkcrkyu9te5h83kli2d</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Embedlist</title>
+    <ns>10</ns>
+    <id>337955</id>
+    <revision>
+      <id>481567</id>
+      <timestamp>2014-12-24T20:54:16Z</timestamp>
+      <contributor>
+        <username>Jeremi</username>
+        <id>49</id>
+      </contributor>
+      <comment>Created page with &quot;{{{1}}}&quot;</comment>
+      <text xml:space="preserve" bytes="7">{{{1}}}</text>
+      <sha1>cmn9dlq4osu63jqm4mfq9mfvdt3q6zw</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:NewBookRequest</title>
+    <ns>10</ns>
+    <id>259970</id>
+    <revision>
+      <id>480720</id>
+      <parentid>480514</parentid>
+      <timestamp>2014-12-01T18:14:56Z</timestamp>
+      <contributor>
+        <username>Jeremi</username>
+        <id>49</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1211">&lt;noinclude&gt;{{#ask: [[Category:Books]] [[{{PAGENAME}}]]
+  | ?translator
+  | ?author
+  | ?fulltitle
+  | ?series
+  | ?place#
+  | ?publisher
+  | ?pubdate
+  | ?lcclassification
+  | format=template
+  | template=citation
+  | limit=1
+}}&lt;/noinclude&gt;
+&lt;includeonly&gt;
+&lt;center&gt;
+&lt;div class=&quot;alert alert-info&quot; role=&quot;alert&quot; style=&quot;display:inline-block;max-width:1000px;margin-left:auto;margin-right:auto;text-align:left;&quot;&gt;
+The scans of this item are available at the bottom of this page. If you would like to request that portions of this text be added to the DRL, Email the research department here: [mailto:Research@tsadra.org?Subject=RE:%20Text%20Request Request a text from the Research Department]. To check to see if the physical copy of this text is available for purchase, click the ISBN number in the info-box and follow the links. If this text is not easily available for purchase, and you would like to request a digital version, you may likewise contact the Research Department. &lt;u&gt;Remember that any digital book or other content shared through the DRL is meant for Tsadra Staff and Fellows '''ONLY'''.&lt;/u&gt;&lt;/div&gt;&lt;/center&gt;&lt;/includeonly&gt;
+&lt;noinclude&gt;[[Category:Request Templates]] [[Category:DRL Templates]]&lt;/noinclude&gt;</text>
+      <sha1>cplbgboqi1wdnxtd7gt3ib986fzxuq1</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:OtherEditList</title>
+    <ns>10</ns>
+    <id>337994</id>
+    <revision>
+      <id>482143</id>
+      <parentid>482139</parentid>
+      <timestamp>2015-01-09T18:34:38Z</timestamp>
+      <contributor>
+        <username>Jeremi</username>
+        <id>49</id>
+      </contributor>
+      <text xml:space="preserve" bytes="7">{{{1}}}</text>
+      <sha1>cmn9dlq4osu63jqm4mfq9mfvdt3q6zw</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:OtherEditions</title>
+    <ns>10</ns>
+    <id>337984</id>
+    <revision>
+      <id>482144</id>
+      <parentid>482142</parentid>
+      <timestamp>2015-01-09T18:36:06Z</timestamp>
+      <contributor>
+        <username>Jeremi</username>
+        <id>49</id>
+      </contributor>
+      <text xml:space="preserve" bytes="209">== Other Editions and Related Works ==
+
+{{#ask: [[{{PAGENAME}}]] 
+| ?otheredition={{{1}}} 
+| format=template 
+| template=OtherEditList
+| default=No other edition or related work. 
+| mainlabel=- 
+| link=none
+}}</text>
+      <sha1>o1h2jwh2l1012fojamhpdmnxwz55rom</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:StatusMessage</title>
+    <ns>10</ns>
+    <id>337657</id>
+    <revision>
+      <id>480592</id>
+      <parentid>480588</parentid>
+      <timestamp>2014-11-25T23:17:39Z</timestamp>
+      <contributor>
+        <username>Jeremi</username>
+        <id>49</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1090">{{
+#ifeq: {{{1}}} | Temporary stub only | &lt;center&gt;&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot; style=&quot;display:inline-block;&quot;&gt;STATUS: This is an initial temporary stub awaiting further information.&lt;/div&gt;&lt;/center&gt; | 
+}}{{
+#ifeq: {{{1}}} | Needs content | &lt;center&gt;&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot; style=&quot;display:inline-block;&quot;&gt;STATUS: Basic information entered. Subpages and contents still need to be added.&lt;/div&gt;&lt;/center&gt; | 
+}}{{
+#ifeq: {{{1}}} | Full text | |
+}}{{
+#ifeq: {{{1}}} | Phase I Complete | &lt;center&gt;&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot; style=&quot;display:inline-block;&quot;&gt;STATUS: Subpages created. Content adding in progress.&lt;/div&gt;&lt;/center&gt; | 
+}}{{
+#ifeq: {{{1}}} | Phase I Incomplete | &lt;center&gt;&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot; style=&quot;display:inline-block;&quot;&gt;STATUS: Subpages creation not complete.&lt;/div&gt;&lt;/center&gt; | 
+}}{{
+#ifeq: {{{1}}} | Phase II Complete | | 
+}}{{
+#ifeq: {{{1}}} | Phase II Incomplete | &lt;center&gt;&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot; style=&quot;display:inline-block;&quot;&gt;STATUS: Content of subpages not complete.&lt;/div&gt;&lt;/center&gt; | 
+}}</text>
+      <sha1>a07r3iqkh6i25yd5h9bfgfy9i9tqjgt</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+</mediawiki>

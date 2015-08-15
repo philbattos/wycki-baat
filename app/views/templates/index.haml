@@ -1,0 +1,36 @@
+.row
+  .col-md-12
+    %h2 Template *index* Page
+
+    %hr
+
+    .well
+      %h3 Template Creation
+      %ol
+        %li User selects a file in main "template" folder.
+        %li App finds parent folder, displays name of folder, and asks user if it is correct.
+        %ul
+          %li App scans folder and displays alert saying how many (.txt) files
+          will be uploaded (and how many unrecognized files are in the folder)
+        %li User selects wiki destination for templates (url? namespace?)
+        %li User clicks "Abracadabra" (or "Presto")!
+      / %strong Current directory
+      / = Dir.pwd
+      = form_for @template do |f|
+        .form-horizontal
+          .form-group
+            .col-sm-2.control-label= f.label :txt_file, 'Select Folder'
+            .col-sm-8= f.file_field :txt_file, name: "text_files[]", mozdirectory: "", webkitdirectory: "", directory: ""
+          .form-group
+            .col-sm-2.control-label= f.label :destination, 'Wiki URL'
+            .col-sm-4= f.text_field :destination, :class => 'form-control'
+          .form-group
+            .col-sm-offset-2.col-sm-10= submit_tag 'Upload', :class => 'btn btn-primary'
+    .well
+      %h3 Volume Creation
+    .well
+      %h3 Text Uploading
+    .well
+      %h3 PDF Uploading
+    .well
+      %h3 Image Uploading

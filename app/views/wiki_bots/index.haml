@@ -1,0 +1,42 @@
+.row
+  .col-md-12
+    %h2 Tsadra Wiki-Bot
+    %h2 Tsadra Wickerbaat
+    %h2 Tsadra Wickybaat
+    %h2 Tsadra Wikkibaat
+    %h2 Tsadra Wikkybaat
+    %h2 Tsadra Wykkibaat
+    %h2 Tsadra Wyckibaat
+
+    %hr
+
+    .well
+      %h3 Template Creation
+      %ol
+        %li User selects a file in main "template" folder.
+        %li App finds parent folder, displays name of folder, and asks user if it is correct.
+        %ul
+          %li App scans folder and displays alert saying how many (.txt) files
+          will be uploaded (and how many unrecognized files are in the folder)
+        %li User selects wiki destination for templates (url? namespace?)
+        %li User clicks "Abracadabra" (or "Presto")!
+      %strong Current directory
+      = Dir.pwd
+      = form_for @wiki_bot do |f|
+        = f.file_field :txt_file, name: "text_files[]", mozdirectory: "", webkitdirectory: "", directory: ""
+        = submit_tag 'Find File'
+    .well
+      %h3 Volume Creation
+    .well
+      %h3 Text Uploading
+    .well
+      %h3 PDF Uploading
+    .well
+      %h3 Image Uploading
+
+    .well
+      %h3 Available Bots
+      - @bots.each do |bot|
+        %li= bot.name || "Unknown Name"
+        %li= bot.site_url || "Unknown Site"
+        %li= bot.api_endpoint || "Unknown API"

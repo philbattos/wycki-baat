@@ -1,0 +1,67 @@
+{{DRL Metadata
+|publicationtype=Book
+|citation=The Third Khamtrul Rinpoche, Ngawang Kunga Tenzin. The Royal Seal of Mahamudra Volume One: A Guidebook for the Realization of Coemergence. Translated by Gerardo Abboud. Boston & London: Snow Lion Publications/Shambhala, 2014.
+|author=The Third Khamtrul Rinpoche, Ngawang Kunga Tenzin
+|translator=Abboud, Gerardo
+|fulltitle=The Royal Seal of Mahamudra Volume One: A Guidebook for the Realization of Coemergence
+|place=Boston & London
+|publisher=Snow Lion Publications
+|pubdate=2014
+|edition=1st edition
+|editiontype=Hardcover
+|isbn=9781559394376
+|pubsubtype=Translation
+|topic=Philosophy
+|keywords=Meditative practices; Meditation; stability; insight; Drukpa Kagyu lineage; coemergence; mahamudra;eighteenth-century; Tibetan master; Ngawang Kunga Tenzin;Third Khamtrul Rinpoche; Khamtrul, 3rd; spiritual exercises; clear realization; ever-present, nondual nature of mind; Mahāmudrā; Abboud, G.
+|index=Yes
+|totalpages=352
+|glossary=No glossary
+|notes=Endnotes
+|language=English
+|translation=Tibetan to English
+|formatofsourcetext=None
+|canonical=No
+|noncanonical=Yes
+|sourceauthor=[[Khamtrul, 3rd]]
+|sourcetitle=[[Phyag rgya chen po lhan cig skyes sbyor gyi dngos gzhi'i khrid yig zab don rgya mtsho'i lam tshang bla na med pa]]
+|citationofsourcetexts=[[Khamtrul, 3rd]]. [[Phyag rgya chen po lhan cig skyes sbyor gyi dngos gzhi'i khrid yig zab don rgya mtsho'i lam tshang bla na med pa]]. [http://www.tbrc.org/#!rid=W1KG4190 TBRC W1KG4190]. tashijong, palampur, h.p., India: Sungrab nyamso gyunphel parkhang, tibetan craft community, 1974.
+|lcclassification=BQ8921.M35 N3313 2014
+|lcsubjects=I. Mahāmudrā (Tantric rite)-Early works to 1800. 2.Meditation-'brug pa (sect) 
+|library=Physical
+|librarylocation=General
+|sectionarea=A
+|physicalcondition=New
+|numberofcopies=1
+|pagecreationdate=2015/01/28
+|librarynote=Needs content
+|noncanonicalgenre=
+}}
+<br>{{BookHeader}}
+
+== Title Page ==
+{{/Title Page}}
+
+== Publication data ==
+{{/Publication data}}
+
+== Table of Contents ==
+{{/Table of Contents}}
+
+== Introduction ==
+{{/Introduction}}
+
+== Glossary ==
+{{/Glossary}}
+
+== Notes ==
+{{/Notes}}
+
+== Bibliography ==
+{{/Bibliography}}
+
+{{OtherEditions}}
+
+== Scans ==
+{{Digital Library Scanned Pages, eBook and Categories | {{PAGENAME}}}}
+
+[[Category: Abboud, G.]] [[Category: Khamtrul, 3rd]] [[Category: Snow Lion Publications]] [[Category: Shambhala Publications]]

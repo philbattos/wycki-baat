@@ -1,0 +1,76 @@
+{{DRL Metadata
+|publicationtype=Book
+|citation=Braitstein, Lara and Saraha. The Adamantine Songs (Vajragīti): Study, Translation, and Tibetan Critical Edition. Treasury of the Buddhist Sciences. New York: Columbia University's Center for Buddhist Studies, 2014.
+|author=Saraha; Braitstein, Lara
+|translator=Braitstein, Lara
+|fulltitle=The Adamantine Songs (Vajragīti): Study, Translation, and Tibetan Critical Edition
+|series=Treasury of the Buddhist Sciences
+|place=New York
+|publisher=Columbia University's Center for Buddhist Studies
+|pubdate=2014
+|edition=1st edition
+|isbn=9781935011170
+|pubsubtype=Translation
+|topic=Philosophy, Poetry
+|index=Yes
+|totalpages=236
+|glossary=No glossary
+|notes=Footnotes
+|language=English
+|translation=Tibetan to English
+|formatofsourcetext=Wylie transliteration
+|canonical=Yes
+|sourceauthor=[[Saraha]]
+|sourcetitle=[[sku'i mdzod 'chi med rdo rje'i glu]]<br>
+[[gsung gi mdzod 'jam dbyangs rdo rje'i glu]]<br>
+[[thugs kyi mdzod skye med rdo rje'i glu]]
+|citationofsourcetexts=[[Saraha]]. [[sku'i mdzod 'chi med rdo rje'i glu]], Toh. 2269, CT 1179, ;
+[[Saraha]]. [[gsung gi mdzod 'jam dbyangs rdo rje'i glu]], Toh. 2270, CT 1180, ;
+[[Saraha]]. [[thugs kyi mdzod skye med rdo rje'i glu]], Toh. 2271, CT 1181, ;
+|library=Physical
+|librarylocation=Series
+|sectionarea=Treasury of the Buddhist Sciences
+|physicalcondition=New
+|numberofcopies=1
+|pagecreationdate=2015/01/29
+|librarynote=Needs content
+|containedin=
+|university=
+|pagenumbers=
+|issuenumber=
+|abbreviation=
+|affiliate=
+|affiliatewebsite=
+|issn=
+|noncanonicalgenre=
+}}
+<br>{{BookHeader}}
+
+== Title Page ==
+{{/Title Page}}
+
+== Publication data ==
+{{/Publication data}}
+
+== Table of Contents ==
+{{/Table of Contents}}
+
+== Introduction ==
+{{/Introduction}}
+
+== Glossary ==
+{{/Glossary}}
+
+== Notes ==
+{{/Notes}}
+
+== Bibliography ==
+{{/Bibliography}}
+
+{{OtherEditions}}
+
+== Scans ==
+{{Digital Library Scanned Pages, eBook and Categories | {{PAGENAME}}}} 
+
+[[Category: Saraha]] [[Category: Braitstein, L.]] [[Category: Treasury of the Buddhist Sciences]] [[Category: Columbia University's Center for Buddhist Studies]]  [[Category: Tibet House US]]
+[[Category: American Institute of Buddhist Studies]]

@@ -1,0 +1,83 @@
+{{DRL Metadata
+|citation=Dharmachakra Translation Committee. Ornament of the Great Vehicle Sūtras: Maitreya’s Mahāyānasūtrālaṃkāra with Commentaries by Khenpo Shenga and Ju Mipham. Boston: Snow Lion Publications, 2014.
+|author=Maitreya; Asanga
+|translator=Dharmachakra Translation Committee
+|contributors=Khenpo Shenga; Ju Mipham; Maitreya; Asanga
+|fulltitle=Ornament of the Great Vehicle Sūtras: Maitreya’s Mahāyānasūtrālaṃkāra with Commentaries by Khenpo Shenga and Ju Mipham
+|place=Boston
+|publisher=Snow Lion Publications
+|pubdate=2014
+|edition=1st edition
+|editiontype=Hardcover
+|isbn=978-1-55939-428-4
+|pubsubtype=Translation
+|topic=Philosophy, Sutra
+|index=Yes
+|totalpages=1021
+|glossary=Tibetan-Sanskrit-English
+|notes=Endnotes
+|language=English
+|translation=Tibetan to English
+|canonical=Yes
+|noncanonical=Yes
+|sourceauthor=[[Maitreya]]<br>
+[[Asanga]]<br>
+[[Khenpo Shenga]]<br>
+[[Ju Mipham Gyatso]]
+|sourcetitle=[[Mahāyānasūtrālaṃkāra]] ([[theg pa chen po mdo sde'i rgyan zhes bya ba'i tshig le'ur byas pa]])<br>
+[[Theg pa chen po mdo sde’i rgyan gyi dgongs don rnam par bshad pa theg mchog bdud rtsi’i dga’ ston]]<br>
+[[Theg pa chen po’i mdo sde’i rgyan ces bya ba’i mchan ’grel]]
+|citationofsourcetexts=[[Asanga]]. [[Mahāyānasūtrālaṃkāra]] [[theg pa chen po mdo sde'i rgyan zhes bya ba'i tshig le'ur byas pa]]), D 4020, sems tsam, phi 1b1-39a4. Translated by T. Śākyasimha and dpal brtsegs.[http://tbrc.org/link?RID=O1GS6011|O1GS601137641$W23703 TBRC LINK W23703]<br>
+
+[[’ju mi pham ’jam dbyangs rnam rgyal rgya mtsho]], 1846–1912. A Feast of the Supreme Vehicle ([[Theg pa chen po mdo sde’i rgyan gyi dgongs don rnam par bshad pa theg mchog bdud rtsi’i dga’ ston]]). In Sde-dge dgon-chen Prints of the Writings of ’Jam-mgon ’Ju Mi-pham-rgyamtsho.
+Edited by Dilgo Khyentse. Vol. 2. Kathmandu: Shechen Monastery.<br>
+
+[[mkhan po gzhan dga']] (gzhan phan chos kyi snang ba), 1871–1927. Annotation Commentary on the “Ornament of the Great Vehicle Sūtras” ([[Theg pa chen po’i mdo sde’i rgyan ces bya ba’i mchan ’grel]]). Edited by Konchhog Lhadrepa. Delhi: ’Bri gung nyi ma lcang ra’i par khang, 1993.
+|canonicalgenre=Cittamātra, Sems tsam
+|lcclassification=bq3002.e5d53 2014
+|lcsubjects=1. Yogācāra (Buddhism)—Early works to 1800. I. Maitreyanātha.
+II. Gźan-phan-chos-kyi-snaṅ-ba, Gźan-dga’, 1871–1927.
+III. Mi-pham-rgya-mtsho, ’Jam-mgon ’Ju, 1846–1912.
+IV. Dharmachakra Translation Committee.
+|library=Physical and digital
+|librarylocation=Special Collections
+|sectionarea=Dharmachakra
+|physicalcondition=Good
+|numberofcopies=1
+|pagecreationdate=2015/02/17
+|librarynote=Needs content
+|containedin=
+|abbreviation=
+|affiliate=
+|affiliatewebsite=
+|noncanonicalgenre=
+}}
+<br>{{BookHeader}}
+
+== Title Page ==
+{{/Title Page}}
+
+== Publication data ==
+{{/Publication data}}
+
+== Table of Contents ==
+{{/Table of Contents}}
+
+== Introduction ==
+{{/Introduction}}
+
+== Glossary ==
+{{/Glossary}}
+
+== Notes ==
+{{/Notes}}
+
+== Bibliography ==
+{{/Bibliography}}
+
+{{OtherEditions}}
+
+== Scans ==
+{{Digital Library Scanned Pages, eBook and Categories | {{PAGENAME}}}}
+
+[[Category: Dharmachakra Translation Committee]] [[Category: Mi pham rgya mtsho]] [[Category: mkhan po gzhan dga']] [[Category: Snow Lion Publications]] [[Category: Shambhala Publications]] [[Category: Maitreya]] [[Category: Asaṅga]]

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @volume.name %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @volume.destination %>
+</p>
+
+<%= link_to 'Edit', edit_volume_path(@volume) %> |
+<%= link_to 'Back', volumes_path %>
