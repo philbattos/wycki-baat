@@ -6,26 +6,24 @@
 
     .well
       %h3 Template Creation
-      %ol
-        %li User selects a file in main "template" folder.
-        %li App finds parent folder, displays name of folder, and asks user if it is correct.
-        %ul
-          %li App scans folder and displays alert saying how many (.txt) files
-          will be uploaded (and how many unrecognized files are in the folder)
-        %li User selects wiki destination for templates (url? namespace?)
-        %li User clicks "Abracadabra" (or "Presto")!
-      / %strong Current directory
-      / = Dir.pwd
+
       = form_for @template do |f|
         .form-horizontal
           .form-group
-            .col-sm-2.control-label= f.label :txt_file, 'Select Folder'
-            .col-sm-8= f.file_field :txt_file, name: "text_files[]", mozdirectory: "", webkitdirectory: "", directory: ""
+            .col-sm-3.control-label
+              = f.label :txt_file, "Folder"
+              = link_to "#", { "data-toggle" => "tooltip", "data-placement": "top", title: folder_info } do
+                %span.glyphicon.glyphicon-info-sign{ "aria-hidden" => "true" }
+            .col-sm-7= f.file_field :txt_file, name: "text_files[]", mozdirectory: "", webkitdirectory: "", directory: ""
           .form-group
-            .col-sm-2.control-label= f.label :destination, 'Wiki URL'
-            .col-sm-4= f.text_field :destination, :class => 'form-control'
+            .col-sm-3.control-label
+              = f.label :destination, "Wiki Domain"
+              = link_to "#", { "data-toggle" => "tooltip", "data-placement": "top", title: wiki_url_info } do
+                %span.glyphicon.glyphicon-info-sign{ "aria-hidden" => "true" }
+            .col-sm-3
+              = f.text_field :destination, :class => "form-control", placeholder: "terdzod.tsadra.org"
           .form-group
-            .col-sm-offset-2.col-sm-10= submit_tag 'Upload', :class => 'btn btn-primary'
+            .col-sm-offset-2.col-sm-10= submit_tag "Create Template Pages", :class => "btn btn-primary"
     .well
       %h3 Volume Creation
     .well
@@ -34,3 +32,8 @@
       %h3 PDF Uploading
     .well
       %h3 Image Uploading
+
+:javascript
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });

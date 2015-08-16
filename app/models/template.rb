@@ -12,8 +12,8 @@ class Template < ActiveRecord::Base
   #    Scopes
   #-------------------------------------------------
 
-  def create_page(file, wiki_url)
-    uploader  = build_mediawiki_uploader(wiki_url)
+  def create_page(file, domain)
+    uploader  = build_mediawiki_uploader(domain)
     file_name = file.original_filename.rpartition('.').first
     title     = "TESTING_" + file_name
     content   = page_content(file)
@@ -33,8 +33,9 @@ class Template < ActiveRecord::Base
       # formatted_text.map {|line| line.lstrip }.join('')
     end
 
-    def build_mediawiki_uploader(wiki_url)
-      client = MediawikiApi::Client.new wiki_url
+    def build_mediawiki_uploader(domain)
+      wiki_url  = "http://#{domain}/api.php"
+      client    = MediawikiApi::Client.new wiki_url
       client.log_in(username, password)
       client
     end

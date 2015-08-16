@@ -3,6 +3,10 @@ class WikiBotsController < ApplicationController
   def index
     @bots = WikiBot.all
     @template = Template.new
+    @volume   = Volume.new
+    @text     = Text.new
+    @folio    = Folio.new
+    @image    = Image.new
     @wiki_bot = WikiBot.new
   end
 

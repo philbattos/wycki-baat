@@ -1,0 +1,50 @@
+/ #-------------------------------------------------
+/ #    Notes
+/ #-------------------------------------------------
+
+%h1 Notes
+%ol
+  %li Ways of identifying folders
+    %ul
+      %li user finds file; app selects parent folder (and confirms contents with user)
+      %li user enters path/to/folder into form field; app finds folder using path
+      %li folders/files are packaged as .zip files; user selects .zip file; app opens it
+      %li gem?
+  %li The app may only work in Chrome! (because the folder upload feature is Chrome-specific)
+  %li When a user uploads files using the bot, do we want to use credentials from
+      the user or the bot? (Using credentials from the user would allow us to track
+      which user initiated the upload.)
+    %ul
+      %li If we use user credentials, users will have to enter their username and
+          password for that wiki
+      %li If we always use the bot's credentials, we will have to ensure that the bot
+          has the right permissions for that wiki. We will also have to ensure that
+          the credentials for that wiki are stored in the bot. Do different wikis
+          require different credentials or are they accessible with one login?
+  %li Should users enter in the entire url for the API endpoint (http://terdzod.tsadra.org/api.php),
+      or just the domain (terdzod.tsadra.org), or just the subdomain (terdzod)?
+  %li Do we want to have users sign in to use this tool? Is there any user info we
+      want to capture?
+  %li What should we name the different upload stages?
+    %ul
+      %li Templates, Volumes, Texts, PDFs, Images?
+  %li Could there ever be a time when the Template files will be really large?
+  %li Add checklist of the upload stages to let user know what stages have been completed?
+  %li Do we want to send notifications (emails) when uploads are made?
+  %li Do we want to save a record of last uploaded files (for each stage)?
+  %li Do we want to fetch data about wiki (number of pages?) and display it for the user?
+
+
+/ #-------------------------------------------------
+/ #    To Do
+/ #-------------------------------------------------
+
+%ol
+  %li Create way to display list of files/folders in user-selected folder so that the user
+      can confirm that he has selected the correct folder before uploading starts.
+  %li Create Trello board for this project.
+  %li Add support for displaying multiple alert messages
+  %li Add support for multiple models on one page (in one controller action). Facade pattern?
+  / %li Add git repo
+  %li Add validation for wiki-domain field (Check that it ends with .org and
+      doesn't contain a forward slash ('/') or any other suspicious characters.)
