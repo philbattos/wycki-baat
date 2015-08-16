@@ -17,3 +17,7 @@
 
 # Ignore personal reference
 notes.txt
+
+# Ignore environment variables
+.env
+
