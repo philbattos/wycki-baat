@@ -23,8 +23,9 @@
         .well
           %h3 Template Creation
           = link_to '/templates', templates_path
-          = form_for @template do |f|
+          = form_for @template, url: wiki_bots_path, namespace: 'TEMPLATE' do |f|
             .form-horizontal
+              = f.hidden_field :txt_file, value: 'TEMPLATE'
               .form-group
                 .col-sm-3.control-label
                   = f.label :txt_file, "Folder"

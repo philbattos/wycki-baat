@@ -12,18 +12,44 @@ class Template < ActiveRecord::Base
   #    Scopes
   #-------------------------------------------------
 
-  def create_page(file, domain)
-    uploader  = build_mediawiki_uploader(domain)
-    file_name = file.original_filename.rpartition('.').first
-    title     = "TESTING_" + file_name
-    content   = page_content(file)
+  # def create_page(file)
+  #   uploader  = build_mediawiki_uploader
+  #   file_name = file.original_filename.rpartition('.').first
+  #   title     = "TESTING_" + file_name
+  #   content   = page_content(file)
 
-    uploader.create_page(title, content)
+  #   uploader.create_page(title, content)
+  # end
+
+  def create_pages(files)
+    uploader = build_mediawiki_uploader
+
+    files.each do |file|
+      file_name = file.original_filename.rpartition('.').first
+      title     = "TESTING_" + file_name
+      content   = page_content(file)
+      response  = uploader.create_page(title, content)
+      # puts response.body
+      puts response.data
+      # puts response.status
+      # puts response.inspect
+      # puts success_message if response.status == '200'
+    end
   end
 
 #=================================================
   private
 #=================================================
+
+    def build_mediawiki_uploader
+      client = MediawikiApi::Client.new wiki_url
+      client.log_in(username, password)
+      client
+    end
+
+    def wiki_url
+      "http://#{destination}.tsadra.org/api.php"
+    end
 
     def page_content(file)
       # for most files File.open().read should work best (it retains all the line breaks);
@@ -33,23 +59,14 @@ class Template < ActiveRecord::Base
       # formatted_text.map {|line| line.lstrip }.join('')
     end
 
-    def build_mediawiki_uploader(domain)
-      wiki_url  = "http://#{domain}/api.php"
-      client    = MediawikiApi::Client.new wiki_url
-      client.log_in(username, password)
-      client
-    end
-
     def username
       ENV['TERDZOD_USERNAME']
       # ENV['LIBRARY_WIKI_USERNAME']
-      # current_user.terdzod_username
     end
 
     def password
       ENV['TERDZOD_PASSWORD']
       # ENV['LIBRARY_WIKI_PASSWORD']
-      # current_user.terdzod_password
     end
 
 end

@@ -1,0 +1,32 @@
+.row
+  .col-md-12
+    %h2 Tsadra Wycki-baat
+
+    %hr
+
+    %ul.nav.nav-tabs
+      %li.active{ role: "presentation" }
+        = link_to "Templates", "#templates", { "aria-controls": "templates", role: "tab", "data-toggle": "tab" }
+      %li{ role: "presentation" }
+        = link_to "Volumes", "#volumes", { "aria-controls": "volumes", role: "tab", "data-toggle": "tab" }
+      %li{ role: "presentation" }
+        = link_to "Texts", "#texts", { "aria-controls": "texts", role: "tab", "data-toggle": "tab" }
+      %li{ role: "presentation" }
+        = link_to "Folios", "#folios", { "aria-controls": "texts", role: "tab", "data-toggle": "tab" }
+      %li{ role: "presentation" }
+        = link_to "Images", "#images", { "aria-controls": "texts", role: "tab", "data-toggle": "tab" }
+
+    %br
+
+    .tab-content
+      .tab-pane#templates.active{ role: "tabpanel" }
+        = render partial: "tab_content", locals: { stage: "template" }
+      .tab-pane#volumes{ role: "tabpanel" }
+        = render partial: "tab_content", locals: { stage: "volume" }
+      .tab-pane#texts{ role: "tabpanel" }
+        = render partial: "tab_content", locals: { stage: "text" }
+      .tab-pane#folios{ role: "tabpanel" }
+        = render partial: "tab_content", locals: { stage: "folio" }
+      .tab-pane#images{ role: "tabpanel" }
+        = render partial: "tab_content", locals: { stage: "image" }
+

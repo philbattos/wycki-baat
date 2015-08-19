@@ -1,21 +1,25 @@
-class WikiBotsController < ApplicationController
+class BaatsController < ApplicationController
 
+  # GET /baats
+  # GET /baats.json
   def index
-    @bots = WikiBot.all
+    @baat     = Baat.new
     @template = Template.new
-    @volume   = Volume.new
-    @text     = Text.new
-    @folio    = Folio.new
-    @image    = Image.new
-    @wiki_bot = WikiBot.new
+    # @volume   = Volume.new
+    # @text     = Text.new
+    # @folio    = Folio.new
+    # @image    = Image.new
   end
 
-  # POST /wiki_bots
-  # POST /wiki_bots.json
+  # POST /baats
+  # POST /baats.json
   def create
-    binding.pry
-    model_instance = Model.new(model_params)
-    selected_folder = params[:text_files]
+    files     = params[:files]
+    baat_type = params[:baat][:type]
+    # wiki      = params[:baat][:destination]
+    baat      = baat_type.classify.constantize.new(baat_params)
+
+    baat.create_pages(files)
 
     # verify that folder/files look correct
     # folder_confirmation(selected_folder)
@@ -25,15 +29,13 @@ class WikiBotsController < ApplicationController
     #   flash[:notice] = msg
     # end
 
-    response = model_instance.create_pages(selected_folder, model_instance.destination)
-
     respond_to do |format|
-      # if @template.save
-      #   format.html { redirect_to @template, notice: 'Template was successfully created.' }
-      #   format.json { render :show, status: :created, location: @template }
+      # if @baat.save
+      #   format.html { redirect_to @baat, notice: 'Baat was successfully created.' }
+      #   format.json { render :show, status: :created, location: @baat }
       # else
       #   format.html { render :new }
-      #   format.json { render json: @template.errors, status: :unprocessable_entity }
+      #   format.json { render json: @baat.errors, status: :unprocessable_entity }
       # end
       format.html { redirect_to "/" }
     end
@@ -42,6 +44,11 @@ class WikiBotsController < ApplicationController
 #=================================================
   private
 #=================================================
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def baat_params
+      params.require(:baat).permit(:name, :destination)
+    end
+
     def folder_confirmation(files)
       directories = files.map do |f|
         f.headers.match(/(.+filename=\")(.+)(\"\r\n.+)/)[2].split('/')

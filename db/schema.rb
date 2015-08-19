@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150814034212) do
+ActiveRecord::Schema.define(version: 20150819064232) do
+
+  create_table "baats", force: :cascade do |t|
+    t.string   "name"
+    t.string   "destination"
+    t.string   "type"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.text     "files",       default: "--- []\n"
+  end
 
   create_table "folios", force: :cascade do |t|
     t.string   "name"
@@ -30,8 +39,9 @@ ActiveRecord::Schema.define(version: 20150814034212) do
   create_table "templates", force: :cascade do |t|
     t.string   "name"
     t.string   "destination"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.text     "files",       default: "--- []\n"
   end
 
   create_table "texts", force: :cascade do |t|

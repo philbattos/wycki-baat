@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
-  resources :images
-  resources :folios
-  resources :texts
-  resources :volumes
-  resources :templates
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'wiki_bots#index'
+  root 'baats#index'
 
+  resources :baats
+  resources :images
+  resources :folios
+  resources :templates
+  resources :texts
+  resources :volumes
   resources :wiki_bots
 
   # Example of regular route:
