@@ -1,4 +1,3 @@
 .well
   %h3= "#{stage.capitalize} Creation"
-  = link_to "/#{stage}s", "/#{stage}s"
   = render partial: "form", locals: { stage: stage }

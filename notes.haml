@@ -33,6 +33,9 @@
   %li Do we want to send notifications (emails) when uploads are made?
   %li Do we want to save a record of last uploaded files (for each stage)?
   %li Do we want to fetch data about wiki (number of pages?) and display it for the user?
+  %li When we open a folder via the browser, all of the sub-folders and all of their
+      files get loaded into memory as parameters. This could overload the memory for
+      collections that have 1000s of files. (Is there an alternative?)
 
 
 / #-------------------------------------------------
@@ -55,3 +58,4 @@
   %li Convert db to postgres
   %li Add serialized arrays as 'files' attributes on models (may require postgres)
   %li Remove @baat as form object since we do not use it?
+  %li Refactor create_pages method in Volume model

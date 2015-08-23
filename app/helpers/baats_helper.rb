@@ -7,7 +7,11 @@ module BaatsHelper
 
   def wiki_url_info
     "Enter the sub-domain of the wiki where the templates will be created.
-     Ex: librarywiki, terdzod, etc."
+     For example, enter \"librarywiki\" for http://librarywiki.tsadra.org."
+  end
+
+  def volume_number
+    "Enter the total number of volumes to be created for this collection."
   end
 
 end

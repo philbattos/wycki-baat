@@ -13,7 +13,6 @@ class WikiBotsController < ApplicationController
   # POST /wiki_bots
   # POST /wiki_bots.json
   def create
-    binding.pry
     model_instance = Model.new(model_params)
     selected_folder = params[:text_files]
 
