@@ -47,6 +47,7 @@ gem 'spring',        group: :development
 gem 'rest-client'                           # for making external http requests
 gem 'mediawiki_api'                         # for accessing the Media Wiki API (created by Wikimedia)
 gem 'haml'                                  # alternative to html views
+gem 'pg'                                    # Heroku uses postgres
 
 
 group :development, :test do

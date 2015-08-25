@@ -13,13 +13,16 @@
 
 ActiveRecord::Schema.define(version: 20150819064232) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "baats", force: :cascade do |t|
     t.string   "name"
     t.string   "destination"
     t.string   "type"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.text     "files",       default: "--- []\n"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "files",       default: [],              array: true
   end
 
   create_table "folios", force: :cascade do |t|
@@ -39,9 +42,9 @@ ActiveRecord::Schema.define(version: 20150819064232) do
   create_table "templates", force: :cascade do |t|
     t.string   "name"
     t.string   "destination"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.text     "files",       default: "--- []\n"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "files",       default: [],              array: true
   end
 
   create_table "texts", force: :cascade do |t|
