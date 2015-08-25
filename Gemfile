@@ -39,6 +39,9 @@ gem 'mediawiki_api'                         # for accessing the Media Wiki API (
 gem 'haml'                                  # alternative to html views
 gem 'pg'                                    # Heroku uses postgres
 gem 'newrelic_rpm'                          # for monitoring site performance
+gem 'rails_12factor'                        # for Heroku deployment
+gem 'rails_stdout_logging'                  # for capturing all logs on Heroku
+gem 'rails_serve_static_assets'             # enables Rails server to deliver assets on Heroku
 
 
 group :development, :test do
