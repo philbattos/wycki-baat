@@ -6,9 +6,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     / Latest Bootstrap compiled and minified CSS
-    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}
-    / Latest compiled and minified JavaScript
-    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
+    %link{ href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", rel: "stylesheet" }
   %body
     .container
       - flash.each do |name, msg|
@@ -18,3 +16,8 @@
           = msg
 
       = yield
+
+    / Minified JQuery 2.1.4
+    %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" }
+    / Compiled and minified JavaScript for Bootstrap 3.3.5
+    %script{ src: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" }
