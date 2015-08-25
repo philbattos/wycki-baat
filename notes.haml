@@ -36,7 +36,9 @@
   %li When we open a folder via the browser, all of the sub-folders and all of their
       files get loaded into memory as parameters. This could overload the memory for
       collections that have 1000s of files. (Is there an alternative?)
-
+  %li Can we remove "< ActiveRecord::Base" from the models? Is there anything else that needs
+      to be done to remove ActiveRecord?
+  %li Consider moving upload processing into background jobs.
 
 / #-------------------------------------------------
 / #    To Do
@@ -59,3 +61,6 @@
   %li Add serialized arrays as 'files' attributes on models (may require postgres)
   %li Remove @baat as form object since we do not use it?
   %li Refactor create_pages method in Volume model
+  %li Add after_initialize to models for build_mediawiki_uploader
+  %li Change how username and password are found in each model. For example, change
+      TERDZOD_USERNAME to WYCKIBAAT_USERNAME (or similar) and change values.
