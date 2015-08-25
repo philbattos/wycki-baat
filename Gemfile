@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
+ruby '2.2.2' # used by Heroku
 
 #-------------------------------------------------
 #    Rails default gems
 #-------------------------------------------------
-gem 'rails',        '4.2.1'     # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails',           '4.2.1'  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'sass-rails',   '~> 4.0.3'  # Use SCSS for stylesheets
 gem 'uglifier',     '>= 1.3.0'  # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.0.0'  # Use CoffeeScript for .js.coffee assets and views
@@ -37,6 +38,7 @@ gem 'rest-client'                           # for making external http requests
 gem 'mediawiki_api'                         # for accessing the Media Wiki API (created by Wikimedia)
 gem 'haml'                                  # alternative to html views
 gem 'pg'                                    # Heroku uses postgres
+gem 'newrelic_rpm'                          # for monitoring site performance
 
 
 group :development, :test do
