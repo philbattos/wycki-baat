@@ -1,31 +1,31 @@
-class TemplatesController < ApplicationController
-  before_action :set_template, only: [:show, :edit]
+class ModelsController < ApplicationController
+  before_action :set_model, only: [:show, :edit]
 
-  # GET /templates
-  # GET /templates.json
+  # GET /models
+  # GET /models.json
   def index
-    @template = Template.new
+    @model = Model.new
   end
 
-  # GET /templates/1
-  # GET /templates/1.json
+  # GET /models/1
+  # GET /models/1.json
   def show
-    @template = Template.new
+    @model = Model.new
   end
 
-  # GET /templates/new
+  # GET /models/new
   def new
-    @template = Template.new
+    @model = Model.new
   end
 
-  # GET /templates/1/edit
+  # GET /models/1/edit
   def edit
   end
 
-  # POST /templates
-  # POST /templates.json
+  # POST /models
+  # POST /models.json
   def create
-    template = Template.new(template_params)
+    model = Model.new(model_params)
     selected_folder = params[:text_files]
 
     # verify that folder/files look correct
@@ -33,7 +33,7 @@ class TemplatesController < ApplicationController
     messages = []
 
     selected_folder.each do |file|
-      response = template.create_page(file, template.destination)
+      response = model.create_page(file, model.destination)
       messages << response.warnings
       messages << response.data
       messages << "#{file.original_filename} has been uploaded \n"
@@ -44,14 +44,14 @@ class TemplatesController < ApplicationController
     end
 
     respond_to do |format|
-      # if @template.save
-      #   format.html { redirect_to @template, notice: 'Template was successfully created.' }
-      #   format.json { render :show, status: :created, location: @template }
+      # if @model.save
+      #   format.html { redirect_to @model, notice: 'Model was successfully created.' }
+      #   format.json { render :show, status: :created, location: @model }
       # else
       #   format.html { render :new }
-      #   format.json { render json: @template.errors, status: :unprocessable_entity }
+      #   format.json { render json: @model.errors, status: :unprocessable_entity }
       # end
-      format.html { redirect_to '/templates' }
+      format.html { redirect_to '/models' }
     end
   end
 
@@ -59,13 +59,13 @@ class TemplatesController < ApplicationController
   private
 #=================================================
     # Use callbacks to share common setup or constraints between actions.
-    def set_template
-      @template = Template.find(params[:id])
+    def set_model
+      @model = Model.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def template_params
-      params.require(:template).permit(:name, :destination)
+    def model_params
+      params.require(:model).permit(:name, :destination)
     end
 
     def folder_confirmation(selected_folder)

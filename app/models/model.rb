@@ -1,4 +1,4 @@
-class Template < ActiveRecord::Base
+class Model < ActiveRecord::Base
 
   #-------------------------------------------------
   #    Associations
@@ -29,8 +29,8 @@ class Template < ActiveRecord::Base
       title     = "TESTING_" + file_name
       content   = page_content(file)
       response  = uploader.create_page(title, content)
-      # puts response.body
       puts response.data
+      # puts response.body
       # puts response.status
       # puts response.inspect
       # puts success_message if response.status == '200'
@@ -60,13 +60,11 @@ class Template < ActiveRecord::Base
     end
 
     def username
-      ENV['TERDZOD_USERNAME']
-      # ENV['LIBRARY_WIKI_USERNAME']
+      ENV['TSADRA_WIKI_USERNAME']
     end
 
     def password
-      ENV['TERDZOD_PASSWORD']
-      # ENV['LIBRARY_WIKI_PASSWORD']
+      ENV['TSADRA_WIKI_PASSWORD']
     end
 
 end

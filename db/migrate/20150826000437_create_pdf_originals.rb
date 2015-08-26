@@ -1,6 +1,6 @@
-class CreateTemplates < ActiveRecord::Migration
+class CreatePdfOriginals < ActiveRecord::Migration
   def change
-    create_table :templates do |t|
+    create_table :pdf_originals do |t|
       t.string :name
       t.string :destination
 

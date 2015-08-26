@@ -10,7 +10,7 @@
         = f.file_field :txt_file, name: "files[]", mozdirectory: "", webkitdirectory: "", directory: ""
     .form-group
       .col-sm-3.control-label
-        = f.label :destination, "Wiki Domain"
+        = f.label :destination, "Wiki Sub-Domain"
         = link_to "#", { "data-toggle": "tooltip", "data-placement": "top", title: wiki_url_info } do
           %span.glyphicon.glyphicon-info-sign{ "aria-hidden": "true" }
       .col-sm-3

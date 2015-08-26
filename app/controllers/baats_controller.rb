@@ -4,10 +4,9 @@ class BaatsController < ApplicationController
   # GET /baats.json
   def index
     @baat     = Baat.new
-    # @template = Template.new
-    # @volume   = Volume.new
-    # @text     = Text.new
-    # @folio    = Folio.new
+    # @model = Model.new
+    # @content     = Content.new
+    # @pdf_original    = PdfOriginal.new
     # @image    = Image.new
   end
 
@@ -19,7 +18,7 @@ class BaatsController < ApplicationController
     # wiki      = params[:baat][:destination]
     baat      = baat_type.classify.constantize.new(baat_params)
 
-    baat.create_pages(files)
+    baat.create_pages(files, baat.destination)
 
     # verify that folder/files look correct
     # folder_confirmation(selected_folder)
@@ -37,7 +36,7 @@ class BaatsController < ApplicationController
       #   format.html { render :new }
       #   format.json { render json: @baat.errors, status: :unprocessable_entity }
       # end
-      format.html { redirect_to "/" }
+      format.html { redirect_to "/", notice: 'Uploading volumes and texts has been initiated.' }
     end
   end
 

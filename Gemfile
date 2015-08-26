@@ -38,11 +38,15 @@ gem 'rest-client'                           # for making external http requests
 gem 'mediawiki_api'                         # for accessing the Media Wiki API (created by Wikimedia)
 gem 'haml'                                  # alternative to html views
 gem 'pg'                                    # Heroku uses postgres
-gem 'newrelic_rpm'                          # for monitoring site performance
-gem 'rails_12factor'                        # for Heroku deployment
-gem 'rails_stdout_logging'                  # for capturing all logs on Heroku
-gem 'rails_serve_static_assets'             # enables Rails server to deliver assets on Heroku
+gem 'sidekiq'                               # background jobs
+gem 'sinatra', :require => nil              # for Sidekiq UI wyckibaat.com/sidekiq
 
+group :production do
+  gem 'newrelic_rpm'                        # for monitoring site performance
+  gem 'rails_12factor'                      # for Heroku deployment
+  gem 'rails_stdout_logging'                # for capturing all logs on Heroku
+  gem 'rails_serve_static_assets'           # enables Rails server to deliver assets on Heroku
+end
 
 group :development, :test do
   gem 'dotenv-rails'                        # for storing environment variables

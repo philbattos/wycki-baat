@@ -1,6 +1,6 @@
-class CreateFolios < ActiveRecord::Migration
+class CreateContents < ActiveRecord::Migration
   def change
-    create_table :folios do |t|
+    create_table :contents do |t|
       t.string :name
       t.string :destination
 

@@ -1,9 +1,8 @@
-class CreateBaats < ActiveRecord::Migration
+class CreateModels < ActiveRecord::Migration
   def change
-    create_table :baats do |t|
+    create_table :models do |t|
       t.string :name
       t.string :destination
-      t.string :type
       t.text :files, array: true, default: []
 
       t.timestamps null: false
