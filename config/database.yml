@@ -6,7 +6,7 @@
 #
 default: &default
   adapter: postgresql
-  pool: 5
+  pool: 15
   timeout: 5000
 
 development:
@@ -15,6 +15,9 @@ development:
   host: localhost
   username: philbattos
   database: wyckibaat_dev
+
+production:
+  <<: *default
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
