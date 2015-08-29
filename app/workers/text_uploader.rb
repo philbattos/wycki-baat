@@ -10,6 +10,9 @@ class TextUploader
     uploader      = build_mediawiki_uploader(wiki)
     response      = uploader.create_page(title, content)
     puts response.data
+
+    # total 100 # by default
+    # at 5, "Almost done"
   end
 
 #=================================================

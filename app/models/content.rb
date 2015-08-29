@@ -7,13 +7,7 @@ class Content < ActiveRecord::Base
 
     volumes   = format_volumes(files)
     templates = volumes.delete('templates')
-
-    volumes.each do |vol, files|
-      # create batching??
-      vol_num = vol.match(/\d+/)[0]
-      upload_templates(wiki, vol_num, templates)
-      upload_texts(wiki, vol, files)
-    end
+    WorkerManager.perform_async(volumes, templates, wiki) # it may be helpful to have a high-level worker so that we can track the upload progress
   end
 
 #=================================================
@@ -35,18 +29,6 @@ class Content < ActiveRecord::Base
     def extract_file_info(files)
       files.map! do |file|
         { filepath: file.path, headers: file.headers, filename: file.original_filename }
-      end
-    end
-
-    def upload_templates(wiki, volume_number, templates)
-      templates.each do |template|
-        VolumeUploader.perform_async(wiki, volume_number, template)
-      end
-    end
-
-    def upload_texts(wiki, volume, texts)
-      texts.each do |text|
-        TextUploader.perform_async(wiki, volume, text)
       end
     end
 

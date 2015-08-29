@@ -5,6 +5,12 @@ class ModelsController < ApplicationController
   # GET /models.json
   def index
     @model = Model.new
+    # @results = Net::HTTP.get('http://research.tsadra.org')
+    # curl = `curl --digest -u drleditorthree:tsadra-drl321 https://research.tsadra.org/index.php/Main_Page`
+    # puts curl
+    # respond_to do |format|
+    #   format.json { render :index, status: :created }
+    # end
   end
 
   # GET /models/1

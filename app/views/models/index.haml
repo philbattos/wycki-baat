@@ -1,39 +1,10 @@
 .row
   .col-md-12
-    %h2 Template *index* Page
+    %h2 Models *index* Page
 
     %hr
 
     .well
-      %h3 Template Creation
-
-      = form_for @template do |f|
-        .form-horizontal
-          .form-group
-            .col-sm-3.control-label
-              = f.label :txt_file, "Folder"
-              = link_to "#", { "data-toggle" => "tooltip", "data-placement": "top", title: folder_info } do
-                %span.glyphicon.glyphicon-info-sign{ "aria-hidden" => "true" }
-            .col-sm-7= f.file_field :txt_file, name: "text_files[]", mozdirectory: "", webkitdirectory: "", directory: ""
-          .form-group
-            .col-sm-3.control-label
-              = f.label :destination, "Wiki Domain"
-              = link_to "#", { "data-toggle" => "tooltip", "data-placement": "top", title: wiki_url_info } do
-                %span.glyphicon.glyphicon-info-sign{ "aria-hidden" => "true" }
-            .col-sm-3
-              = f.text_field :destination, :class => "form-control", placeholder: "terdzod.tsadra.org"
-          .form-group
-            .col-sm-offset-2.col-sm-10= submit_tag "Create Template Pages", :class => "btn btn-primary"
-    .well
-      %h3 Volume Creation
-    .well
-      %h3 Text Uploading
-    .well
-      %h3 PDF Uploading
-    .well
-      %h3 Image Uploading
-
-:javascript
-  $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-  });
+      %h3 Connecting Wikis
+      - sample_query = 'https://research.tsadra.org/index.php?title=Special%3AAsk&q=%5B%5BBuddhism%2C+Sexuality%2C+and+Gender%5D%5D&po=author%0D%0Afulltitle%0D%0Apublisher%0D%0A&eq=yes&p%5Bformat%5D=csv&p%5Bsep%5D=%2C'
+      / = link_to 'Fetch Results', sample_query

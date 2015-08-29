@@ -12,6 +12,24 @@ class Model < ActiveRecord::Base
   #    Scopes
   #-------------------------------------------------
 
+  # Digest authentication
+  def digest_auth_request(uri)
+    Net::HTTP.start(uri.host, uri.port) do |http|
+      res = Net::HTTP.get_response uri
+      auth = digest_auth.auth_header uri, res['www-authenticate'], 'GET'
+      req = Net::HTTP::Get.new uri
+      req.add_field 'Authorization', auth
+      # http.request req
+    end
+  end
+  # [
+  #   "Digest username=\"drleditorthree\",
+  #   realm=\"Realm ID 11292652\",
+  #   algorithm=MD5, uri=\"/index.php/Main_Page\",
+  #   nonce=\"d2fb2243e0645b73faa0035d01f82d951440828213172035\",
+  #   response=\"5e427c5508322a9d1960411a4639561c\""
+  # ]
+
   # def create_page(file)
   #   uploader  = build_mediawiki_uploader
   #   file_name = file.original_filename.rpartition('.').first

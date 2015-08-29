@@ -34,12 +34,15 @@ gem 'spring',                   group: :development # Spring speeds up developme
 #-------------------------------------------------
 #    Added gems
 #-------------------------------------------------
-gem 'rest-client'                           # for making external http requests
 gem 'mediawiki_api'                         # for accessing the Media Wiki API (created by Wikimedia)
 gem 'haml'                                  # alternative to html views
 gem 'pg'                                    # Heroku uses postgres
 gem 'sidekiq'                               # background jobs
+gem 'sidekiq-status'                        # for tracking the status of background jobs in Sidekiq
 gem 'sinatra', :require => nil              # for Sidekiq UI wyckibaat.com/sidekiq
+gem 'net-http-digest_auth'                  # for digest authentication (re: firewall on research.tsadra.org)
+gem 'rest-client'                           # for making external http requests
+
 
 group :production do
   gem 'newrelic_rpm'                        # for monitoring site performance
