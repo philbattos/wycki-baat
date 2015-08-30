@@ -17,7 +17,7 @@
 dump.rdb
 
 # Ignore personal reference
-notes.txt
+notes.haml
 
 # Ignore environment variables
 .env
