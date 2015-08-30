@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :pdf_originals
   resources :images
 
+  get '/research-query' => 'portals#fetch_query'
+
 end

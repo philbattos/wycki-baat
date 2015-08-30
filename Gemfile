@@ -42,7 +42,7 @@ gem 'sidekiq-status'                        # for tracking the status of backgro
 gem 'sinatra', :require => nil              # for Sidekiq UI wyckibaat.com/sidekiq
 gem 'net-http-digest_auth'                  # for digest authentication (re: firewall on research.tsadra.org)
 gem 'rest-client'                           # for making external http requests
-
+# gem 'active_model_serializers'
 
 group :production do
   gem 'newrelic_rpm'                        # for monitoring site performance

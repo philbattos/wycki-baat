@@ -13,14 +13,8 @@ class Model < ActiveRecord::Base
   #-------------------------------------------------
 
   # Digest authentication
-  def digest_auth_request(uri)
-    Net::HTTP.start(uri.host, uri.port) do |http|
-      res = Net::HTTP.get_response uri
-      auth = digest_auth.auth_header uri, res['www-authenticate'], 'GET'
-      req = Net::HTTP::Get.new uri
-      req.add_field 'Authorization', auth
-      # http.request req
-    end
+  def digest_auth_request
+
   end
   # [
   #   "Digest username=\"drleditorthree\",

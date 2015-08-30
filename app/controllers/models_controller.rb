@@ -5,6 +5,7 @@ class ModelsController < ApplicationController
   # GET /models.json
   def index
     @model = Model.new
+    @model.digest_auth_request
     # @results = Net::HTTP.get('http://research.tsadra.org')
     # curl = `curl --digest -u drleditorthree:tsadra-drl321 https://research.tsadra.org/index.php/Main_Page`
     # puts curl
