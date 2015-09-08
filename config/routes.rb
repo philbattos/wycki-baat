@@ -5,12 +5,11 @@ Rails.application.routes.draw do
 
   root 'baats#index'
 
-  resources :baats
+  resources :baats, only: [:index, :create] do |baat|
+    # collection { get :events } # for streaming via ActionController::Live
+  end
   resources :models
   resources :content
   resources :pdf_originals
   resources :images
-
-  get '/research-query' => 'portals#fetch_query'
-
 end

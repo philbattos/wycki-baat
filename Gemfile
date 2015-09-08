@@ -43,6 +43,9 @@ gem 'sinatra', :require => nil              # for Sidekiq UI wyckibaat.com/sidek
 gem 'net-http-digest_auth'                  # for digest authentication (re: firewall on research.tsadra.org)
 gem 'rest-client'                           # for making external http requests
 # gem 'active_model_serializers'
+# gem 'puma'                                  # server that supports streaming and multiple async connections (for alerts from background jobs)
+# gem 'redis'                                 # for streaming events (alerts from background jobs)
+
 
 group :production do
   gem 'newrelic_rpm'                        # for monitoring site performance
@@ -55,4 +58,5 @@ group :development, :test do
   gem 'dotenv-rails'                        # for storing environment variables
   gem 'rspec-rails', '~> 3.0'               # for testing
   gem 'pry'                                 # for investigation & debugging
+  gem 'web-console', '~> 2.0'               # web console for debugging
 end

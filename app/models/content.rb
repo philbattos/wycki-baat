@@ -7,7 +7,10 @@ class Content < ActiveRecord::Base
 
     volumes   = format_volumes(files)
     templates = volumes.delete('templates')
-    WorkerManager.perform_async(volumes, templates, wiki) # it may be helpful to have a high-level worker so that we can track the upload progress
+    job_id    = WorkerManager.perform_async(volumes, templates, wiki) # it may be helpful to have a high-level worker so that we can track the upload progress
+    # data      = Sidekiq::Status.get_all job_id
+    # puts Sidekiq::Status.get job_id, :progress
+    # puts data
   end
 
 #=================================================

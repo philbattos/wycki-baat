@@ -1,4 +1,5 @@
 class BaatsController < ApplicationController
+  # include ActionController::Live
 
   # GET /baats
   # GET /baats.json
@@ -15,10 +16,21 @@ class BaatsController < ApplicationController
   def create
     files     = params[:files]
     baat_type = params[:baat][:type]
-    # wiki      = params[:baat][:destination]
+    wiki      = params[:baat][:destination]
     baat      = baat_type.classify.constantize.new(baat_params)
+    # baat.create_pages(files, baat.destination)
 
-    baat.create_pages(files, baat.destination)
+    case baat_type
+    when 'model'
+      raise 'NOT IMPLEMENTED YET'
+      # Model.build_templates(params)
+    when 'content'
+      if Volume.save_volumes_and_texts(files)
+        WorkerManager.perform_async(wiki) # it may be helpful to have a high-level worker so that we can track the upload progress
+      else
+        # error in saving volumes & texts
+      end
+    end
 
     # verify that folder/files look correct
     # folder_confirmation(selected_folder)
@@ -27,6 +39,8 @@ class BaatsController < ApplicationController
     # messages.each do |msg|
     #   flash[:notice] = msg
     # end
+
+    # $redis.publish('messages.create', @message.to_json)
 
     respond_to do |format|
       # if @baat.save
@@ -39,6 +53,24 @@ class BaatsController < ApplicationController
       format.html { redirect_to "/", notice: 'Uploading volumes and texts has been initiated.' }
     end
   end
+
+  # def events
+  #   response.headers["Content-Type"] = "text/event-stream"
+  #   10.times do |n|
+  #     # Message.uncached do
+  #     #   Message.where('created_at > ?', start).each do |message|
+  #     #     response.stream.write "data: #{message.to_json}\n\n"
+  #     #     start = Time.zone.now
+  #     #   end
+  #     # end
+  #     response.stream.write "data: Text ##{n} uploaded. \n\n"
+  #     sleep 1
+  #   end
+  # rescue IOError
+  #   logger.info "Stream closed"
+  # ensure
+  #   response.stream.close
+  # end
 
 #=================================================
   private

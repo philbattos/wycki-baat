@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830001231) do
+ActiveRecord::Schema.define(version: 20150908004041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20150830001231) do
     t.text     "files",       default: [],              array: true
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "collections", force: :cascade do |t|
+    t.string   "name"
+    t.string   "destination"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "contents", force: :cascade do |t|
@@ -54,13 +61,30 @@ ActiveRecord::Schema.define(version: 20150830001231) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "portals", force: :cascade do |t|
-    t.string   "request_source"
-    t.string   "request_destination"
-    t.text     "query"
-    t.text     "response"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+  create_table "texts", force: :cascade do |t|
+    t.text     "name"
+    t.text     "content"
+    t.string   "destination"
+    t.string   "type"
+    t.text     "file_path"
+    t.text     "file_name"
+    t.text     "file_headers"
+    t.string   "file_root"
+    t.string   "file_extension"
+    t.text     "categories",     default: [],              array: true
+    t.integer  "volume_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "volumes", force: :cascade do |t|
+    t.string   "name"
+    t.text     "content"
+    t.string   "destination"
+    t.string   "type"
+    t.integer  "collection_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
