@@ -1,4 +1,5 @@
 class Text < ActiveRecord::Base
+  include AASM # state machine
 
   #-------------------------------------------------
   #    Associations
@@ -15,6 +16,22 @@ class Text < ActiveRecord::Base
   #-------------------------------------------------
   scope :txt_files, -> { where file_extension: '.txt' }
 
+  #-------------------------------------------------
+  #    States
+  #-------------------------------------------------
+  aasm do
+    state :new, initial: true
+    state :uploaded
+    state :failure
+
+    event :successful_upload do
+      transitions from: :new, to: :uploaded
+    end
+
+    event :failed_upload do
+      transitions from: :new, to: :failure
+    end
+  end
 
 
 end

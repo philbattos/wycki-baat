@@ -45,7 +45,8 @@ gem 'rest-client'                           # for making external http requests
 # gem 'active_model_serializers'
 # gem 'puma'                                  # server that supports streaming and multiple async connections (for alerts from background jobs)
 # gem 'redis'                                 # for streaming events (alerts from background jobs)
-
+# gem 'state_machine'                         # for tracking the state of uploaded objects
+gem 'aasm'                                  # for tracking the state of uploaded objects (state_machine gem is neglected)
 
 group :production do
   gem 'newrelic_rpm'                        # for monitoring site performance

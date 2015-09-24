@@ -9,11 +9,7 @@
     %link{ href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", rel: "stylesheet" }
   %body
     .container
-      - flash.each do |name, msg|
-        .alert.alert-danger.alert-dismissible{ role: 'alert' }
-          %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
-            %span{"aria-hidden" => "true"} &times;
-          = msg
+      = flash_messages
 
       = yield
 

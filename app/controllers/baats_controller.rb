@@ -1,8 +1,6 @@
 class BaatsController < ApplicationController
   # include ActionController::Live
 
-  # GET /baats
-  # GET /baats.json
   def index
     @baat     = Baat.new
     # @model = Model.new
@@ -11,8 +9,6 @@ class BaatsController < ApplicationController
     # @image    = Image.new
   end
 
-  # POST /baats
-  # POST /baats.json
   def create
     files     = params[:files]
     baat_type = params[:baat][:type]
@@ -25,9 +21,13 @@ class BaatsController < ApplicationController
       raise 'NOT IMPLEMENTED YET'
       # Model.build_templates(params)
     when 'content'
+      Volume.delete_all
       if Volume.save_volumes_and_texts(files)
+        flash[:success] = "Volumes & Texts saved to database"
+        flash[:notice] = "Volumes & Texts sent to background jobs to for uploading..."
         WorkerManager.perform_async(wiki) # it may be helpful to have a high-level worker so that we can track the upload progress
       else
+        flash[:error] = "There was a problem saving some Volumes or Texts"
         # error in saving volumes & texts
       end
     end
@@ -35,22 +35,10 @@ class BaatsController < ApplicationController
     # verify that folder/files look correct
     # folder_confirmation(selected_folder)
 
-    # messages = folder_confirmation(@selected_folder)
-    # messages.each do |msg|
-    #   flash[:notice] = msg
-    # end
-
     # $redis.publish('messages.create', @message.to_json)
 
     respond_to do |format|
-      # if @baat.save
-      #   format.html { redirect_to @baat, notice: 'Baat was successfully created.' }
-      #   format.json { render :show, status: :created, location: @baat }
-      # else
-      #   format.html { render :new }
-      #   format.json { render json: @baat.errors, status: :unprocessable_entity }
-      # end
-      format.html { redirect_to "/", notice: 'Uploading volumes and texts has been initiated.' }
+      format.html { redirect_to "/" }
     end
   end
 
