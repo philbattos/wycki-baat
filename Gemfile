@@ -34,30 +34,31 @@ gem 'spring',                   group: :development # Spring speeds up developme
 #-------------------------------------------------
 #    Added gems
 #-------------------------------------------------
-gem 'mediawiki_api'                         # for accessing the Media Wiki API (created by Wikimedia)
-gem 'haml'                                  # alternative to html views
-gem 'pg'                                    # Heroku uses postgres
-gem 'sidekiq'                               # background jobs
-gem 'sidekiq-status'                        # for tracking the status of background jobs in Sidekiq
-gem 'sinatra', :require => nil              # for Sidekiq UI wyckibaat.com/sidekiq
-gem 'net-http-digest_auth'                  # for digest authentication (re: firewall on research.tsadra.org)
-gem 'rest-client'                           # for making external http requests
+gem 'mediawiki_api'                             # for accessing the Media Wiki API (created by Wikimedia)
+gem 'haml'                                      # alternative to html views
+gem 'pg'                                        # Heroku uses postgres
+gem 'sidekiq'                                   # background jobs
+gem 'sidekiq-status'                            # for tracking the status of background jobs in Sidekiq
+gem 'sinatra', :require => nil                  # for Sidekiq UI wyckibaat.com/sidekiq
+gem 'net-http-digest_auth'                      # for digest authentication (re: firewall on research.tsadra.org)
+gem 'rest-client'                               # for making external http requests
 # gem 'active_model_serializers'
-# gem 'puma'                                  # server that supports streaming and multiple async connections (for alerts from background jobs)
-# gem 'redis'                                 # for streaming events (alerts from background jobs)
-# gem 'state_machine'                         # for tracking the state of uploaded objects
-gem 'aasm'                                  # for tracking the state of uploaded objects (state_machine gem is neglected)
+gem 'puma'                                      # server that supports streaming and multiple async connections (ActionCable)
+# gem 'redis'                                     # for streaming events (alerts from background jobs)
+# gem 'state_machine'                             # for tracking the state of uploaded objects
+gem 'aasm'                                      # for tracking the state of uploaded objects (state_machine gem is neglected)
+gem 'actioncable', github: 'rails/actioncable'  # for real-time communication over websockets (for alerts from background jobs)
 
 group :production do
-  gem 'newrelic_rpm'                        # for monitoring site performance
-  gem 'rails_12factor'                      # for Heroku deployment
-  gem 'rails_stdout_logging'                # for capturing all logs on Heroku
-  gem 'rails_serve_static_assets'           # enables Rails server to deliver assets on Heroku
+  gem 'newrelic_rpm'                            # for monitoring site performance
+  gem 'rails_12factor'                          # for Heroku deployment
+  gem 'rails_stdout_logging'                    # for capturing all logs on Heroku
+  gem 'rails_serve_static_assets'               # enables Rails server to deliver assets on Heroku
 end
 
 group :development, :test do
-  gem 'dotenv-rails'                        # for storing environment variables
-  gem 'rspec-rails', '~> 3.0'               # for testing
-  gem 'pry'                                 # for investigation & debugging
-  gem 'web-console', '~> 2.0'               # web console for debugging
+  gem 'dotenv-rails'                            # for storing environment variables
+  gem 'rspec-rails', '~> 3.0'                   # for testing
+  gem 'pry'                                     # for investigation & debugging
+  gem 'web-console', '~> 2.0'                   # web console for debugging
 end

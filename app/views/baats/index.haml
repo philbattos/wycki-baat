@@ -5,25 +5,35 @@
 
     %hr
 
-    %ul.nav.nav-tabs
-      %li.active{ role: "presentation" }
-        = link_to "Models", "#models", { "aria-controls": "models", role: "tab", "data-toggle": "tab" }
-      %li{ role: "presentation" }
-        = link_to "Content", "#content", { "aria-controls": "content", role: "tab", "data-toggle": "tab" }
-      %li{ role: "presentation" }
-        = link_to "PDFs", "#pdfs", { "aria-controls": "pdf_originals", role: "tab", "data-toggle": "tab" }
-      %li{ role: "presentation" }
-        = link_to "Images", "#images", { "aria-controls": "images", role: "tab", "data-toggle": "tab" }
+    .row
+      .col-md-6
+        %ul.nav.nav-tabs
+          %li.active{ role: "presentation" }
+            = link_to "Models", "#models", { "aria-controls": "models", role: "tab", "data-toggle": "tab" }
+          %li{ role: "presentation" }
+            = link_to "Content", "#content", { "aria-controls": "content", role: "tab", "data-toggle": "tab" }
+          %li{ role: "presentation" }
+            = link_to "PDFs", "#pdfs", { "aria-controls": "pdf_originals", role: "tab", "data-toggle": "tab" }
+          %li{ role: "presentation" }
+            = link_to "Images", "#images", { "aria-controls": "images", role: "tab", "data-toggle": "tab" }
 
-    %br
+        %br
 
-    .tab-content
-      .tab-pane#models.active{ role: "tabpanel" }
-        = render partial: "tab_content", locals: { stage: "model" }
-      .tab-pane#content{ role: "tabpanel" }
-        = render partial: "tab_content", locals: { stage: "content" }
-      .tab-pane#pdfs{ role: "tabpanel" }
-        = render partial: "tab_content", locals: { stage: "pdf_original" }
-      .tab-pane#images{ role: "tabpanel" }
-        = render partial: "tab_content", locals: { stage: "image" }
+        .tab-content
+          .tab-pane#models.active{ role: "tabpanel" }
+            = render partial: "tab_content", locals: { stage: "model" }
+          .tab-pane#content{ role: "tabpanel" }
+            = render partial: "tab_content", locals: { stage: "content" }
+          .tab-pane#pdfs{ role: "tabpanel" }
+            = render partial: "tab_content", locals: { stage: "pdf_original" }
+          .tab-pane#images{ role: "tabpanel" }
+            = render partial: "tab_content", locals: { stage: "image" }
+
+        %br
+
+        #upload-progress
+
+      .col-md-6
+        = render 'shared/flash'
+        #upload-alerts
 

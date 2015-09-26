@@ -30,8 +30,20 @@ class WorkerManager
             content   = text.content
             response  = uploader.create_page(title, content)
             puts response.data
+            ActionCable.server.broadcast 'alerts',
+              message: "VOLUME TEMPLATE successfully uploaded: #{title}",
+              html_class: "success",
+              text_decoration: "b", # bold
+              page_type: "VOLUME TEMPLATE",
+              page_name: "#{title}"
           rescue MediawikiApi::ApiError => api_error
             puts "UPLOAD ERROR: #{api_error} (#{title})"
+            ActionCable.server.broadcast 'alerts',
+              message: "Uploading failed for VOLUME TEMPLATE #{title}: #{api_error}",
+              html_class: "danger",
+              text_decoration: "s", # strikethrough
+              page_type: "VOLUME TEMPLATE",
+              page_name: "#{title}"
           end
         end
       end
@@ -48,10 +60,22 @@ class WorkerManager
           text.update(api_response: response.data['result'])
           text.successful_upload!
           puts response.data
+          ActionCable.server.broadcast 'alerts',
+            message: "TEXT successfully uploaded: #{title}",
+            html_class: "success",
+            text_decoration: "b", # bold
+            page_type: "TEXT",
+            page_name: "#{title}"
         rescue MediawikiApi::ApiError => api_error
           puts "UPLOAD ERROR: #{api_error} (#{text.name}, #{text.id})"
           text.update(api_response: api_error)
           text.failed_upload!
+          ActionCable.server.broadcast 'alerts',
+            message: "Uploading failed for TEXT #{title}: #{api_error}",
+            html_class: "danger",
+            text_decoration: "s", # strikethrough
+            page_type: "TEXT",
+            page_name: "#{title}"
         end
       end
     end

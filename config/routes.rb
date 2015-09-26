@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :content
   resources :pdf_originals
   resources :images
+
 end

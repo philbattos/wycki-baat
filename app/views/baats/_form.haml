@@ -2,18 +2,18 @@
   .form-horizontal
     = f.hidden_field :type, value: stage
     .form-group
-      .col-sm-3.control-label
+      .col-sm-5.control-label
         = f.label :txt_file, "File Directory"
         = link_to "#", { "data-toggle": "tooltip", "data-placement": "top", title: directory_info } do
           %span.glyphicon.glyphicon-info-sign{ "aria-hidden": "true" }
-      .col-sm-7
+      .col-sm-6
         = f.file_field :txt_file, name: "files[]", mozdirectory: "", webkitdirectory: "", directory: ""
     .form-group
-      .col-sm-3.control-label
+      .col-sm-5.control-label
         = f.label :destination, "Wiki Sub-Domain"
         = link_to "#", { "data-toggle": "tooltip", "data-placement": "top", title: wiki_url_info } do
           %span.glyphicon.glyphicon-info-sign{ "aria-hidden": "true" }
-      .col-sm-3
+      .col-sm-6
         = f.text_field :destination, :class => "form-control", placeholder: "librarywiki, terdzod, etc."
     .form-group
       .col-sm-offset-2.col-sm-10= submit_tag "Create #{stage.capitalize} Pages", :class => "btn btn-primary"

@@ -27,8 +27,8 @@ class BaatsController < ApplicationController
         flash[:notice] = "Volumes & Texts sent to background jobs to for uploading..."
         WorkerManager.perform_async(wiki) # it may be helpful to have a high-level worker so that we can track the upload progress
       else
-        flash[:error] = "There was a problem saving some Volumes or Texts"
         # error in saving volumes & texts
+        flash[:error] = "There was a problem saving some Volumes or Texts"
       end
     end
 
