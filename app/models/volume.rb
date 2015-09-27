@@ -10,7 +10,10 @@ class Volume < ActiveRecord::Base
   #-------------------------------------------------
   #    Validations
   #-------------------------------------------------
-  validates :name, format: { with: /\A[^.].+$\z/, message: "Volume name must not start with a dot(.)" }
+  validates :name,  presence: true,
+                    format: { with: /\A[^.].+$\z/, message: "Volume name must not start with a dot(.)" }
+  validates :destination, presence: true,
+                          inclusion: { :in => %w[ librarywiki terzod research ], message: "'%{value}' is not a valid wiki destination. Please enter 'librarywiki', 'terdzod', or 'research'" }
 
   #-------------------------------------------------
   #    Scopes
@@ -41,7 +44,7 @@ class Volume < ActiveRecord::Base
   #-------------------------------------------------
   #    Public Methods
   #-------------------------------------------------
-  def self.save_volumes_and_texts(files)
+  def self.save_volumes_and_texts(files, wiki)
     # add batches?
     # verify that all files are .txt files so that we don't try to save/upload images or pdfs
     Volume.transaction do
@@ -49,9 +52,10 @@ class Volume < ActiveRecord::Base
         path = extract_path(file)
         root, volume_name, *categories, text_name = path.split('/') # EXAMPLE: wikipages/volume1/*/text-name
         text_name.nil? ? next : text_name.slice!('.txt') # if text is something irrelavant like DS_Store, skip to the next file
-        volume = Volume.find_or_create_by(name: volume_name)
-        volume.texts.create(
+        volume = Volume.find_or_create_by!(name: volume_name, destination: wiki)
+        volume.texts.create!(
           name:           text_name,
+          destination:    wiki,
           file_path:      file.path,
           content:        File.foreach(file.path).to_a.join(''),
           file_extension: File.extname(file.path),
@@ -59,11 +63,14 @@ class Volume < ActiveRecord::Base
           file_headers:   file.headers,
           file_name:      file.original_filename,
           file_root:      root,
-          categories:     categories,
-          # categories?
+          categories:     categories
         )
       end
     end
+    true # volumes and texts were saved without errors
+  rescue ActiveRecord::RecordInvalid => validation_error
+    puts "ERROR in Volume model: #{validation_error}"
+    validation_error
   end
 
 #=================================================

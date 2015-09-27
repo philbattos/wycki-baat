@@ -14,6 +14,9 @@ class WorkerManager
       upload_texts(vol, uploader)
       vol.complete_upload!
     end
+    ActionCable.server.broadcast 'alerts',
+      message: "Volumes & Texts uploading finished.",
+      html_class: "info"
   end
 
 #=================================================

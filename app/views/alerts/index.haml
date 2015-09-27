@@ -1,8 +1,0 @@
-%div#messages
-%br
-
-= form_for :message, url: alerts_path, remote: true, id: 'messages-form' do |f|
-  = f.label :body, 'Enter a message:'
-  = f.text_field :body
-  %br
-  = f.submit 'Send message'

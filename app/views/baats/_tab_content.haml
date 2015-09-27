@@ -1,3 +1,5 @@
 .well
-  %h3= "#{stage.humanize.titleize} Creation"
+  .text-center
+    %h3= "#{stage.humanize.titleize} Creation"
+  %br
   = render partial: "form", locals: { stage: stage }
