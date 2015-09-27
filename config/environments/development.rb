@@ -34,4 +34,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.middleware.use ActionCableMiddleware
+  config.web_socket_server_url = "ws://127.0.0.1:28080"
+  # config.web_socket_server_url = "ws://localhost:3000"
 end

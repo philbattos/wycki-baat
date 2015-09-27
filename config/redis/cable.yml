@@ -6,3 +6,10 @@ local: &local
   :inline: true
 development: *local
 test: *local
+production: &production
+  :url: redis://redistogo:d6fc67f6a29ecd1ed6910654163e83f3@sole.redistogo.com:9762
+  :host: sole.redistogo.com
+  :port: 9762
+  :password: d6fc67f6a29ecd1ed6910654163e83f3
+  :inline: true
+  :timeout: 1
