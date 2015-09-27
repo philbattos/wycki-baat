@@ -16,11 +16,10 @@ class BaatsController < ApplicationController
       raise 'NOT IMPLEMENTED YET'
       # Model.build_templates(params)
     when 'content'
-      Volume.delete_all
+      Volume.destroy_all
       response = Volume.save_volumes_and_texts(files, wiki)
       if response == true
-        flash[:success] = "Volumes & Texts saved to database"
-        flash[:notice] = "Volumes & Texts sent to background jobs to for uploading."
+        flash[:notice] = "The selected Volumes & Texts have been saved to the database and are being dispatched to background jobs for uploading."
         WorkerManager.perform_async(wiki) # it may be helpful to have a high-level worker so that we can track the upload progress
       else # error in saving volumes & texts
         error = response.to_s

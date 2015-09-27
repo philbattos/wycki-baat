@@ -18,10 +18,10 @@ class Volume < ActiveRecord::Base
   #-------------------------------------------------
   #    Scopes
   #-------------------------------------------------
-  scope :metadata_templates,  -> { where name: 'Model Stubs' }
+  scope :page_templates,      -> { where name: 'Model Stubs' }
   scope :volume_templates,    -> { where name: 'Models' }
-  scope :templates,           -> { where name: ['Model Stubs', 'Models', 'templates'] }
-  scope :volume_pages,        -> { where.not(name: ['Model Stubs', 'Models', 'templates']) }
+  scope :templates,           -> { where name: ['Model Stubs', 'Models'] }
+  scope :volume_pages,        -> { where.not(name: ['Model Stubs', 'Models']) }
     # TO DO: find volume pages associated with current upload; do not find pages from old uploads
 
   #-------------------------------------------------

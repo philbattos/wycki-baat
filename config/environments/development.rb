@@ -37,5 +37,4 @@ Rails.application.configure do
 
   config.middleware.use ActionCableMiddleware
   config.web_socket_server_url = "ws://127.0.0.1:28080"
-  # config.web_socket_server_url = "ws://localhost:3000"
 end
