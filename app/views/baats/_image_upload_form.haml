@@ -1,0 +1,29 @@
+= form_for @baat do |f|
+  .form-horizontal
+    = f.hidden_field :type, value: 'images'
+    .form-group
+      .col-sm-5.control-label
+        = f.label :txt_file, "File Directory"
+        = link_to "#", { "data-toggle": "tooltip", "data-placement": "top", title: directory_info } do
+          %span.glyphicon.glyphicon-info-sign{ "aria-hidden": "true" }
+      .col-sm-6
+        = f.file_field :txt_file, name: "files[]", mozdirectory: "", webkitdirectory: "", directory: ""
+    .form-group
+      .col-sm-5.control-label
+        = f.label :destination, "Destination Wiki"
+        = link_to "#", { "data-toggle": "tooltip", "data-placement": "top", title: wiki_url_info } do
+          %span.glyphicon.glyphicon-info-sign{ "aria-hidden": "true" }
+      .col-sm-6
+        = f.text_field :destination, :class => "form-control", placeholder: "librarywiki, terdzod, etc."
+    .form-group
+      .col-sm-offset-1.col-sm-10
+        .text-center
+          %em.text-small Note: All page names will be prefaced with "TESTING"
+          %br
+          %br
+          = submit_tag "Upload Image Files", :class => "btn btn-primary"
+
+:javascript
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });

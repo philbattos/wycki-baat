@@ -12,15 +12,15 @@ class BaatsController < ApplicationController
     # baat.create_pages(files, baat.destination)
 
     case baat_type
-    when 'model'
+    when 'templates'
       raise 'NOT IMPLEMENTED YET'
       # Model.build_templates(params)
-    when 'content'
-      Volume.destroy_all
+    when 'volume-texts'
+      Volume.destroy_all # this is done to keep the Heroku database small (and free)
       response = Volume.save_volumes_and_texts(files, wiki)
       if response == true
         flash[:notice] = "The selected Volumes & Texts have been saved to the database and are being dispatched to background jobs for uploading."
-        WorkerManager.perform_async(wiki) # it may be helpful to have a high-level worker so that we can track the upload progress
+        VolumeTextUploader.perform_async(wiki)
       else # error in saving volumes & texts
         error = response.to_s
         flash[:error] = "There was a problem saving some Volumes or Texts. (#{error}.) No files were uploaded."

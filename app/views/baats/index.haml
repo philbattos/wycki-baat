@@ -9,9 +9,9 @@
       .col-md-7
         %ul.nav.nav-tabs
           %li.active{ role: "presentation" }
-            = link_to "Models", "#models", { "aria-controls": "models", role: "tab", "data-toggle": "tab" }
+            = link_to "Templates", "#templates", { "aria-controls": "templates", role: "tab", "data-toggle": "tab" }
           %li{ role: "presentation" }
-            = link_to "Content", "#content", { "aria-controls": "content", role: "tab", "data-toggle": "tab" }
+            = link_to "Volumes & Texts", "#volume-texts", { "aria-controls": "volume-texts", role: "tab", "data-toggle": "tab" }
           %li{ role: "presentation" }
             = link_to "PDFs", "#pdfs", { "aria-controls": "pdf_originals", role: "tab", "data-toggle": "tab" }
           %li{ role: "presentation" }
@@ -20,14 +20,30 @@
         %br
 
         .tab-content
-          .tab-pane#models.active{ role: "tabpanel" }
-            = render partial: "tab_content", locals: { stage: "model" }
-          .tab-pane#content{ role: "tabpanel" }
-            = render partial: "tab_content", locals: { stage: "content" }
+          .tab-pane#templates.active{ role: "tabpanel" }
+            .well
+              .text-center
+                %h3= "Template Uploading"
+              %br
+              = render partial: "template_upload_form"
+          .tab-pane#volume-texts{ role: "tabpanel" }
+            .well
+              .text-center
+                %h3= "Volume & Text Uploading"
+              %br
+              = render partial: "volume_text_upload_form"
           .tab-pane#pdfs{ role: "tabpanel" }
-            = render partial: "tab_content", locals: { stage: "pdf_original" }
+            .well
+              .text-center
+                %h3= "PDF Uploading"
+              %br
+              = render partial: "pdf_upload_form"
           .tab-pane#images{ role: "tabpanel" }
-            = render partial: "tab_content", locals: { stage: "image" }
+            .well
+              .text-center
+                %h3= "Image Uploading"
+              %br
+              = render partial: "image_upload_form"
 
         %br
 

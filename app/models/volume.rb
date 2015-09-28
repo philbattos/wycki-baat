@@ -45,13 +45,12 @@ class Volume < ActiveRecord::Base
   #    Public Methods
   #-------------------------------------------------
   def self.save_volumes_and_texts(files, wiki)
-    # add batches?
     # verify that all files are .txt files so that we don't try to save/upload images or pdfs
     Volume.transaction do
       files.each do |file|
         path = extract_path(file)
         root, volume_name, *categories, text_name = path.split('/') # EXAMPLE: wikipages/volume1/*/text-name
-        text_name.nil? ? next : text_name.slice!('.txt') # if text is something irrelavant like DS_Store, skip to the next file
+        is_skippable?(text_name) ? next : text_name.slice!('.txt')
         volume = Volume.find_or_create_by!(name: volume_name, destination: wiki)
         volume.texts.create!(
           name:           text_name,
@@ -79,6 +78,11 @@ class Volume < ActiveRecord::Base
 
     def self.extract_path(file)
       file.headers.match(/(filename=)("(.+)")/).captures.last
+    end
+
+    def self.is_skippable?(text)
+      blacklist = [ nil, '.DS_Store' ]
+      blacklist.include? text
     end
 
 end
