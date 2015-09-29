@@ -46,19 +46,29 @@ ActiveRecord::Schema.define(version: 20150923175743) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "models", force: :cascade do |t|
-    t.string   "name"
-    t.string   "destination"
-    t.text     "files",       default: [],              array: true
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "pdf_originals", force: :cascade do |t|
     t.string   "name"
     t.string   "destination"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "templates", force: :cascade do |t|
+    t.string   "name"
+    t.text     "content"
+    t.string   "destination"
+    t.string   "type"
+    t.text     "file_path"
+    t.text     "file_name"
+    t.text     "file_headers"
+    t.string   "file_root"
+    t.string   "file_extension"
+    t.text     "categories",     default: [],              array: true
+    t.decimal  "file_size"
+    t.text     "api_response"
+    t.string   "aasm_state"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "texts", force: :cascade do |t|

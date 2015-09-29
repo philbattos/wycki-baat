@@ -5,19 +5,25 @@ class BaatsController < ApplicationController
   end
 
   def create
-    files     = params[:files]
-    baat_type = params[:baat][:type]
-    wiki      = params[:baat][:destination]
-    # baat      = baat_type.classify.constantize.new(baat_params)
-    # baat.create_pages(files, baat.destination)
+    upload_type = params[:baat][:type]
+    wiki        = params[:baat][:destination]
+    volumes     = params[:volume_files]
+    templates   = params[:template_files]
 
-    case baat_type
+    case upload_type
     when 'templates'
-      raise 'NOT IMPLEMENTED YET'
-      # Model.build_templates(params)
+      Template.destroy_all
+      response = Template.save_templates(templates, wiki)
+      if response == true
+        flash[:notice] = "The selected Templates have been saved to the database and are being dispatched to background jobs for uploading."
+        TemplateUploader.perform_async(wiki)
+      else # error in saving template
+        error = response.to_s
+        flash[:error] = "There was a problem saving a Template. (#{error}.) No files were uploaded."
+      end
     when 'volume-texts'
       Volume.destroy_all # this is done to keep the Heroku database small (and free)
-      response = Volume.save_volumes_and_texts(files, wiki)
+      response = Volume.save_volumes_and_texts(volumes, wiki)
       if response == true
         flash[:notice] = "The selected Volumes & Texts have been saved to the database and are being dispatched to background jobs for uploading."
         VolumeTextUploader.perform_async(wiki)
@@ -25,6 +31,10 @@ class BaatsController < ApplicationController
         error = response.to_s
         flash[:error] = "There was a problem saving some Volumes or Texts. (#{error}.) No files were uploaded."
       end
+    when 'pdfs'
+      raise 'NOT IMPLEMENTED YET'
+    when 'images'
+      raise 'NOT IMPLEMENTED YET'
     end
 
     # verify that folder/files look correct
