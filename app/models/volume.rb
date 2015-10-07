@@ -20,7 +20,7 @@ class Volume < ActiveRecord::Base
   #-------------------------------------------------
   scope :page_templates,      -> { where name: 'Model Stubs' }
   scope :volume_templates,    -> { where name: 'Models' }
-  scope :templates,           -> { where name: ['Model Stubs', 'Models'] }
+  # scope :templates,           -> { where name: ['Model Stubs', 'Models'] }
   scope :volume_pages,        -> { where.not(name: ['Model Stubs', 'Models']) }
     # TO DO: find volume pages associated with current upload; do not find pages from old uploads
 
@@ -44,14 +44,14 @@ class Volume < ActiveRecord::Base
   #-------------------------------------------------
   #    Public Methods
   #-------------------------------------------------
-  def self.save_volumes_and_texts(files, wiki)
+  def self.save_volumes_and_texts(files, wiki, collection_id)
     # verify that all files are .txt files so that we don't try to save/upload images or pdfs
     Volume.transaction do
       files.each do |file|
         path = extract_path(file)
         root, volume_name, *categories, text_name = path.split('/') # EXAMPLE: wikipages/volume1/*/text-name
         is_skippable?(text_name) ? next : text_name.slice!('.txt')
-        volume = Volume.find_or_create_by!(name: volume_name, destination: wiki)
+        volume = Volume.find_or_create_by!(name: volume_name, destination: wiki, collection_id: collection_id)
         volume.texts.create!(
           name:           text_name,
           destination:    wiki,

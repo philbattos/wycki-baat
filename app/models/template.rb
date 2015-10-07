@@ -42,7 +42,7 @@ class Template < ActiveRecord::Base
   #-------------------------------------------------
   #    Public Methods
   #-------------------------------------------------
-  def self.save_templates(files, wiki)
+  def self.save_templates(files, wiki, collection_id)
     # verify that all files are .txt files so that we don't try to save/upload images or pdfs
     Template.transaction do
       files.each do |file|
@@ -50,6 +50,7 @@ class Template < ActiveRecord::Base
         root, *categories, text_name = path.split('/') # EXAMPLE: Templates/*/Main_Page.txt
         is_skippable?(text_name) ? next : text_name.slice!('.txt')
         Template.create!(
+          collection_id:  collection_id,
           name:           text_name,
           destination:    wiki,
           file_path:      file.path,

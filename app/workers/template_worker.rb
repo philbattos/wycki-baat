@@ -8,7 +8,7 @@ class TemplateUploader
     templates.each do |template|
       begin
         template.start_upload!
-        title     = template.name
+        title     = build_title(template)
         content   = template.content
         # add categories?
         response  = uploader.create_page(title, content)
@@ -45,6 +45,10 @@ class TemplateUploader
       @uploader ||= MediawikiApi::Client.new wiki_url(subdomain)
       @uploader.log_in(username, password)
       @uploader
+    end
+
+    def build_title(template)
+      template.name.gsub('-', ':') + "-TESTING"
     end
 
     def wiki_url(subdomain)

@@ -10,15 +10,24 @@
         = f.file_field :txt_file, name: "volume_files[]", mozdirectory: "", webkitdirectory: "", directory: ""
     .form-group
       .col-sm-5.control-label
+        = f.label :collection, "Collection Name"
+        = link_to "#", { "data-toggle": "tooltip", "data-placement": "top", title: collection_info } do
+          %span.glyphicon.glyphicon-info-sign{ "aria-hidden": "true" }
+      .col-sm-6
+        = f.text_field :collection, :class => "form-control", placeholder: "Terdzod, Sakya, etc."
+    .form-group
+      .col-sm-5.control-label
         = f.label :destination, "Destination Wiki"
         = link_to "#", { "data-toggle": "tooltip", "data-placement": "top", title: wiki_url_info } do
           %span.glyphicon.glyphicon-info-sign{ "aria-hidden": "true" }
       .col-sm-6
         = f.text_field :destination, :class => "form-control", placeholder: "librarywiki, terdzod, etc."
+      .col-sm-offset-1.col-sm-10
+        .text-center
     .form-group
       .col-sm-offset-1.col-sm-10
         .text-center
-          %em.text-small Note: All page names will be prefaced with "TESTING"
+          %em.text-small Note: All page names will be prefaced or appended with "TESTING"
           %br
           %br
           = submit_tag "Create Volume/Text Pages", :class => "btn btn-primary"

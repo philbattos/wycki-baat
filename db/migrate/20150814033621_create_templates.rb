@@ -1,4 +1,4 @@
-class CreateModels < ActiveRecord::Migration
+class CreateTemplates < ActiveRecord::Migration
   def change
     create_table :templates do |t|
       t.string :name
@@ -14,6 +14,7 @@ class CreateModels < ActiveRecord::Migration
       t.decimal :file_size
       t.text :api_response
       t.string :aasm_state
+      t.references :collection
 
       t.timestamps null: false
     end

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150923175743) do
     t.string   "name"
     t.string   "destination"
     t.string   "type"
+    t.string   "collection"
     t.text     "files",       default: [],              array: true
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 20150923175743) do
     t.decimal  "file_size"
     t.text     "api_response"
     t.string   "aasm_state"
+    t.integer  "collection_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end

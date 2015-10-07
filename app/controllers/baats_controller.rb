@@ -5,15 +5,18 @@ class BaatsController < ApplicationController
   end
 
   def create
-    upload_type = params[:baat][:type]
-    wiki        = params[:baat][:destination]
-    volumes     = params[:volume_files]
-    templates   = params[:template_files]
+    collection_name = params[:baat][:collection]
+    upload_type     = params[:baat][:type]
+    wiki            = params[:baat][:destination]
+    volumes         = params[:volume_files]
+    templates       = params[:template_files]
+
+    collection = Collection.find_or_create_by!(name: collection_name, destination: wiki)
 
     case upload_type
     when 'templates'
       Template.destroy_all
-      response = Template.save_templates(templates, wiki)
+      response = Template.save_templates(templates, wiki, collection.id)
       if response == true
         flash[:notice] = "The selected Templates have been saved to the database and are being dispatched to background jobs for uploading."
         TemplateUploader.perform_async(wiki)
@@ -23,7 +26,7 @@ class BaatsController < ApplicationController
       end
     when 'volume-texts'
       Volume.destroy_all # this is done to keep the Heroku database small (and free)
-      response = Volume.save_volumes_and_texts(volumes, wiki)
+      response = Volume.save_volumes_and_texts(volumes, wiki, collection.id)
       if response == true
         flash[:notice] = "The selected Volumes & Texts have been saved to the database and are being dispatched to background jobs for uploading."
         VolumeTextUploader.perform_async(wiki)

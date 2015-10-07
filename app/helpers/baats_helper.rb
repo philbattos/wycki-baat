@@ -14,4 +14,9 @@ module BaatsHelper
     "Enter the total number of volumes to be created for this collection."
   end
 
+  def collection_info
+    "Enter a name for the collection of volumes and texts. The name should be somewhat
+     succinct since it will be used in page titles and content."
+  end
+
 end

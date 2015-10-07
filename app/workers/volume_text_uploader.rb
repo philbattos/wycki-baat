@@ -11,7 +11,7 @@ class VolumeTextUploader
       # verify collection name??
       upload_templates(number, uploader)
       upload_compiled_texts(vol, number, uploader)
-      upload_text_category_page(vol, number, uploader)
+      upload_text_category_page(vol, uploader)
       vol.complete_upload!
     end
     ActionCable.server.broadcast 'alerts',
@@ -82,10 +82,10 @@ class VolumeTextUploader
       end
     end
 
-    def upload_text_category_page(volume, vol_num, uploader)
+    def upload_text_category_page(volume, uploader)
       volume.texts.each do |text|
         begin
-          title     = "Category-#{text.name}-#{vol_num}"
+          title     = "Category:#{text.name}"
           content   = "{{TextCategoryPage}}"
           response  = uploader.create_page(title, content)
           puts response.data
@@ -117,17 +117,36 @@ class VolumeTextUploader
     end
 
     def compile_title(text, vol_num)
-      "TESTING-" + replace_volume_number(text.name, vol_num)
+      title = replace_collection_name(text)
+      title = replace_volume_number(title, vol_num)
+      title = format_category_title(title)
+      # drop volume number from title? remove vol number from file name?
+      title + "-TESTING"
     end
 
     def compile_content(text, template, vol_num, categories=[])
       content = replace_volume_number(template.content, vol_num)
-      content = text.nil? ? content : replace_content(content, text)
+      content = replace_text_number(content, text) unless text.nil?
+      content = replace_content(content, text) unless text.nil?
       content = append_categories(content, categories)
+    end
+
+    def replace_collection_name(text)
+      coll_name = text.volume.collection.name
+      text.name.gsub(/@@+/, coll_name)
     end
 
     def replace_volume_number(string, vol_num)
       string.gsub(/##+/, vol_num)
+    end
+
+    def replace_text_number(string, text)
+      text_num = text.name.split('-').last
+      string.gsub(/%%+/, text_num)
+    end
+
+    def format_category_title(title)
+      title.gsub(/^Category-/, 'Category:')
     end
 
     def replace_content(template, text)
