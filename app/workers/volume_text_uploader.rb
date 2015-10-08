@@ -120,7 +120,6 @@ class VolumeTextUploader
       title = replace_collection_name(text)
       title = replace_volume_number(title, vol_num)
       title = format_category_title(title)
-      # drop volume number from title? remove vol number from file name?
       title + "-TESTING"
     end
 

@@ -10,6 +10,7 @@ class BaatsController < ApplicationController
     wiki            = params[:baat][:destination]
     volumes         = params[:volume_files]
     templates       = params[:template_files]
+    pdfs            = params[:pdf_files]
 
     collection = Collection.find_or_create_by!(name: collection_name, destination: wiki)
 
@@ -35,7 +36,16 @@ class BaatsController < ApplicationController
         flash[:error] = "There was a problem saving some Volumes or Texts. (#{error}.) No files were uploaded."
       end
     when 'pdfs'
-      raise 'NOT IMPLEMENTED YET'
+      raise 'NOT WORKING YET (invalid byte sequence in UTF-8)'
+      PdfOriginal.destroy_all
+      response = PdfOriginal.save_files(pdfs, wiki, collection.id)
+      if response == true
+        flash[:notice] = "The selected PDFs have been saved to the database and are being dispatched to background jobs for uploading."
+        PDFUploader.perform_async(wiki)
+      else # error in saving PDFs
+        error = response.to_s
+        flash[:error] = "There was a problem saving some PDFs. (#{error}.) No files were uploaded."
+      end
     when 'images'
       raise 'NOT IMPLEMENTED YET'
     end
