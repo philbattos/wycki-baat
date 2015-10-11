@@ -48,6 +48,7 @@ gem 'puma'                                      # server that supports streaming
 # gem 'state_machine'                             # for tracking the state of uploaded objects
 gem 'aasm'                                      # for tracking the state of uploaded objects (state_machine gem is neglected)
 gem 'actioncable', github: 'rails/actioncable'  # for real-time communication over websockets (for alerts from background jobs)
+# gem 'yomu'                                      # for reading different types of files (ex. .rtf instead of .txt)
 
 group :production do
   gem 'newrelic_rpm'                            # for monitoring site performance

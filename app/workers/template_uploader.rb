@@ -48,7 +48,7 @@ class TemplateUploader
     end
 
     def build_title(template)
-      template.name.gsub('-', ':') + "-TESTING"
+      "TESTING-" + template.name.gsub('-', ':')
     end
 
     def wiki_url(subdomain)
