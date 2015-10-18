@@ -2,7 +2,8 @@ module BaatsHelper
 
   def directory_info
     "Select the directory/folder that contains the files that you would like to
-     use to create wiki pages. It should only contain other folders and/or .txt files."
+     use to create wiki pages. It should only contain other folders and/or .txt files.
+     Please only select folders that contain less than 128 files."
   end
 
   def wiki_url_info

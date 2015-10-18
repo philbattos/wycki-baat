@@ -43,8 +43,10 @@ ActiveRecord::Schema.define(version: 20151008052826) do
   create_table "images", force: :cascade do |t|
     t.string   "name"
     t.string   "destination"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "aasm_state"
+    t.text     "api_response"
   end
 
   create_table "pdf_originals", force: :cascade do |t|
@@ -103,6 +105,7 @@ ActiveRecord::Schema.define(version: 20151008052826) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "aasm_state"
+    t.text     "api_response"
   end
 
 end

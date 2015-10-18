@@ -6,13 +6,27 @@ class VolumeTextUploader
     volumes   = Volume.volume_pages
 
     volumes.each do |vol|
-      vol.start_upload!
-      collection, *label, number = vol.name.split('-')
-      # verify collection name??
-      upload_templates(number, uploader)
-      upload_compiled_texts(vol, number, uploader)
-      upload_text_category_page(vol, uploader)
-      vol.complete_upload!
+      begin
+        # vol.start_upload!
+        collection, *label, number = vol.name.split('-')
+        # verify collection name??
+        upload_templates(number, uploader)
+        upload_compiled_texts(vol, number, uploader)
+        upload_text_category_page(vol, uploader)
+        # vol.complete_upload!
+      rescue AASM::InvalidTransition => state_machine_error
+        puts state_machine_error
+        state_machine_error
+        ActionCable.server.broadcast 'alerts',
+          message: 'state machine error',
+          html_class: 'danger',
+          text_decoration: 's', # strikethrough
+          page_type: 'ERROR',
+          page_name: "#{vol}"
+      rescue => e
+        puts "some error: #{vol.name}"
+        puts e
+      end
     end
     ActionCable.server.broadcast 'alerts',
       message: "Volumes & Texts have finished uploading.",
@@ -24,7 +38,7 @@ class VolumeTextUploader
 #=================================================
 
     def upload_templates(volume_number, uploader)
-      volume_templates = Volume.volume_templates # we're assuming that all templates are less than 2mb in size
+      volume_templates = Volume.volume_templates
       volume_templates.each do |volume|
         volume.texts.each do |text|
           begin
@@ -37,6 +51,7 @@ class VolumeTextUploader
               html_class: "success",
               text_decoration: "b", # bold
               page_type: "VOLUME TEMPLATE",
+              url: target_url(text.destination, response.data['pageid']),
               page_name: "#{title}"
           rescue MediawikiApi::ApiError => api_error
             puts "UPLOAD ERROR: #{api_error} (#{title})"
@@ -55,18 +70,18 @@ class VolumeTextUploader
       volume.texts.each do |text|
         begin
           template    = find_template(text)
-          title       = "TESTING_#{text.name}"
+          title       = text.name
           categories  = category_tags(text)
           content     = compile_content(text, template, vol_num, categories)
           response    = uploader.create_page(title, content)
           text.update(api_response: response.data['result'])
-          text.successful_upload!
           puts response.data
           ActionCable.server.broadcast 'alerts',
             message: "TEXT successfully uploaded: #{title}",
             html_class: "success",
             text_decoration: "b", # bold
             page_type: "TEXT",
+            url: target_url(text.destination, response.data['pageid']),
             page_name: "#{title}"
         rescue MediawikiApi::ApiError => api_error
           puts "UPLOAD ERROR: #{api_error} (#{text.name}, #{text.id})"
@@ -94,6 +109,7 @@ class VolumeTextUploader
             html_class: "success",
             text_decoration: "b", # bold
             page_type: "TEMPLATE",
+            url: target_url(text.destination, response.data['pageid']),
             page_name: "#{title}"
         rescue MediawikiApi::ApiError => api_error
           puts "UPLOAD ERROR: #{api_error} (#{title}, text.id: #{text.id})"
@@ -117,22 +133,24 @@ class VolumeTextUploader
     end
 
     def compile_title(text, vol_num)
-      title = replace_collection_name(text)
+      title = text.name
+      title = replace_collection_name(title, text)
       title = replace_volume_number(title, vol_num)
       title = format_category_title(title)
-      title + "-TESTING"
+      title
     end
 
     def compile_content(text, template, vol_num, categories=[])
       content = replace_volume_number(template.content, vol_num)
+      content = replace_collection_name(content, text) unless text.nil?
       content = replace_text_number(content, text) unless text.nil?
       content = replace_content(content, text) unless text.nil?
       content = append_categories(content, categories)
     end
 
-    def replace_collection_name(text)
+    def replace_collection_name(string, text)
       coll_name = text.volume.collection.name
-      text.name.gsub(/@@+/, coll_name)
+      string.gsub(/@@+/, coll_name)
     end
 
     def replace_volume_number(string, vol_num)
@@ -165,6 +183,10 @@ class VolumeTextUploader
       # EXAMPLE: category_tag = "[[Category:VALUE]]"
       categories = text.categories.insert(0, text.volume.name)
       categories.map {|cat| "[[Category:#{cat}]]" }
+    end
+
+    def target_url(destination, pageid)
+      "http://#{destination}.tsadra.org/?curid=#{pageid}"
     end
 
     def build_mediawiki_uploader(subdomain)

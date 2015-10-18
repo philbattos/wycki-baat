@@ -7,4 +7,4 @@ App.messages = App.cable.subscriptions.create 'AlertsChannel',
     "<div class='alert alert-#{data.html_class} fade in'> #{data.message} </div>"
 
   listUploadedFile: (data) ->
-    "<li class='text-#{data.html_class}'><#{data.text_decoration}> #{data.page_type}: #{data.page_name} </#{data.text_decoration}></li>"
+    "<li class='text-#{data.html_class}'><#{data.text_decoration}> #{data.page_type}: <a href=#{data.url} target='_blank'>#{data.page_name}</a> </#{data.text_decoration}></li>"

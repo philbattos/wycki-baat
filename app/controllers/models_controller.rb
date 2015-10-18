@@ -4,14 +4,7 @@ class ModelsController < ApplicationController
   # GET /models
   # GET /models.json
   def index
-    @model = Model.new
-    @model.digest_auth_request
-    # @results = Net::HTTP.get('http://research.tsadra.org')
-    # curl = `curl --digest -u drleditorthree:tsadra-drl321 https://research.tsadra.org/index.php/Main_Page`
-    # puts curl
-    # respond_to do |format|
-    #   format.json { render :index, status: :created }
-    # end
+    @models = Model.all
   end
 
   # GET /models/1
@@ -73,25 +66,6 @@ class ModelsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def model_params
       params.require(:model).permit(:name, :destination)
-    end
-
-    def folder_confirmation(selected_folder)
-      directories = selected_folder.map do |f|
-        f.headers.match(/(.+filename=\")(.+)(\"\r\n.+)/)[2].split('/')
-      end
-      depth = directories.max.count
-      directories.reject! {|d| d.include? ".DS_Store" }
-      messages = []
-      if directories.any? {|d| d.count < depth} # selected directory has subdirectories
-        messages << "wrong number of subdirectories"
-      end
-      if directories.map {|d| d.first}.uniq.count > 1
-        messages << "too many first-level directories"
-      end
-      if directories.map {|d| d.second}.uniq.count > 1
-        messages << "too many second-level directories"
-      end
-      messages
     end
 
 end

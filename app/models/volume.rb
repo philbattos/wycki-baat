@@ -45,11 +45,12 @@ class Volume < ActiveRecord::Base
   #    Public Methods
   #-------------------------------------------------
   def self.save_volumes_and_texts(files, wiki, collection_id)
-    # verify that all files are .txt files so that we don't try to save/upload images or pdfs
+    # verify that all files are .txt (or .rtf) files so that we don't try to save/upload images or pdfs
     Volume.transaction do
       files.each do |file|
         path = extract_path(file)
-        root, volume_name, *categories, text_name = path.split('/') # EXAMPLE: wikipages/volume1/*/text-name
+        root, *categories, volume_name, text_name = path.split('/') # EXAMPLE: wikipages/volume1/*/text-name
+        raise IOError, "Wrong directory selected. Please select 'Content' instead of '#{root}'." unless root.match(/\AContent.*\z/)
         is_skippable?(text_name) ? next : text_name.slice!('.txt')
         volume = Volume.find_or_create_by!(name: volume_name, destination: wiki, collection_id: collection_id)
         volume.texts.create!(
@@ -70,6 +71,8 @@ class Volume < ActiveRecord::Base
   rescue ActiveRecord::RecordInvalid => validation_error
     puts "ERROR in Volume model: #{validation_error}"
     validation_error
+  rescue IOError => input_error
+    input_error
   end
 
 #=================================================

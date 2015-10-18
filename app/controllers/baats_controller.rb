@@ -5,12 +5,14 @@ class BaatsController < ApplicationController
   end
 
   def create
-    collection_name = params[:baat][:collection]
+    collection      = params[:baat][:collection]
+    collection_name = collection.blank? ? 'UNKNOWN-COLLECTION' : collection
     upload_type     = params[:baat][:type]
     wiki            = params[:baat][:destination]
     volumes         = params[:volume_files]
     templates       = params[:template_files]
     pdfs            = params[:pdf_files]
+    images          = params[:images]
 
     collection = Collection.find_or_create_by!(name: collection_name, destination: wiki)
 
@@ -23,7 +25,7 @@ class BaatsController < ApplicationController
         TemplateUploader.perform_async(wiki)
       else # error in saving template
         error = response.to_s
-        flash[:error] = "There was a problem saving a Template. (#{error}.) No files were uploaded."
+        flash[:error] = "There was a problem saving a Template. (#{error}) No files were uploaded."
       end
     when 'volume-texts'
       Volume.destroy_all # this is done to keep the Heroku database small (and free)
@@ -33,29 +35,32 @@ class BaatsController < ApplicationController
         VolumeTextUploader.perform_async(wiki)
       else # error in saving volumes & texts
         error = response.to_s
-        flash[:error] = "There was a problem saving some Volumes or Texts. (#{error}.) No files were uploaded."
+        flash[:error] = "There was a problem saving some Volumes or Texts. (#{error}) No files were uploaded."
       end
     when 'pdfs'
-      raise 'NOT WORKING YET (invalid byte sequence in UTF-8)'
-      PdfOriginal.destroy_all
-      response = PdfOriginal.save_files(pdfs, wiki, collection.id)
+      response = PdfOriginal.save_files(pdfs, wiki, collection)
       if response == true
         flash[:notice] = "The selected PDFs have been saved to the database and are being dispatched to background jobs for uploading."
         PDFUploader.perform_async(wiki)
       else # error in saving PDFs
         error = response.to_s
-        flash[:error] = "There was a problem saving some PDFs. (#{error}.) No files were uploaded."
+        flash[:error] = "There was a problem saving some PDFs. (#{error}) No files were uploaded."
       end
     when 'images'
-      raise 'NOT IMPLEMENTED YET'
+      response = Image.save_files(images, wiki, collection)
+      if response == true
+        flash[:notice] = "The selected images have been saved to the database and are being dispatched to background jobs for uploading."
+        ImageUploader.perform_async(wiki)
+      else # error in saving images
+        error = response.to_s
+        flash[:error] = "There was a problem saving some images. (#{error}) No files were uploaded."
+      end
     end
 
     # verify that folder/files look correct
     # folder_confirmation(selected_folder)
 
-    respond_to do |format|
-      format.html { redirect_to "/" }
-    end
+    redirect_to :back
   end
 
 #=================================================

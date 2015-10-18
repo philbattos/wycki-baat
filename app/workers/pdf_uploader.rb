@@ -2,36 +2,32 @@ class PDFUploader
   include Sidekiq::Worker
 
   def perform(wiki)
-    uploader  = build_mediawiki_uploader(wiki)
-    pdfs      = Dir['public/uploads/pdfs/*.pdf']
+    uploader      = build_mediawiki_uploader(wiki)
+    uploaded_pdfs = Dir['public/uploads/pdfs/**/*.pdf']
 
-    pdfs.each do |pdf|
+    uploaded_pdfs.each do |pdf|
       begin
-        # template.start_upload!
-        title     = build_title(pdf)
-        # content   = File.foreach(pdf).to_a.join('')
-        content   = 'TEST CONTENT'
-        # add categories?
-        response  = uploader.create_page(title, content)
-        # response  = uploader.action :upload, filename: title, file: content
+        title           = build_title(pdf)
+        comments        = build_comments(pdf) # category tags
+        ignorewarnings  = true # allows multiple uploads with same filename
+        response        = uploader.upload_image title, pdf, comments, ignorewarnings
         puts response.data
         ActionCable.server.broadcast 'alerts',
           message: "PDF successfully uploaded: #{title}",
           html_class: "success",
           text_decoration: "b", # bold
           page_type: "PDF",
+          url: response.data['imageinfo']['descriptionurl'],
           page_name: "#{title}"
-        # template.complete_upload!
+        File.delete(pdf)
       rescue MediawikiApi::ApiError => api_error
-        # puts "UPLOAD ERROR: #{api_error} (#{title})"
-        # pdf.update(api_response: api_error)
-        # pdf.failed_upload!
-        # ActionCable.server.broadcast 'alerts',
-        #   message: "Uploading failed for PDF #{title}: #{api_error}",
-        #   html_class: "danger",
-        #   text_decoration: "s", # strikethrough
-        #   page_type: "PDF",
-        #   page_name: "#{title}"
+        puts "UPLOAD ERROR: #{api_error} (#{title})"
+        ActionCable.server.broadcast 'alerts',
+          message: "Uploading failed for PDF #{title}: #{api_error}",
+          html_class: "danger",
+          text_decoration: "s", # strikethrough
+          page_type: "PDF",
+          page_name: "#{title}"
       end
     end
     ActionCable.server.broadcast 'alerts',
@@ -51,7 +47,15 @@ class PDFUploader
 
     def build_title(pdf)
       filename = File.basename(pdf)
-      "File:#{filename}-TESTING"
+      "File:#{filename}"
+    end
+
+    def build_comments(pdf)
+      path = pdf.split('public/uploads/pdfs/').last
+      collection, *categories, file = path.split('/')
+      filename = File.basename(file, '.pdf')
+      category_tags = categories.map! { |category| "[[Category:#{category}]]\n" }.join('')
+      category_tags + "[[Category:#{filename}]]\n"
     end
 
     def wiki_url(subdomain)

@@ -12,6 +12,8 @@ class Template < ActiveRecord::Base
                     format: { with: /\A[^.].+$\z/, message: "Template name must not start with a dot(.)" }
   validates :destination, presence: true,
                           inclusion: { :in => %w[ librarywiki terzod research ], message: "'%{value}' is not a valid wiki destination. Please enter 'librarywiki', 'terdzod', or 'research'" }
+  validates :file_root, presence: true,
+                        format: { with: /\ATemplates\z/, message: "The selected folder containing templates should be named 'Templates'. It looks like you selected something else." }
 
   #-------------------------------------------------
   #    Scopes
@@ -48,6 +50,7 @@ class Template < ActiveRecord::Base
       files.each do |file|
         path = extract_path(file)
         root, *categories, text_name = path.split('/') # EXAMPLE: Templates/*/Main_Page.txt
+        raise IOError, "Wrong directory selected. Please select 'Templates' instead of '#{root}'." unless root.match(/\ATemplates\z/)
         is_skippable?(text_name) ? next : text_name.slice!('.txt')
         Template.create!(
           collection_id:  collection_id,
@@ -68,6 +71,8 @@ class Template < ActiveRecord::Base
   rescue ActiveRecord::RecordInvalid => validation_error
     puts "ERROR in Template model: #{validation_error}"
     validation_error
+  rescue IOError => input_error
+    input_error
   end
 
 #=================================================

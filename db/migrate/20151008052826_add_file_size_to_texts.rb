@@ -5,8 +5,12 @@ class AddFileSizeToTexts < ActiveRecord::Migration
     add_column :texts, :aasm_state, :string
 
     add_column :volumes, :aasm_state, :string
+    add_column :volumes, :api_response, :text
 
     add_column :pdf_originals, :aasm_state, :string
     add_column :pdf_originals, :api_response, :text
+
+    add_column :images, :aasm_state, :string
+    add_column :images, :api_response, :text
   end
 end
