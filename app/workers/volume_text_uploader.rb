@@ -12,6 +12,8 @@ class VolumeTextUploader
         # verify collection name??
         upload_templates(number, uploader)
         upload_compiled_texts(vol, number, uploader)
+        upload_volume_category_page(vol, uploader)
+        upload_karchag_category_page(vol, uploader)
         upload_text_category_page(vol, uploader)
         # vol.complete_upload!
       rescue AASM::InvalidTransition => state_machine_error
@@ -47,19 +49,19 @@ class VolumeTextUploader
             response  = uploader.create_page(title, content)
             puts response.data
             ActionCable.server.broadcast 'alerts',
-              message: "VOLUME TEMPLATE successfully uploaded: #{title}",
+              message: "VOLUME MODEL successfully uploaded: #{title}",
               html_class: "success",
               text_decoration: "b", # bold
-              page_type: "VOLUME TEMPLATE",
+              page_type: "VOLUME MODEL",
               url: target_url(text.destination, response.data['pageid']),
               page_name: "#{title}"
           rescue MediawikiApi::ApiError => api_error
             puts "UPLOAD ERROR: #{api_error} (#{title})"
             ActionCable.server.broadcast 'alerts',
-              message: "Uploading failed for VOLUME TEMPLATE #{title}: #{api_error}",
+              message: "Uploading failed for VOLUME MODEL #{title}: #{api_error}",
               html_class: "danger",
               text_decoration: "s", # strikethrough
-              page_type: "VOLUME TEMPLATE",
+              page_type: "VOLUME MODEL",
               page_name: "#{title}"
           end
         end
@@ -97,6 +99,50 @@ class VolumeTextUploader
       end
     end
 
+    def upload_volume_category_page(volume, uploader)
+      title = "Category:#{volume.name}"
+      content = "{{VolumeCategoryPage}}"
+      response = uploader.create_page(title, content)
+      puts response.data
+      ActionCable.server.broadcast 'alerts',
+        message: "VOLUME-CATEGORY successfully uploaded: #{title}",
+        html_class: "success",
+        text_decoration: "b", # bold
+        page_type: "VOLUME-CATEGORY",
+        url: target_url(volume.destination, response.data['pageid']),
+        page_name: "#{title}"
+    rescue MediawikiApi::ApiError => api_error
+      puts "UPLOAD ERROR: #{api_error} (#{title}, volume.id: #{volume.id})"
+      ActionCable.server.broadcast 'alerts',
+        message: "Uploading failed for VOLUME-CATEGORY #{title}: #{api_error}",
+        html_class: "danger",
+        text_decoration: "s", # strikethrough
+        page_type: "VOLUME-CATEGORY",
+        page_name: "#{title}"
+    end
+
+    def upload_karchag_category_page(volume, uploader)
+      title = "Category:#{volume.name}-Karchag"
+      content = "{{KarchagCategoryPage}}"
+      response = uploader.create_page(title, content)
+      puts response.data
+      ActionCable.server.broadcast 'alerts',
+        message: "KARCHAG-CATEGORY successfully uploaded: #{title}",
+        html_class: "success",
+        text_decoration: "b", # bold
+        page_type: "KARCHAG-CATEGORY",
+        url: target_url(volume.destination, response.data['pageid']),
+        page_name: "#{title}"
+    rescue MediawikiApi::ApiError => api_error
+      puts "UPLOAD ERROR: #{api_error} (#{title}, volume.id: #{volume.id})"
+      ActionCable.server.broadcast 'alerts',
+        message: "Uploading failed for KARCHAG-CATEGORY #{title}: #{api_error}",
+        html_class: "danger",
+        text_decoration: "s", # strikethrough
+        page_type: "KARCHAG-CATEGORY",
+        page_name: "#{title}"
+    end
+
     def upload_text_category_page(volume, uploader)
       volume.texts.each do |text|
         begin
@@ -105,19 +151,19 @@ class VolumeTextUploader
           response  = uploader.create_page(title, content)
           puts response.data
           ActionCable.server.broadcast 'alerts',
-            message: "TEMPLATE successfully uploaded: #{title}",
+            message: "TEXT-CATEGORY successfully uploaded: #{title}",
             html_class: "success",
             text_decoration: "b", # bold
-            page_type: "TEMPLATE",
+            page_type: "TEXT-CATEGORY",
             url: target_url(text.destination, response.data['pageid']),
             page_name: "#{title}"
         rescue MediawikiApi::ApiError => api_error
           puts "UPLOAD ERROR: #{api_error} (#{title}, text.id: #{text.id})"
           ActionCable.server.broadcast 'alerts',
-            message: "Uploading failed for TEMPLATE #{title}: #{api_error}",
+            message: "Uploading failed for TEXT-CATEGORY #{title}: #{api_error}",
             html_class: "danger",
             text_decoration: "s", # strikethrough
-            page_type: "TEMPLATE",
+            page_type: "TEXT-CATEGORY",
             page_name: "#{title}"
         end
       end

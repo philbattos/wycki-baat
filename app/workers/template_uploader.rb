@@ -49,7 +49,7 @@ class TemplateUploader
     end
 
     def build_title(template)
-      template.name.gsub('-', ':')
+      template.name.gsub('$', ':')
     end
 
     def target_url(destination, pageid)
