@@ -15,6 +15,7 @@
 /log/*.log
 /tmp
 dump.rdb
+/public/uploads/pdf_original
 
 # Ignore personal reference
 notes.haml
