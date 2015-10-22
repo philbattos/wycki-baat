@@ -44,9 +44,10 @@ class VolumeTextUploader
       volume_templates.each do |volume|
         volume.texts.each do |text|
           begin
-            title     = compile_title(text, volume_number)
-            content   = compile_content(nil, text, volume_number)
-            response  = uploader.create_page(title, content)
+            title       = compile_title(text, volume_number)
+            categories  = category_tags(text)
+            content     = compile_content(nil, text, volume_number, categories)
+            response    = uploader.create_page(title, content)
             puts response.data
             ActionCable.server.broadcast 'alerts',
               message: "VOLUME MODEL successfully uploaded: #{title}",
@@ -188,7 +189,7 @@ class VolumeTextUploader
 
     def compile_content(text, template, vol_num, categories=[])
       content = replace_volume_number(template.content, vol_num)
-      content = replace_collection_name(content, text) unless text.nil?
+      content = text.nil? ? replace_collection_name(content, template) : replace_collection_name(content, text)
       content = replace_text_number(content, text) unless text.nil?
       content = replace_content(content, text) unless text.nil?
       content = append_categories(content, categories)
@@ -221,13 +222,20 @@ class VolumeTextUploader
     # end
 
     def append_categories(content, categories)
+      # categories = clean_categories(categories)
       content += "\n" + categories.join("\n") if categories.present?
       content
     end
 
+    def ignore_categories
+      [ '', 'Models', 'Model Stubs' ]
+    end
+
     def category_tags(text)
       # EXAMPLE: category_tag = "[[Category:VALUE]]"
-      categories = text.categories.insert(0, text.volume.name)
+      vol_name    = text.volume.name
+      categories  = text.categories
+      categories.insert(0, vol_name) unless ignore_categories.include? vol_name
       categories.map {|cat| "[[Category:#{cat}]]" }
     end
 
