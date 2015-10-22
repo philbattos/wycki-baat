@@ -38,6 +38,7 @@ class BaatsController < ApplicationController
         flash[:error] = "There was a problem saving some Volumes or Texts. (#{error}) No files were uploaded."
       end
     when 'pdfs'
+      PdfOriginal.destroy_all
       response = PdfOriginal.save_files(pdfs, wiki, collection)
       if response == true
         flash[:notice] = "The selected PDFs have been saved to the database and are being dispatched to background jobs for uploading."

@@ -222,7 +222,6 @@ class VolumeTextUploader
     # end
 
     def append_categories(content, categories)
-      # categories = clean_categories(categories)
       content += "\n" + categories.join("\n") if categories.present?
       content
     end

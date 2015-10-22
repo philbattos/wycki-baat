@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008052826) do
+ActiveRecord::Schema.define(version: 20151022045521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20151008052826) do
     t.datetime "updated_at",   null: false
     t.string   "aasm_state"
     t.text     "api_response"
+    t.string   "image_file"
   end
 
   create_table "pdf_originals", force: :cascade do |t|
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20151008052826) do
     t.datetime "updated_at",   null: false
     t.string   "aasm_state"
     t.text     "api_response"
+    t.string   "pdf_file"
   end
 
   create_table "templates", force: :cascade do |t|

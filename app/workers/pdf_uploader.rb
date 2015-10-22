@@ -3,14 +3,15 @@ class PDFUploader
 
   def perform(wiki)
     uploader      = build_mediawiki_uploader(wiki)
-    uploaded_pdfs = Dir['public/uploads/pdfs/**/*.pdf']
+    uploaded_pdfs = PdfOriginal.all
 
     uploaded_pdfs.each do |pdf|
       begin
         title           = build_title(pdf)
-        comments        = build_comments(pdf) # category tags
+        # comments        = build_comments(pdf) # category tags
         ignorewarnings  = true # allows multiple uploads with same filename
-        response        = uploader.upload_image title, pdf, comments, ignorewarnings
+        # response        = uploader.upload_image title, pdf, comments, ignorewarnings
+        response        = uploader.upload_image title, pdf.pdf_file.current_path, 'testing-pdfs', ignorewarnings
         puts response.data
         ActionCable.server.broadcast 'alerts',
           message: "PDF successfully uploaded: #{title}",
@@ -19,7 +20,7 @@ class PDFUploader
           page_type: "PDF",
           url: response.data['imageinfo']['descriptionurl'],
           page_name: "#{title}"
-        File.delete(pdf)
+        # File.delete(pdf)
       rescue MediawikiApi::ApiError => api_error
         puts "UPLOAD ERROR: #{api_error} (#{title})"
         ActionCable.server.broadcast 'alerts',
@@ -46,7 +47,8 @@ class PDFUploader
     end
 
     def build_title(pdf)
-      filename = File.basename(pdf)
+      # filename = File.basename(pdf)
+      filename = pdf.pdf_file_identifier
       "File:#{filename}"
     end
 
