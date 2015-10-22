@@ -11,7 +11,8 @@ class PDFUploader
         # comments        = build_comments(pdf) # category tags
         ignorewarnings  = true # allows multiple uploads with same filename
         # response        = uploader.upload_image title, pdf, comments, ignorewarnings
-        response        = uploader.upload_image title, pdf.pdf_file.current_path, 'testing-pdfs', ignorewarnings
+        filepath        = File.join('public', pdf.pdf_file.url)
+        response        = uploader.upload_image title, filepath, 'testing-pdfs', ignorewarnings
         puts response.data
         ActionCable.server.broadcast 'alerts',
           message: "PDF successfully uploaded: #{title}",
