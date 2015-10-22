@@ -205,7 +205,7 @@ class VolumeTextUploader
     end
 
     def replace_text_number(string, text)
-      text_num = text.name.split('-').last
+      text_num = text.name.split('-').last.match(/\d+/)
       string.gsub(/%%+/, text_num)
     end
 
