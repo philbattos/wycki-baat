@@ -1,20 +1,37 @@
 class PDFUploader
   include Sidekiq::Worker
 
-  def perform(wiki)
+  def perform(wiki, count)
+    retries = 0
+    begin
+      puts "retries: #{retries}"
+      puts "PDF-count: #{PdfOriginal.count}"
+      if count == PdfOriginal.count
+        send_pdfs_to_wiki(wiki)
+        retries = 21
+      elsif retries == 20
+        raise 'All retries completed; PDFs took too long to save to AWS'
+      else
+        retries += 1
+        sleep 5
+      end
+    rescue => e
+      puts e
+      e
+    end while retries < 21
+  end
+
+  def send_pdfs_to_wiki(wiki)
     uploader      = build_mediawiki_uploader(wiki)
     uploaded_pdfs = PdfOriginal.all
-
     uploaded_pdfs.each do |pdf|
+      puts "pdf url: #{pdf.pdf_file.url}"
       begin
         title           = build_title(pdf)
         # comments        = build_comments(pdf) # category tags
         ignorewarnings  = true # allows multiple uploads with same filename
-        # response        = uploader.upload_image title, pdf, comments, ignorewarnings
-        # filepath        = pdf.pdf_file.url
         temp_file       = URI.parse(pdf.pdf_file.url)
         filepath        = temp_file.open
-        # filepath        = pdf.pdf_file.url.gsub('tsadra.s3', 's3-us-west-1')
         response        = uploader.upload_image title, filepath, 'testing-pdfs', ignorewarnings
         puts response.data
         ActionCable.server.broadcast 'alerts',
@@ -51,7 +68,6 @@ class PDFUploader
     end
 
     def build_title(pdf)
-      # filename = File.basename(pdf)
       filename = pdf.pdf_file_identifier
       "File:#{filename}"
     end

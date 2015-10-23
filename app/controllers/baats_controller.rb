@@ -38,12 +38,13 @@ class BaatsController < ApplicationController
         flash[:error] = "There was a problem saving some Volumes or Texts. (#{error}) No files were uploaded."
       end
     when 'pdfs'
-      PdfOriginal.destroy_all
       flash[:success] = "The selected PDFs are being stored in AWS S3... Please wait."
+      PdfOriginal.destroy_all
+      count = pdfs.count
       response = PdfOriginal.save_files(pdfs, wiki, collection)
       if response == true
         flash[:notice] = "The selected PDFs have been saved to the database and are being dispatched to background jobs for uploading."
-        PDFUploader.perform_async(wiki)
+        PDFUploader.perform_async(wiki, count)
       else # error in saving PDFs
         error = response.to_s
         flash[:error] = "There was a problem saving some PDFs. (#{error}) No files were uploaded."

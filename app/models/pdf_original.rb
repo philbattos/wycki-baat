@@ -45,13 +45,16 @@ class PdfOriginal < ActiveRecord::Base
       path = extract_path(pdf)
       root, *categories, filename = path.split('/')
       raise IOError, "Wrong directory selected. Please select 'PDFs' instead of '#{root}'." unless root.match(/\APDFs\z/)
-      pdf_original = PdfOriginal.new
-      pdf_original.pdf_file = pdf
-      pdf_original.save!
-      # pdf_original.pdf_file.url
-      # pdf_original.pdf_file.current_path
-      # pdf_original.pdf_file_identifier
-      puts "File uploaded: #{pdf_original.pdf_file.url}"
+      # pdf_original = PdfOriginal.new
+      # pdf_original.pdf_file = pdf
+      # pdf_original.save!
+      # pdf_original = PdfOriginal.create!(name: filename)
+
+      path      = pdf.path
+      # filename  = pdf.original_filename
+      AWSUploader.perform_async(path)
+
+      # puts "File uploaded: #{pdf_original.pdf_file.url}"
     end
     true
   rescue IOError => input_error
