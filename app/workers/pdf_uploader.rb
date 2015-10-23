@@ -11,7 +11,8 @@ class PDFUploader
         # comments        = build_comments(pdf) # category tags
         ignorewarnings  = true # allows multiple uploads with same filename
         # response        = uploader.upload_image title, pdf, comments, ignorewarnings
-        filepath        = File.join(Rails.root, 'tmp', pdf.pdf_file.url)
+        # filepath        = pdf.pdf_file.url
+        filepath        = pdf.pdf_file.url.gsub('tsadra.s3', 's3-us-west-1')
         response        = uploader.upload_image title, filepath, 'testing-pdfs', ignorewarnings
         puts response.data
         ActionCable.server.broadcast 'alerts',

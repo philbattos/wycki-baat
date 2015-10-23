@@ -39,6 +39,7 @@ class BaatsController < ApplicationController
       end
     when 'pdfs'
       PdfOriginal.destroy_all
+      flash[:success] = "The selected PDFs are being stored in AWS S3... Please wait."
       response = PdfOriginal.save_files(pdfs, wiki, collection)
       if response == true
         flash[:notice] = "The selected PDFs have been saved to the database and are being dispatched to background jobs for uploading."
