@@ -12,7 +12,9 @@ class PDFUploader
         ignorewarnings  = true # allows multiple uploads with same filename
         # response        = uploader.upload_image title, pdf, comments, ignorewarnings
         # filepath        = pdf.pdf_file.url
-        filepath        = pdf.pdf_file.url.gsub('tsadra.s3', 's3-us-west-1')
+        temp_file       = URI.parse(pdf.pdf_file.url)
+        filepath        = temp_file.open
+        # filepath        = pdf.pdf_file.url.gsub('tsadra.s3', 's3-us-west-1')
         response        = uploader.upload_image title, filepath, 'testing-pdfs', ignorewarnings
         puts response.data
         ActionCable.server.broadcast 'alerts',
