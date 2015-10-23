@@ -13,6 +13,6 @@ class AWSUploader
 
     ActionCable.server.broadcast 'alerts',
       message: "PDF successfully stored on S3: #{pdf.pdf_file_identifier}",
-      html_class: "success",
+      html_class: "success"
   end
 end
