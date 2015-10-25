@@ -1,0 +1,22 @@
+%h3 All PDFs
+
+%br
+
+= form_for PdfOriginal.new, html: { id: "fileupload" } do |f|
+  = f.label :example, "Upload PDFs:"
+  = f.file_field :example, name: "example[]", multiple: true, mozdirectory: "", webkitdirectory: "", directory: ""
+
+%hr
+
+%h4 PDF Gallery
+#paintings
+  = render @pdf_originals
+
+.clear
+
+#datepicker
+
+:javascript
+  $(function() {
+      $( "#datepicker" ).datepicker();
+  });
