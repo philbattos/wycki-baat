@@ -1,7 +1,6 @@
 require 'fileutils'
 
 class PdfOriginal < ActiveRecord::Base
-  # mount_uploader :pdf_file, PdfStorage
 
   #-------------------------------------------------
   #    Associations

@@ -1,5 +1,5 @@
-<% if @pdf_original.new_record? %>
-  alert("Failed to upload PDF: <%= j @pdf_original.errors.full_messages.join(', ').html_safe %>");
+<% if @pdf.new_record? %>
+  alert("Failed to upload PDF: <%= j @pdf.errors.full_messages.join(', ').html_safe %>");
 <% else %>
-  $("#pdf_originals").append("<%= j render(@pdf_original) %>");
+  $("#pdfs").append("<%= j render(@pdf) %>");
 <% end %>

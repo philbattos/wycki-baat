@@ -9,11 +9,11 @@ class PDFUploader
 
     begin
       title           = build_title(pdf)
-      # comments        = build_comments(pdf) # category tags
+      comments        = build_comments(pdf) # category tags
       ignorewarnings  = true # allows multiple uploads with same filename
       temp_file       = URI.parse(pdf.pdf_file)
       filepath        = temp_file.open
-      response        = uploader.upload_image title, filepath, 'testing-pdfs', ignorewarnings
+      response        = uploader.upload_image title, filepath, comments, ignorewarnings
       puts response.data
       ActionCable.server.broadcast 'alerts',
         message: "PDF successfully uploaded: #{title}",
@@ -22,7 +22,6 @@ class PDFUploader
         page_type: "PDF",
         url: response.data['imageinfo']['descriptionurl'],
         page_name: "#{title}"
-      # File.delete(pdf)
     rescue MediawikiApi::ApiError => api_error
       puts "UPLOAD ERROR: #{api_error} (#{title})"
       ActionCable.server.broadcast 'alerts',
@@ -37,6 +36,8 @@ class PDFUploader
     #     message: "PDFs have finished uploading.",
     #     html_class: "info"
     # end
+
+    # pdf.delete
   end
 
 #=================================================
@@ -56,11 +57,8 @@ class PDFUploader
     end
 
     def build_comments(pdf)
-      path = pdf.split('public/uploads/pdfs/').last
-      collection, *categories, file = path.split('/')
-      filename = File.basename(file, '.pdf')
-      category_tags = categories.map! { |category| "[[Category:#{category}]]\n" }.join('')
-      category_tags + "[[Category:#{filename}]]\n"
+      category_tags = pdf.categories.map! { |category| "[[Category:#{category}]]\n" }.join('')
+      category_tags += "[[Category:#{pdf.name}]]\n"
     end
 
     def wiki_url(subdomain)

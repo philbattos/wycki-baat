@@ -18,7 +18,8 @@ class TemplatesController < ApplicationController
       flash[:error] = "There was a problem saving a Template. (#{error}) No files were uploaded."
     end
 
-    redirect_to action: 'index'
+    # redirect_to action: 'index'
+    redirect_to '/'
   end
 
 #=================================================

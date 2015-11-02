@@ -47,8 +47,6 @@ gem 'puma'                                      # server that supports streaming
 gem 'aasm'                                      # for tracking the state of uploaded objects (state_machine gem is neglected)
 gem 'actioncable', github: 'rails/actioncable'  # for real-time communication over websockets (for alerts from background jobs)
 # gem 'yomu'                                      # for reading different types of files (ex. .rtf instead of .txt)
-# gem 'carrierwave'                               # for uploading files
-# gem 'fog'                                       # required for using carrierwave with AWS
 gem 'jquery-fileupload-rails'                   # for jquery-file-upload
 gem 'aws-sdk'                                   # for direct uploads to S3
 

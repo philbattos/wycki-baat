@@ -9,20 +9,6 @@ class BaatsController < ApplicationController
     @image    = Image.new
   end
 
-  def create
-    # collection      = params[:baat][:collection]
-    # collection_name = collection.blank? ? 'UNKNOWN-COLLECTION' : collection
-    # upload_type     = params[:baat][:type]
-    # wiki            = params[:baat][:destination]
-
-    # collection = Collection.find_or_create_by!(name: collection_name, destination: wiki)
-
-    # verify that folder/files look correct
-    # folder_confirmation(selected_folder)
-
-    redirect_to :back
-  end
-
 #=================================================
   private
 #=================================================
@@ -32,7 +18,7 @@ class BaatsController < ApplicationController
     end
 
     def set_s3_direct_post
-      @s3_direct_post = S3_BUCKET.presigned_post( key:                    "uploads/#{SecureRandom.uuid}/${filename}",
+      @s3_direct_post = S3_BUCKET.presigned_post( key:                    "uploads/#{Time.now.strftime('%Y%^b%d-%^A%H%M-%S%L')}/${filename}",
                                                   success_action_status:  '201',
                                                   acl:                    'public-read' )
     end
@@ -41,19 +27,5 @@ class BaatsController < ApplicationController
     #   directories = files.map do |f|
     #     f.headers.match(/(.+filename=\")(.+)(\"\r\n.+)/)[2].split('/')
     #   end
-
-    #   depth = directories.max.count
-    #   directories.reject! {|d| d.include? ".DS_Store" }
-    #   messages = []
-    #   if directories.any? {|d| d.count < depth} # selected directory has subdirectories
-    #     messages << "wrong number of subdirectories"
-    #   end
-    #   if directories.map {|d| d.first}.uniq.count > 1
-    #     messages << "too many first-level directories"
-    #   end
-    #   if directories.map {|d| d.second}.uniq.count > 1
-    #     messages << "too many second-level directories"
-    #   end
-    # end
 
 end

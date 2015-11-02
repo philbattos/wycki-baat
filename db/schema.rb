@@ -43,12 +43,13 @@ ActiveRecord::Schema.define(version: 20151101070506) do
   create_table "images", force: :cascade do |t|
     t.string   "name"
     t.string   "destination"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "aasm_state"
     t.text     "api_response"
     t.string   "image_file"
     t.string   "image_url"
+    t.text     "categories",      default: [],              array: true
     t.string   "collection_name"
     t.integer  "collection_id"
   end
@@ -56,14 +57,15 @@ ActiveRecord::Schema.define(version: 20151101070506) do
   create_table "pdf_originals", force: :cascade do |t|
     t.string   "name"
     t.string   "destination"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "aasm_state"
     t.text     "api_response"
     t.string   "pdf_file"
     t.string   "pdf_url"
     t.string   "collection_name"
     t.integer  "collection_id"
+    t.text     "categories",      default: [],              array: true
   end
 
   create_table "templates", force: :cascade do |t|

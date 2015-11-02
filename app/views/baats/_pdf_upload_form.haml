@@ -22,8 +22,8 @@
           %span.glyphicon.glyphicon-info-sign{ "aria-hidden": "true" }
       .col-sm-6
         = f.file_field :pdf_file, name: "pdf_files[]", multiple: true, mozdirectory: "", webkitdirectory: "", directory: ""
-    .form-group
-      .col-sm-offset-1.col-sm-10
-        .text-center
-          %br
-          = submit_tag "Upload PDFs", :class => "btn btn-primary"
+    / .form-group
+    /   .col-sm-offset-1.col-sm-10
+    /     .text-center
+    /       %br
+    /       = submit_tag "Upload PDFs", :class => "btn btn-primary"

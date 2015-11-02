@@ -1,5 +1,5 @@
 class PdfOriginalsController < ApplicationController
-  before_action :set_s3_direct_post, only: [:index, :create]
+  # before_action :set_s3_direct_post, only: [:index, :create]
 
   def index
     @pdf_originals = PdfOriginal.all
@@ -10,26 +10,25 @@ class PdfOriginalsController < ApplicationController
     wiki            = params[:destination]
     collection      = Collection.find_or_create_by!(name: collection_name, destination: wiki)
 
-    if pdf = collection.pdf_originals.create(pdf_params)
-      # send pdf to worker
-      PDFUploader.perform_async(pdf.id)
+    if @pdf = collection.pdf_originals.create(pdf_params)
+      PDFUploader.perform_async(@pdf.id)
       flash[:notice] = "The selected PDF has been saved to the database and is being dispatched a background job for uploading."
     else
       flash[:error] = "There was a problem saving a PDF. Please try again. (#{error})"
     end
 
-    redirect_to action: 'index'
+    redirect_to '/'
   end
 
 #=================================================
   private
 #=================================================
     def pdf_params
-      params.permit(:name, :destination, :api_response, :pdf_file, :collection_name)
+      params.permit(:name, :destination, :api_response, :pdf_file, :collection_name, categories: [])
     end
 
     def set_s3_direct_post
-      @s3_direct_post = S3_BUCKET.presigned_post( key:                    "uploads/#{SecureRandom.uuid}/${filename}",
+      @s3_direct_post = S3_BUCKET.presigned_post( key:                    "uploads/#{Time.now.strftime('%Y%^b%d-%^A%H%M-%S%L')}/${filename}",
                                                   success_action_status:  '201',
                                                   acl:                    'public-read' )
     end

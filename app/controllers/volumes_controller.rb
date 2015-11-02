@@ -18,7 +18,8 @@ class VolumesController < ApplicationController
       flash[:error] = "There was a problem saving some Volumes or Texts. (#{error}) No files were uploaded."
     end
 
-    redirect_to action: 'index'
+    # redirect_to action: 'index'
+    redirect_to '/'
   end
 
 #=================================================
