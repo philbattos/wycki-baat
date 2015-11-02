@@ -1,7 +1,7 @@
-# encoding: utf-8
+# # encoding: utf-8
 
-class AwsStorage < CarrierWave::Uploader::Base
+# class AwsStorage < CarrierWave::Uploader::Base
 
-  storage :fog
+#   storage :fog
 
-end
+# end

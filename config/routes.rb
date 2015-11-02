@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :baats,         only: [:index, :create]
   resources :templates,     only: [:index, :create]
   resources :volumes,       only: [:index, :create]
-  resources :pdf_originals, only: [:index, :create]
   resources :images,        only: [:index, :create]
+
+  get   '/pdfs', to: 'pdf_originals#index', as: 'pdf_originals'
+  post  '/pdfs', to: 'pdf_originals#create'
 
 end

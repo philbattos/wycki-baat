@@ -13,7 +13,7 @@ class PdfOriginalsController < ApplicationController
     if pdf = collection.pdf_originals.create(pdf_params)
       # send pdf to worker
       PDFUploader.perform_async(pdf.id)
-      flash[:notice] = "The selected PDFs have been saved to the database and are being dispatched to background jobs for uploading."
+      flash[:notice] = "The selected PDF has been saved to the database and is being dispatched a background job for uploading."
     else
       flash[:error] = "There was a problem saving a PDF. Please try again. (#{error})"
     end
@@ -25,7 +25,7 @@ class PdfOriginalsController < ApplicationController
   private
 #=================================================
     def pdf_params
-      params.permit(:name, :destination, :api_response, :pdf_url, :pdf_file, :collection_name)
+      params.permit(:name, :destination, :api_response, :pdf_file, :collection_name)
     end
 
     def set_s3_direct_post

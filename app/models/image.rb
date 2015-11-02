@@ -1,7 +1,7 @@
 require 'fileutils'
 
 class Image < ActiveRecord::Base
-  mount_uploader :image_file, ImageStorage
+  # mount_uploader :image_file, ImageStorage
 
   #-------------------------------------------------
   #    Associations

@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class PDFUploader
   include Sidekiq::Worker
 
@@ -9,7 +11,7 @@ class PDFUploader
       title           = build_title(pdf)
       # comments        = build_comments(pdf) # category tags
       ignorewarnings  = true # allows multiple uploads with same filename
-      temp_file       = URI.parse(pdf.pdf_url)
+      temp_file       = URI.parse(pdf.pdf_file)
       filepath        = temp_file.open
       response        = uploader.upload_image title, filepath, 'testing-pdfs', ignorewarnings
       puts response.data

@@ -42,7 +42,7 @@ $ ->
         if progress == 100
           submitButton.prop 'disabled', false
           progressBar.text 'Saving done'
-          window.location.href = '/pdf_originals'
+          window.location.href = '/pdfs'
       start: (e) ->
         submitButton.prop 'disabled', true
         progressBar.css('background', 'green').css('display', 'block').css('width', '0%').text 'Loading...'
@@ -57,10 +57,10 @@ $ ->
         destination   = $('#pdf_original_destination').val()
         $.ajax
           type: 'POST'
-          url: '/pdf_originals'
+          url: '/pdfs'
           dataType: 'json'
           data:
-            pdf_url: url
+            pdf_file: url
             name: fileName
             destination: destination
             collection_name: collection
