@@ -33,7 +33,7 @@ $ ->
           # window.location.href = '/pdfs'
       start: (e) ->
         submitButton.prop 'disabled', true
-        progressBar.css('background', 'green').css('display', 'block').css('width', '0%').text 'Saving files...'
+        progressBar.css('background', 'green').css('display', 'block').css('width', '0%').text 'Saving...'
         return
       done: (e, data) ->
         # extract key, generate URL from response, and save filename to db
