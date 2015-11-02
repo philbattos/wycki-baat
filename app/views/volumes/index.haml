@@ -1,0 +1,18 @@
+.row
+  .col-md-12
+    = link_to 'uploads', baats_path
+
+.row
+  .col-md-12
+    %h3.text-center Volume/Text Upload Status
+    %hr
+
+.row
+  .col-md-5
+    %h4.text-center Messages
+    = render 'shared/flash'
+    .upload-alerts
+
+  .col-md-7
+    %h4.text-center Pages
+    .upload-progress

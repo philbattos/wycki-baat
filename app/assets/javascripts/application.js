@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic-plus
 //= require turbolinks
 //= require channels
 //= require_tree .

@@ -4,12 +4,10 @@ Rails.application.routes.draw do
 
   root 'baats#index'
 
-  resources :baats, only: [:index, :create] do |baat|
-    # collection { get :events } # for streaming via ActionController::Live
-  end
-  resources :models
-  resources :content
-  resources :pdf_originals
-  resources :images
+  resources :baats,         only: [:index, :create]
+  resources :templates,     only: [:index, :create]
+  resources :volumes,       only: [:index, :create]
+  resources :pdf_originals, only: [:index, :create]
+  resources :images,        only: [:index, :create]
 
 end

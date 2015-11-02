@@ -1,7 +1,7 @@
 App.messages = App.cable.subscriptions.create 'AlertsChannel',
   received: (data) ->
-    $('#upload-alerts').append @renderAlert(data)
-    $('#upload-progress').append @listUploadedFile(data) unless data.html_class == 'info'
+    $('.upload-alerts').append @renderAlert(data)
+    $('.upload-progress').append @listUploadedFile(data) unless data.html_class == 'info'
 
   renderAlert: (data) ->
     "<div class='alert alert-#{data.html_class} fade in'> #{data.message} </div>"

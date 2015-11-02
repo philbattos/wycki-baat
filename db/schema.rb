@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022045521) do
+ActiveRecord::Schema.define(version: 20151101070506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,21 +43,27 @@ ActiveRecord::Schema.define(version: 20151022045521) do
   create_table "images", force: :cascade do |t|
     t.string   "name"
     t.string   "destination"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "aasm_state"
     t.text     "api_response"
     t.string   "image_file"
+    t.string   "image_url"
+    t.string   "collection_name"
+    t.integer  "collection_id"
   end
 
   create_table "pdf_originals", force: :cascade do |t|
     t.string   "name"
     t.string   "destination"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "aasm_state"
     t.text     "api_response"
     t.string   "pdf_file"
+    t.string   "pdf_url"
+    t.string   "collection_name"
+    t.integer  "collection_id"
   end
 
   create_table "templates", force: :cascade do |t|
@@ -70,13 +76,14 @@ ActiveRecord::Schema.define(version: 20151022045521) do
     t.text     "file_headers"
     t.string   "file_root"
     t.string   "file_extension"
-    t.text     "categories",     default: [],              array: true
+    t.text     "categories",      default: [],              array: true
     t.decimal  "file_size"
     t.text     "api_response"
     t.string   "aasm_state"
     t.integer  "collection_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "collection_name"
   end
 
   create_table "texts", force: :cascade do |t|
@@ -104,10 +111,11 @@ ActiveRecord::Schema.define(version: 20151022045521) do
     t.string   "destination"
     t.string   "type"
     t.integer  "collection_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "aasm_state"
     t.text     "api_response"
+    t.string   "collection_name"
   end
 
 end

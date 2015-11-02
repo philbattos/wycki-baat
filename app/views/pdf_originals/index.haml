@@ -1,15 +1,42 @@
-%h3 All PDFs
+.row
+  .col-md-12
+    = link_to 'uploads', baats_path
 
-%br
+.row
+  .col-md-12
+    %h3.text-center PDF Upload Status
+    %hr
 
-= form_for PdfOriginal.new, html: { id: "fileupload" } do |f|
-  = f.label :example, "Upload PDFs:"
-  = f.file_field :example, name: "example[]", multiple: true, mozdirectory: "", webkitdirectory: "", directory: ""
+.row
+  .col-md-5
+    %h4.text-center Messages
+    = render 'shared/flash'
+    .upload-alerts
 
-%hr
+  .col-md-7
+    %h4.text-center Pages
+    .upload-progress
 
-%h4 PDF Gallery
-#paintings
-  = render @pdf_originals
 
-.clear
+/ %h3 All PDFs
+
+/ %br
+
+/ = form_for PdfOriginal.new, html: { :class => 'directupload', multipart: true, data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host }} do |f|
+/   = f.label :pdf_file, "Upload PDFs:"
+/   = f.file_field :pdf_file, name: "pdf_file", multiple: true
+/   = f.submit 'Save', :class => 'btn'
+
+/ %hr
+
+/ %h4 PDF Gallery
+/ #pdf_originals
+/   = render @pdf_originals
+
+/ .clear
+
+/ %script#pdf-upload{:type => "text/x-tmpl"}
+/   .upload
+/     {%=o.name%}
+/     .progress
+/       .bar{:style => "width: 0%;"}

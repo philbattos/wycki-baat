@@ -6,7 +6,7 @@ class PdfOriginal < ActiveRecord::Base
   #-------------------------------------------------
   #    Associations
   #-------------------------------------------------
-  # belongs_to :collection
+  belongs_to :collection
 
   #-------------------------------------------------
   #    Validations
@@ -40,26 +40,26 @@ class PdfOriginal < ActiveRecord::Base
   #   input_error
   # end
 
-  def self.save_files(pdfs, wiki, collection)
-    pdfs.each do |pdf|
-      path = extract_path(pdf)
-      root, *categories, filename = path.split('/')
-      raise IOError, "Wrong directory selected. Please select 'PDFs' instead of '#{root}'." unless root.match(/\APDFs\z/)
-      # pdf_original = PdfOriginal.new
-      # pdf_original.pdf_file = pdf
-      # pdf_original.save!
-      # pdf_original = PdfOriginal.create!(name: filename)
+  # def self.save_files(pdfs, wiki, collection)
+  #   pdfs.each do |pdf|
+  #     path = extract_path(pdf)
+  #     root, *categories, filename = path.split('/')
+  #     raise IOError, "Wrong directory selected. Please select 'PDFs' instead of '#{root}'." unless root.match(/\APDFs\z/)
+  #     # pdf_original = PdfOriginal.new
+  #     # pdf_original.pdf_file = pdf
+  #     # pdf_original.save!
+  #     # pdf_original = PdfOriginal.create!(name: filename)
 
-      path      = pdf.path
-      # filename  = pdf.original_filename
-      AWSUploader.perform_async(path)
+  #     path      = pdf.path
+  #     # filename  = pdf.original_filename
+  #     AWSUploader.perform_async(path)
 
-      # puts "File uploaded: #{pdf_original.pdf_file.url}"
-    end
-    true
-  rescue IOError => input_error
-    input_error
-  end
+  #     # puts "File uploaded: #{pdf_original.pdf_file.url}"
+  #   end
+  #   true
+  # rescue IOError => input_error
+  #   input_error
+  # end
 
 #=================================================
   private

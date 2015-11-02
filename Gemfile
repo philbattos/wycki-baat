@@ -49,6 +49,8 @@ gem 'actioncable', github: 'rails/actioncable'  # for real-time communication ov
 # gem 'yomu'                                      # for reading different types of files (ex. .rtf instead of .txt)
 gem 'carrierwave'                               # for uploading files
 gem 'fog'                                       # required for using carrierwave with AWS
+gem 'jquery-fileupload-rails'                   # for jquery-file-upload
+gem 'aws-sdk'                                   # for direct uploads to S3
 
 group :production do
   gem 'newrelic_rpm'                            # for monitoring site performance

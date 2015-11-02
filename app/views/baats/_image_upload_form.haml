@@ -1,4 +1,4 @@
-= form_for @baat do |f|
+= form_for @image do |f|
   .form-horizontal
     = f.hidden_field :type, value: 'images'
     .form-group
@@ -10,11 +10,11 @@
         = f.file_field :txt_file, name: "images[]", mozdirectory: "", webkitdirectory: "", directory: ""
     .form-group
       .col-sm-5.control-label
-        = f.label :collection, "Collection Name"
+        = f.label :collection_name, "Collection Name"
         = link_to "#", { "data-toggle": "tooltip", "data-placement": "top", title: collection_info } do
           %span.glyphicon.glyphicon-info-sign{ "aria-hidden": "true" }
       .col-sm-6
-        = f.text_field :collection, :class => "form-control", placeholder: "Terdzod, Sakya, etc."
+        = f.text_field :collection_name, :class => "form-control", placeholder: "Terdzod, Sakya, etc."
     .form-group
       .col-sm-5.control-label
         = f.label :destination, "Destination Wiki"
@@ -27,8 +27,3 @@
         .text-center
           %br
           = submit_tag "Upload Images", :class => "btn btn-primary"
-
-:javascript
-  $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-  });
