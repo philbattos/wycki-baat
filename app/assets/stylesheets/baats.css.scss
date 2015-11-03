@@ -1,8 +1,37 @@
-// Place all the styles related to the Baats controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 li a:hover {
   background: none;
   text-decoration: none;
+}
+
+.glyphicon.glyphicon-info-sign:hover {
+  background: none;
+  text-decoration: none;
+}
+
+[data-toggle='tooltip']:hover {
+  background: none;
+  text-decoration: none;
+}
+
+.header-stripe {
+  margin-top: 20px;
+  margin-left: -150px;
+  width: 150%;
+  height: 25px;
+  background: #77D2A4;
+  border-top: 2px solid #297B52;
+}
+
+.header-title {
+  font-family: 'Times New Roman', Georgia, Serif;
+  margin-left: 150px;
+  margin-top: -15px;
+}
+
+.header-logo {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: url('http://librarywiki.tsadra.org/images/LibWikiLogo5-160px.png');
+  background-size: cover;
 }
