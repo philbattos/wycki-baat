@@ -23,9 +23,4 @@ class BaatsController < ApplicationController
                                                   acl:                    'public-read' )
     end
 
-    # def folder_confirmation(files)
-    #   directories = files.map do |f|
-    #     f.headers.match(/(.+filename=\")(.+)(\"\r\n.+)/)[2].split('/')
-    #   end
-
 end
