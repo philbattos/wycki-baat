@@ -8,9 +8,8 @@ class TemplatesController < ApplicationController
 
     collection = Collection.find_or_create_by!(name: collection_name, destination: wiki)
 
-    Template.destroy_all
-
-    if Template.save_templates(templates, wiki, collection.id)
+    response = Template.save_templates(templates, wiki, collection.id)
+    if response == true
       flash[:notice] = "The selected Templates have been saved to the database and are being dispatched to background jobs for uploading."
       TemplateUploader.perform_async(wiki)
     else # error in saving template
@@ -18,14 +17,12 @@ class TemplatesController < ApplicationController
       flash[:error] = "There was a problem saving a Template. (#{error}) No files were uploaded."
     end
 
-    # redirect_to action: 'index'
-    redirect_to '/'
+    redirect_to :back
   end
 
 #=================================================
   private
 #=================================================
-
     def template_params
       params.require(:template).permit(:name, :destination, :collection_name, :type)
     end

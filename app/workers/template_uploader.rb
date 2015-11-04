@@ -32,6 +32,7 @@ class TemplateUploader
           page_type: "TEMPLATE",
           page_name: "#{title}"
       end
+      template.destroy
     end
     ActionCable.server.broadcast 'alerts',
       message: "Templates have finished uploading.",

@@ -31,13 +31,8 @@ class PDFUploader
         page_type: "PDF",
         page_name: "#{title}"
     end
-    # if PdfOriginal.all.count == PdfOriginal.uploaded.count
-    #   ActionCable.server.broadcast 'alerts',
-    #     message: "PDFs have finished uploading.",
-    #     html_class: "info"
-    # end
 
-    # pdf.delete
+    pdf.destroy
   end
 
 #=================================================
@@ -51,7 +46,6 @@ class PDFUploader
     end
 
     def build_title(pdf)
-      # filename = pdf.pdf_file_identifier
       filename = pdf.name
       "File:#{filename}"
     end

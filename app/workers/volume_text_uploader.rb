@@ -9,27 +9,27 @@ class VolumeTextUploader
       begin
         # vol.start_upload!
         collection, *label, number = vol.name.split('-')
-        # verify collection name??
         upload_templates(number, uploader)
         upload_compiled_texts(vol, number, uploader)
         upload_volume_category_page(vol, uploader)
         upload_karchag_category_page(vol, uploader)
         upload_text_category_page(vol, uploader)
         # vol.complete_upload!
-      rescue AASM::InvalidTransition => state_machine_error
-        puts state_machine_error
-        state_machine_error
-        ActionCable.server.broadcast 'alerts',
-          message: 'state machine error',
-          html_class: 'danger',
-          text_decoration: 's', # strikethrough
-          page_type: 'ERROR',
-          page_name: "#{vol}"
+      # rescue AASM::InvalidTransition => state_machine_error
+      #   puts state_machine_error
+      #   state_machine_error
+      #   ActionCable.server.broadcast 'alerts',
+      #     message: 'state machine error',
+      #     html_class: 'danger',
+      #     text_decoration: 's', # strikethrough
+      #     page_type: 'ERROR',
+      #     page_name: "#{vol}"
       rescue => e
         puts "some error: #{vol.name}"
         puts e
       end
     end
+    Volume.destroy_all
     ActionCable.server.broadcast 'alerts',
       message: "Volumes & Texts have finished uploading.",
       html_class: "info"

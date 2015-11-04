@@ -12,7 +12,6 @@ class BaatsController < ApplicationController
 #=================================================
   private
 #=================================================
-    # Never trust parameters from the scary internet, only allow the white list through.
     def baat_params
       params.require(:baat).permit(:name, :destination)
     end

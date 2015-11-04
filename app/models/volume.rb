@@ -20,9 +20,7 @@ class Volume < ActiveRecord::Base
   #-------------------------------------------------
   scope :page_templates,      -> { where name: 'Model Stubs' }
   scope :volume_templates,    -> { where name: 'Models' }
-  # scope :templates,           -> { where name: ['Model Stubs', 'Models'] }
   scope :volume_pages,        -> { where.not(name: ['Model Stubs', 'Models']) }
-    # TO DO: find volume pages associated with current upload; do not find pages from old uploads
 
   #-------------------------------------------------
   #    States
@@ -45,13 +43,17 @@ class Volume < ActiveRecord::Base
   #    Public Methods
   #-------------------------------------------------
   def self.save_volumes_and_texts(files, wiki, collection_id)
-    # verify that all files are .txt (or .rtf) files so that we don't try to save/upload images or pdfs
     Volume.transaction do
       files.each do |file|
         path = extract_path(file)
         root, *categories, volume_name, text_name = path.split('/') # EXAMPLE: wikipages/volume1/*/text-name
         raise IOError, "Wrong directory selected. Please select 'Content' instead of '#{root}'." unless root.match(/\AContent.*\z/)
-        is_skippable?(text_name) ? next : text_name.slice!('.txt')
+        if valid_file_type?(text_name)
+          text_name.slice!('.txt')
+        else # not a .txt file
+          send_alert_message(file)
+          next
+        end
         volume = Volume.find_or_create_by!(name: volume_name, destination: wiki, collection_id: collection_id)
         volume.texts.create!(
           name:           text_name,
@@ -83,9 +85,16 @@ class Volume < ActiveRecord::Base
       file.headers.match(/(filename=)("(.+)")/).captures.last
     end
 
-    def self.is_skippable?(text)
-      blacklist = [ nil, '.DS_Store' ]
-      blacklist.include? text
+    def self.valid_file_type?(text)
+      valid_types = [ '.txt' ]
+      file_type   = File.extname(text) unless text.nil?
+      valid_types.include? file_type
+    end
+
+    def self.send_alert_message(file)
+      ActionCable.server.broadcast 'alerts',
+        message: "Wrong file type. #{file.original_filename} not saved because it is not a .txt file.",
+        html_class: "info"
     end
 
 end

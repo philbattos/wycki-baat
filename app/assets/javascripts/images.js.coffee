@@ -1,7 +1,3 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
 $ ->
   $('#imageUploadForm').find('input:file').each (i, elem) ->
     fileInput     = $(elem)
@@ -20,21 +16,21 @@ $ ->
       dataType: 'XML'
       replaceFileInput: false
       add: (e, data) ->
-        types = /(\.|\/)(gif|jpe?g|png)$/i
-        file = data.files[0]
-        if types.test(file.type) || types.test(file.name)
-          # data.context = $(tmpl("image-upload", file))
-          # $('#imageUploadForm').append(data.context)
-          data.submit()
-        else
-          alert("#{file.name} is not an image file")
+        file          = data.files[0]
+        fileTypes     = /(\.|\/)(gif|jpe?g|png)$/i
+        expectedRoot  = /Image.*/i
+        selectedRoot  = file.webkitRelativePath.split('/')[0]
+        if expectedRoot.test(selectedRoot)
+          if fileTypes.test(file.type) || fileTypes.test(file.name)
+            data.submit()
+          else alert("#{file.name} is not an image file")
+        else alert("Wrong directory selected. Please select the Images folder instead of #{selectedRoot}")
       progressall: (e, data) ->
         progress = parseInt(data.loaded / data.total * 100, 10)
         progressBar.css 'width', progress + '%'
         if progress == 100
           submitButton.prop 'disabled', false
           progressBar.text 'Images Saved'
-          # window.location.href = '/images'
       start: (e) ->
         submitButton.prop 'disabled', true
         progressBar.css('background', 'green').css('display', 'block').css('width', '0%').text 'Saving...'

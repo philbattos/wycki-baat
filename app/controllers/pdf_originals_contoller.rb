@@ -1,5 +1,4 @@
 class PdfOriginalsController < ApplicationController
-  # before_action :set_s3_direct_post, only: [:index, :create]
 
   def index
     @pdf_originals = PdfOriginal.all
@@ -25,12 +24,6 @@ class PdfOriginalsController < ApplicationController
 #=================================================
     def pdf_params
       params.permit(:name, :destination, :api_response, :pdf_file, :collection_name, categories: [])
-    end
-
-    def set_s3_direct_post
-      @s3_direct_post = S3_BUCKET.presigned_post( key:                    "uploads/#{Time.now.strftime('%Y%^b%d-%^A%H%M-%S%L')}/${filename}",
-                                                  success_action_status:  '201',
-                                                  acl:                    'public-read' )
     end
 
 end

@@ -16,21 +16,21 @@ $ ->
       dataType: 'XML'
       replaceFileInput: false
       add: (e, data) ->
-        types = /(\.|\/)(pdf)$/i
-        file = data.files[0]
-        if types.test(file.type) || types.test(file.name)
-          # data.context = $(tmpl("pdf-upload", file))
-          # $('#pdfUploadForm').append(data.context)
-          data.submit()
-        else
-          alert("#{file.name} is not a PDF file")
+        file          = data.files[0]
+        fileTypes     = /(\.|\/)(pdf)$/i
+        expectedRoot  = /PDF.*/i
+        selectedRoot  = file.webkitRelativePath.split('/')[0]
+        if expectedRoot.test(selectedRoot)
+          if fileTypes.test(file.type) || fileTypes.test(file.name)
+            data.submit()
+          else alert("#{file.name} is not a PDF file")
+        else alert("Wrong directory selected. Please select the PDF folder instead of #{selectedRoot}")
       progressall: (e, data) ->
         progress = parseInt(data.loaded / data.total * 100, 10)
         progressBar.css 'width', progress + '%'
         if progress == 100
           submitButton.prop 'disabled', false
           progressBar.text 'PDF Files Saved'
-          # window.location.href = '/pdfs'
       start: (e) ->
         submitButton.prop 'disabled', true
         progressBar.css('background', 'green').css('display', 'block').css('width', '0%').text 'Saving...'

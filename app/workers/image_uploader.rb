@@ -31,13 +31,8 @@ class ImageUploader
         page_type: "IMAGE",
         page_name: "#{title}"
     end
-    # if Image.all.count == Image.uploaded.count
-    #   ActionCable.server.broadcast 'alerts',
-    #     message: "Images have finished uploading.",
-    #     html_class: "info"
-    # end
 
-    # image.delete
+    image.destroy
   end
 
 #=================================================
@@ -51,7 +46,6 @@ class ImageUploader
     end
 
     def build_title(image)
-      # filename = image.image_file_identifier
       filename = image.name
       "File:#{filename}"
     end
