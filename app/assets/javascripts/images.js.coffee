@@ -19,12 +19,14 @@ $ ->
         file          = data.files[0]
         fileTypes     = /(\.|\/)(gif|jpe?g|png)$/i
         expectedRoot  = /Image.*/i
-        selectedRoot  = file.webkitRelativePath.split('/')[0]
-        if expectedRoot.test(selectedRoot)
-          if fileTypes.test(file.type) || fileTypes.test(file.name)
-            data.submit()
-          else alert("#{file.name} is not an image file")
-        else alert("Wrong directory selected. Please select the Images folder instead of #{selectedRoot}")
+        # selectedRoot  = file.webkitRelativePath.split('/')[0]
+        # if expectedRoot.test(selectedRoot)
+        console.log "file.webkitRelativePath: #{file.webkitRelativePath if file}"
+        if fileTypes.test(file.type) || fileTypes.test(file.name)
+          data.submit()
+        else
+          alert("#{file.name} is not an image file")
+        # else alert("Wrong directory selected. Please select the Images folder instead of #{selectedRoot}")
       progressall: (e, data) ->
         progress = parseInt(data.loaded / data.total * 100, 10)
         progressBar.css 'width', progress + '%'
