@@ -11,7 +11,7 @@ class ImagesController < ApplicationController
 
     if @image = collection.images.create(image_params)
       ImageUploader.perform_async(@image.id)
-      flash[:notice] = "The selected image has been saved to the database and is being dispatched a background job for uploading."
+      flash[:notice] = "The selected image has been saved to the database and is being dispatched to a background job for uploading."
     else
       flash[:error] = "There was a problem saving an image. Please try again. (#{error})"
     end

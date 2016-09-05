@@ -51,7 +51,7 @@ $ ->
           url: '/images'
           dataType: 'json'
           data:
-            image_file: url
+            image_file: url.replace(/\s/, '')
             name: fileName
             destination: destination
             collection_name: collection

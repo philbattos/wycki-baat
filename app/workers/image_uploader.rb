@@ -2,6 +2,7 @@ require 'open-uri'
 
 class ImageUploader
   include Sidekiq::Worker
+  sidekiq_options retry: 5
 
   def perform(image_id)
     image     = Image.find(image_id)
@@ -22,10 +23,26 @@ class ImageUploader
         page_type: "IMAGE",
         url: response.data['imageinfo']['descriptionurl'],
         page_name: "#{title}"
+    rescue URI::InvalidURIError => error
+      puts "UPLOAD ERROR: #{error} (#{title})"
+      ActionCable.server.broadcast 'alerts',
+        message: "Uploading failed for IMAGE #{title}: #{error}",
+        html_class: "danger",
+        text_decoration: "s", # strikethrough
+        page_type: "IMAGE",
+        page_name: "#{title}"
     rescue MediawikiApi::ApiError => api_error
       puts "UPLOAD ERROR: #{api_error} (#{title})"
       ActionCable.server.broadcast 'alerts',
         message: "Uploading failed for IMAGE #{title}: #{api_error}",
+        html_class: "danger",
+        text_decoration: "s", # strikethrough
+        page_type: "IMAGE",
+        page_name: "#{title}"
+    rescue StandardError => error
+      puts "UPLOAD ERROR: #{error} (#{title})"
+      ActionCable.server.broadcast 'alerts',
+        message: "Uploading failed for IMAGE #{title}: #{error}",
         html_class: "danger",
         text_decoration: "s", # strikethrough
         page_type: "IMAGE",
