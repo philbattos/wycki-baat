@@ -1,2 +1,2 @@
 concurrency: 5
-retry: 5
+timeout: 8
