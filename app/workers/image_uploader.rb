@@ -11,7 +11,7 @@ class ImageUploader
     begin
       title           = build_title(image)
       comments        = build_comments(image) # category tags
-      ignorewarnings  = true # allows multiple uploads with same filename
+      ignorewarnings  = true                  # allows multiple uploads with same filename
       temp_file       = URI.parse(image.image_file)
       filepath        = temp_file.open
       response        = uploader.upload_image title, filepath, comments, ignorewarnings
@@ -68,8 +68,7 @@ class ImageUploader
     end
 
     def build_comments(image)
-      category_tags = image.categories.map! { |category| "[[Category:#{category}]]\n" }.join('')
-      category_tags += "[[Category:#{image.name}]]\n"
+      image.categories.map! { |category| "[[Category:#{category}]]\n" }.join('')
     end
 
     def wiki_url(subdomain)
