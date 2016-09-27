@@ -4,8 +4,6 @@ class VolumeTextUploader
   def perform(wiki)
     uploader  = build_mediawiki_uploader(wiki)
     volumes   = Volume.volume_pages
-    puts "uploader: #{uploader.inspect}"
-    puts "uploading volumes: #{volumes.inspect}"
 
     volumes.each do |vol|
       begin
@@ -15,6 +13,11 @@ class VolumeTextUploader
         puts "uploading volume: #{vol.inspect}"
         # vol.start_upload!
         collection, *label, number = vol.name.split('-')
+
+        if collection.nil? || number.nil?
+          raise "Invalid volume name: #{vol.name}. (A volume name should be in this format: COLLECTION-Labels-NUMBER. Hyphens, not spaces, should separate each section; COLLECTION and NUMBER are required.)"
+        end
+
         upload_templates(number, uploader)
         upload_compiled_texts(vol, number, uploader)
         upload_volume_category_page(vol, uploader)
@@ -31,11 +34,13 @@ class VolumeTextUploader
       #     page_type: 'ERROR',
       #     page_name: "#{vol}"
       rescue => e
-        puts "some error: #{vol.name}"
-        puts e
+        puts "There was an error with volume #{vol.name}: #{e}"
+        ActionCable.server.broadcast 'alerts',
+          message: "There was a problem uploading volume #{vol.name}: #{e}",
+          html_class: "danger"
       end
     end
-    puts "destroying volumes"
+    puts "destroying all volumes"
     Volume.destroy_all
     ActionCable.server.broadcast 'alerts',
       message: "Volumes & Texts have finished uploading.",
