@@ -4,9 +4,14 @@ class VolumeTextUploader
   def perform(wiki)
     uploader  = build_mediawiki_uploader(wiki)
     volumes   = Volume.volume_pages
+    puts "uploader: #{uploader.inspect}"
+    puts "uploading volumes: #{volumes.inspect}"
 
     volumes.each do |vol|
       begin
+        ActionCable.server.broadcast 'alerts',
+          message: "Attempting to upload volume: #{vol.name}",
+          html_class: "info"
         puts "uploading volume: #{vol.inspect}"
         # vol.start_upload!
         collection, *label, number = vol.name.split('-')
@@ -30,6 +35,7 @@ class VolumeTextUploader
         puts e
       end
     end
+    puts "destroying volumes"
     Volume.destroy_all
     ActionCable.server.broadcast 'alerts',
       message: "Volumes & Texts have finished uploading.",
