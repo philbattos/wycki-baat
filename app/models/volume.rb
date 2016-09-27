@@ -46,7 +46,12 @@ class Volume < ActiveRecord::Base
     Volume.transaction do
       files.each do |file|
         path = extract_path(file)
+        puts "path-2: #{path}"
         root, *categories, volume_name, text_name = path.split('/') # EXAMPLE: wikipages/volume1/*/text-name
+        puts "root: #{root}"
+        puts "categories: #{categories.inspect}"
+        puts "volume_name: #{volume_name}"
+        puts "text_name: #{text_name}"
         raise IOError, "Wrong directory selected. Please select 'Content' instead of '#{root}'." unless root.match(/\AContent.*\z/)
         if valid_file_type?(text_name)
           text_name.slice!('.txt')
@@ -55,6 +60,7 @@ class Volume < ActiveRecord::Base
           next
         end
         volume = Volume.find_or_create_by!(name: volume_name, destination: wiki, collection_id: collection_id)
+        puts "volume: #{volume.inspect}"
         volume.texts.create!(
           name:           text_name,
           destination:    wiki,
@@ -82,7 +88,10 @@ class Volume < ActiveRecord::Base
 #=================================================
 
     def self.extract_path(file)
-      file.headers.match(/(filename=)("(.+)")/).captures.last
+      puts "extracting filepath from #{file.headers.inspect}"
+      path = file.headers.match(/(filename=)("(.+)")/).captures.last
+      puts "path-1: #{path}"
+      path
     end
 
     def self.valid_file_type?(text)

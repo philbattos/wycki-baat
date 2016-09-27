@@ -7,6 +7,7 @@ class VolumeTextUploader
 
     volumes.each do |vol|
       begin
+        puts "uploading volume: #{vol.inspect}"
         # vol.start_upload!
         collection, *label, number = vol.name.split('-')
         upload_templates(number, uploader)
