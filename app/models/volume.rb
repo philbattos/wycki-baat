@@ -43,14 +43,23 @@ class Volume < ActiveRecord::Base
   #    Public Methods
   #-------------------------------------------------
   def self.save_volumes_and_texts(files, wiki, collection_id)
+    puts "starting Volume.save_volumes_and_texts...."
+    puts "wiki: #{wiki.inspect}"
+    puts "collection_id: #{collection_id}"
     Volume.transaction do
       files.each do |file|
         path = extract_path(file)
+        puts "path: #{path.inspect}"
         root, *categories, volume_name, text_name = path.split('/') # EXAMPLE: wikipages/volume1/*/text-name
+        puts "root: #{root.inspect}"
+        puts "categories: #{categories.inspect}"
+        puts "volume_name: #{volume_name.inspect}"
+        puts "text_name: #{text_name.inspect}"
 
         raise IOError, "Wrong directory selected. Please select 'Content' instead of '#{root}'." unless root.match(/\AContent.*\z/)
 
         if valid_file_type?(text_name)
+          puts "valid_file_type: #{text_name.inspect}"
           text_name.slice!('.txt')
         else # not a .txt file
           send_alert_message(file)
@@ -58,6 +67,7 @@ class Volume < ActiveRecord::Base
         end
 
         volume = Volume.find_or_create_by!(name: volume_name, destination: wiki, collection_id: collection_id)
+        puts "volume created: #{volume.inspect}"
         volume.texts.create!(
           name:           text_name,
           destination:    wiki,
