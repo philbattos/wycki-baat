@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-# ruby '2.2.2' # used by Heroku
+ruby '2.5.5' # used by Heroku
 
 #-------------------------------------------------
 #    Rails default gems
