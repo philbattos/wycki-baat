@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2' # used by Heroku
+ruby '2.4.0' # used by Heroku
 
 #-------------------------------------------------
 #    Rails default gems
@@ -45,7 +45,7 @@ gem 'rest-client'                               # for making external http reque
 # gem 'active_model_serializers'
 gem 'puma'                                      # server that supports streaming and multiple async connections (ActionCable)
 gem 'aasm'                                      # for tracking the state of uploaded objects (state_machine gem is neglected)
-gem 'actioncable', github: 'rails/actioncable'  # for real-time communication over websockets (for alerts from background jobs)
+gem 'actioncable', github: 'rails/actioncable', branch: 'archive'
 # gem 'yomu'                                      # for reading different types of files (ex. .rtf instead of .txt)
 gem 'jquery-fileupload-rails'                   # for jquery-file-upload
 gem 'aws-sdk'                                   # for direct uploads to S3
