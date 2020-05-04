@@ -4,7 +4,7 @@ ruby '2.4.0' # used by Heroku
 #-------------------------------------------------
 #    Rails default gems
 #-------------------------------------------------
-gem 'rails',           '4.2.1'  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails',           '4.2.8'  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'sass-rails',   '~> 4.0.3'  # Use SCSS for stylesheets
 gem 'uglifier',     '>= 1.3.0'  # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.0.0'  # Use CoffeeScript for .js.coffee assets and views
