@@ -36,7 +36,7 @@ gem 'spring',                   group: :development # Spring speeds up developme
 #-------------------------------------------------
 gem 'mediawiki_api'                             # for accessing the Media Wiki API (created by Wikimedia)
 gem 'haml'                                      # alternative to html views
-gem 'pg'                                        # Heroku uses postgres
+gem 'pg', '~> 0.20'                             # Heroku uses postgres
 gem 'sidekiq'                                   # background jobs
 gem 'sidekiq-status'                            # for tracking the status of background jobs in Sidekiq
 gem 'sinatra', :require => nil                  # for Sidekiq UI wyckibaat.com/sidekiq
