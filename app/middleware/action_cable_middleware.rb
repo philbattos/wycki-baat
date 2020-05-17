@@ -1,10 +1,12 @@
-class ActionCableMiddleware < ActionCable::Connection::Websocket
+require 'faye/websocket'
+
+class ActionCableMiddleware
   def initialize(app, options={})
     @app = app
   end
 
   def call(env)
-    if ::WebSocket::Driver.websocket?(env)
+    if Faye::WebSocket.websocket?(env)
       ActionCable.server.call(env)
     else
       @app.call(env)
