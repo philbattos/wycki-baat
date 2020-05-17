@@ -37,7 +37,7 @@ gem 'spring',                   group: :development # Spring speeds up developme
 gem 'mediawiki_api'                             # for accessing the Media Wiki API (created by Wikimedia)
 gem 'haml'                                      # alternative to html views
 gem 'pg', '~> 0.20'                             # Heroku uses postgres
-gem 'sidekiq'                                   # background jobs
+gem 'sidekiq', '5.2.7'                          # background jobs (version specified because RedisToGo on Heroku is not compatible with Sidekiq v6)
 gem 'sidekiq-status'                            # for tracking the status of background jobs in Sidekiq
 gem 'sinatra', :require => nil                  # for Sidekiq UI wyckibaat.com/sidekiq
 gem 'net-http-digest_auth'                      # for digest authentication (re: firewall on research.tsadra.org)
