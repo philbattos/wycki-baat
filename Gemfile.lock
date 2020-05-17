@@ -1128,9 +1128,9 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sidekiq (5.2.7)
+    sidekiq (5.2.8)
       connection_pool (~> 2.2, >= 2.2.2)
-      rack (>= 1.5.0)
+      rack (< 2.1.0)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
     sidekiq-status (1.1.4)
@@ -1198,11 +1198,12 @@ DEPENDENCIES
   rails_12factor
   rails_serve_static_assets
   rails_stdout_logging
+  redis
   rest-client
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
-  sidekiq (= 5.2.7)
+  sidekiq
   sidekiq-status
   sinatra
   spring

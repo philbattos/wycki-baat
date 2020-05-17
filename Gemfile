@@ -37,7 +37,7 @@ gem 'spring',                   group: :development # Spring speeds up developme
 gem 'mediawiki_api'                             # for accessing the Media Wiki API (created by Wikimedia)
 gem 'haml'                                      # alternative to html views
 gem 'pg', '~> 0.20'                             # Heroku uses postgres
-gem 'sidekiq', '5.2.7'                          # background jobs (version specified because RedisToGo on Heroku is not compatible with Sidekiq v6)
+gem 'sidekiq'                                   # background jobs
 gem 'sidekiq-status'                            # for tracking the status of background jobs in Sidekiq
 gem 'sinatra', :require => nil                  # for Sidekiq UI wyckibaat.com/sidekiq
 gem 'net-http-digest_auth'                      # for digest authentication (re: firewall on research.tsadra.org)
@@ -49,6 +49,7 @@ gem 'actioncable', github: 'rails/actioncable', branch: 'archive'
 # gem 'yomu'                                      # for reading different types of files (ex. .rtf instead of .txt)
 gem 'jquery-fileupload-rails'                   # for jquery-file-upload
 gem 'aws-sdk'                                   # for direct uploads to S3
+gem 'redis'                                     # for using Heroku Redis
 
 group :production do
   gem 'newrelic_rpm'                            # for monitoring site performance
