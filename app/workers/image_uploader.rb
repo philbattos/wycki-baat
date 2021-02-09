@@ -72,7 +72,7 @@ class ImageUploader
     end
 
     def wiki_url(subdomain)
-      "http://#{subdomain}.tsadra.org/api.php"
+      "https://#{subdomain}.tsadra.org/api.php"
     end
 
     def username

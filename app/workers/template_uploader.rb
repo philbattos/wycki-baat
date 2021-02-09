@@ -54,11 +54,11 @@ class TemplateUploader
     end
 
     def target_url(destination, pageid)
-      "http://#{destination}.tsadra.org/?curid=#{pageid}"
+      "https://#{destination}.tsadra.org/?curid=#{pageid}"
     end
 
     def wiki_url(subdomain)
-      "http://#{subdomain}.tsadra.org/api.php"
+      "https://#{subdomain}.tsadra.org/api.php"
     end
 
     def username

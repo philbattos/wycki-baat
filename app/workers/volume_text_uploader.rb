@@ -251,7 +251,7 @@ class VolumeTextUploader
     end
 
     def target_url(destination, pageid)
-      "http://#{destination}.tsadra.org/?curid=#{pageid}"
+      "https://#{destination}.tsadra.org/?curid=#{pageid}"
     end
 
     def build_mediawiki_uploader(subdomain)
@@ -261,7 +261,7 @@ class VolumeTextUploader
     end
 
     def wiki_url(subdomain)
-      "http://#{subdomain}.tsadra.org/api.php"
+      "https://#{subdomain}.tsadra.org/api.php"
     end
 
     def username

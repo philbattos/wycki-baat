@@ -5,7 +5,7 @@ module BaatsHelper
   end
 
   def wiki_url_info
-    "Enter the sub-domain of the wiki where the pages will be created. For example, enter \"librarywiki\" for http://librarywiki.tsadra.org."
+    "Enter the sub-domain of the wiki where the pages will be created. For example, enter \"librarywiki\" for https://librarywiki.tsadra.org."
   end
 
   # def volume_number
