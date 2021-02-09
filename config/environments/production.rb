@@ -78,4 +78,7 @@ Rails.application.configure do
 
   config.middleware.use ActionCableMiddleware
   config.web_socket_server_url = "wss://wyckibaat.herokuapp.com/"
+
+  # Attempt to solve this error in Heroku logs: "Request origin not allowed: https://wyckibaat.herokuapp.com"
+  config.action_cable.allowed_request_origins = ["https://wyckibaat.herokuapp.com"]
 end
