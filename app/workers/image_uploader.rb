@@ -17,7 +17,7 @@ class ImageUploader
 
       # We're sending "comments" twice: once for the "comment" param and once for the "text" param.
       # The hope is that Mediawiki will use the "text" param to populate category tags on the wiki.
-      response        = uploader.upload_image(title, filepath, comments, ignorewarnings, comments)
+      response        = uploader.upload_image(title, filepath, "", ignorewarnings, comments)
       puts response.data
 
       ActionCable.server.broadcast 'alerts',
