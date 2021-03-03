@@ -11,7 +11,7 @@ class Template < ActiveRecord::Base
   validates :name,  presence: true,
                     format: { with: /\A[^.].+$\z/, message: "Template name must not start with a dot(.)" }
   validates :destination, presence: true,
-                          inclusion: { :in => %w[ librarywiki terdzod research ], message: "'%{value}' is not a valid wiki destination. Please enter 'librarywiki', 'terdzod', or 'research'" }
+                          inclusion: { :in => ENV['SUPPORTED_SUBDOMAINS'], message: "'%{value}' is not a valid wiki destination." }
   validates :file_root, presence: true,
                         format: { with: /\ATemplates\z/, message: "The selected folder containing templates should be named 'Templates'. It looks like you selected something else." }
 
