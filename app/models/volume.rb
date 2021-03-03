@@ -13,7 +13,7 @@ class Volume < ActiveRecord::Base
   validates :name,  presence: true,
                     format: { with: /\A[^.].+$\z/, message: "Volume name must not start with a dot(.)" }
   validates :destination, presence: true,
-                          inclusion: { :in => ENV['SUPPORTED_SUBDOMAINS'], message: "'%{value}' is not a valid wiki destination." }
+                          inclusion: { :in => JSON.parse(ENV['SUPPORTED_SUBDOMAINS']), message: "'%{value}' is not a valid wiki destination." }
 
   #-------------------------------------------------
   #    Scopes

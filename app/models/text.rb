@@ -12,7 +12,7 @@ class Text < ActiveRecord::Base
   validates :name,  presence: true,
                     format: { with: /\A[^.].+$\z/, message: "Text name must not start with a dot(.)" }
   validates :destination, presence: true,
-                          inclusion: { :in => ENV['SUPPORTED_SUBDOMAINS'], message: "'%{value}' is not a valid wiki destination." }
+                          inclusion: { :in => JSON.parse(ENV['SUPPORTED_SUBDOMAINS']), message: "'%{value}' is not a valid wiki destination." }
   validates :file_name, format: { with: /\A(?![.]DS_Store).+\z/, message: "Text file name must not contain '.DS_Store'" }
   validates :file_root, presence: true,
                         format: { with: /\AContent.*\z/, message: "The selected folder containing volumes and texts should start with 'Content'. It looks like you selected something else. You should select a different folder or rename the selected folder to start with 'Content'." }
