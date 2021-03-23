@@ -1,15 +1,16 @@
 local: &local
-  :url: redis://localhost:6379
-  :host: localhost
-  :port: 6379
-  :timeout: 1
-  :inline: true
+  url: redis://localhost:6379
+  host: localhost
+  port: 6379
+  timeout: 1
+  inline: true
 development: *local
 test: *local
 production: &production
-  :url: <%= ENV['REDIS_URL'] %>
-  :host: ec2-18-232-234-255.compute-1.amazonaws.com
-  :port: 11339
-  :password: paf6c116fbce7411072af284093da72a71a6567b0a589ffec2acd5193ec925671
-  :inline: true
-  :timeout: 1
+  url: <%= ENV['REDIS_URL'] %>
+  adapter: redis
+#   host: ec2-18-232-234-255.compute-1.amazonaws.com
+#   port: 11339
+#   password: paf6c116fbce7411072af284093da72a71a6567b0a589ffec2acd5193ec925671
+#   inline: true
+#   timeout: 1
